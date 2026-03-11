@@ -1,16 +1,125 @@
-# React + Vite
+# nurturehive
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Public marketing site with a separate Payload CMS.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Frontend: React, Vite, TypeScript, Tailwind CSS
+- CMS: Payload 3 on Next.js
+- Database: PostgreSQL
+- Local database: Docker
 
-## React Compiler
+## Repo structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```txt
+/web   frontend app
+/cms   Payload CMS
+```
 
-## Expanding the ESLint configuration
+Frontend structure:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```txt
+/web/src
+  /api
+  /blocks
+  /components
+  /hooks
+  /pages
+  /styles
+  /types
+  /utils
+```
+
+## How this project works
+
+- Marketing content is managed in Payload admin.
+- Payload stores content in PostgreSQL.
+- The frontend fetches page data from Payload REST APIs.
+- Page layout is built from Payload blocks, so blocks can be reordered in admin without changing frontend code.
+
+## Local setup
+
+Requirements:
+
+- Node.js 20+
+- npm
+- Docker Desktop
+
+Start local PostgreSQL:
+
+```bash
+docker compose up -d
+```
+
+Create env files:
+
+```bash
+cp cms/.env.example cms/.env
+cp web/.env.example web/.env
+```
+
+Install packages:
+
+```bash
+npm install
+```
+
+Start both apps:
+
+```bash
+npm run dev
+```
+
+Local URLs:
+
+- Frontend: `http://localhost:5173`
+- CMS: `http://localhost:3001`
+- Payload admin: `http://localhost:3001/admin`
+
+## First run
+
+1. Open `http://localhost:3001/admin`
+2. Create the first admin user
+3. Create a `Media` item if you want to use images
+4. Create a `Pages` item with slug `home`
+5. Add blocks to the `layout` field
+6. Refresh the frontend
+
+## Payload content model
+
+Current collections:
+
+- `Users`
+- `Media`
+- `Pages`
+
+`Pages` includes:
+
+- header content
+- footer content
+- SEO fields
+- block-based layout
+
+Current blocks:
+
+- Hero
+- Feature Grid
+- CTA
+- Rich Text
+
+## Frontend notes
+
+- `api` holds fetch logic and endpoint helpers
+- `blocks` holds components that map to Payload blocks
+- `hooks` holds reusable React logic
+- `types` defines the data shapes used by the frontend
+
+## Common local reset
+
+If the CMS gets stuck after schema changes during local development:
+
+```bash
+docker compose down -v
+docker compose up -d
+npm run dev
+```
