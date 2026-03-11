@@ -1,58 +1,93 @@
 # nurturehive
 
-Frontend marketing site for Nurturehive.
+Frontend marketing site with a Payload CMS backend.
 
 ## Stack
 
 - Frontend: React, Vite, TypeScript, Tailwind CSS
+- CMS: Payload (Next.js)
+- Database: PostgreSQL
 
 ## Repo structure
 
 ```txt
 /web   frontend app
-/cms   backend/CMS codebase (optional for local use)
+/cms   Payload CMS
 ```
 
-## Common local instructions (if needed)
+## Local setup (Frontend + Payload + DB)
 
 Requirements:
 
 - Node.js 20+
 - npm
+- Docker Desktop
 
-Install packages:
+Install dependencies:
 
 ```bash
 npm install
 ```
 
-Create frontend env file:
+Create env files:
 
 ```bash
+cp cms/.env.example cms/.env
 cp web/.env.example web/.env
 ```
 
-Set API base URL in `web/.env` (example):
+`cms/.env` uses PostgreSQL via:
+
+```env
+DATABASE_URL=postgres://postgres:postgres@localhost:5432/nurturehive
+PAYLOAD_SECRET=replace-this-with-a-long-random-string
+```
+
+`web/.env` should point to local Payload:
 
 ```env
 VITE_CMS_URL=http://localhost:3001
 ```
 
-Sync your branch with remote (safe fast-forward only):
+Start local PostgreSQL:
+
+```bash
+docker compose up -d
+```
+
+Run frontend + CMS:
+
+```bash
+npm run dev
+```
+
+Local URLs:
+
+- Frontend: `http://localhost:5173`
+- Payload CMS: `http://localhost:3001`
+- Payload Admin: `http://localhost:3001/admin`
+
+First local run:
+
+1. Open Payload admin and create the first admin user
+2. Create content in Payload (`Pages`, `Media`, etc.)
+3. Refresh frontend to see published content
+
+Common reset (if DB/schema gets out of sync):
+
+```bash
+docker compose down -v
+docker compose up -d
+npm run dev
+```
+
+## Daily git command
+
+Sync your branch safely (fast-forward only):
 
 ```bash
 npm run sync
 ```
-
-Start frontend locally:
-
-```bash
-npm run dev:web
-```
-
-Local frontend URL:
-
-- `http://localhost:5173`
 
 ## Git workflow rules
 
