@@ -41,6 +41,10 @@ cp web/.env.example web/.env
 ```env
 DATABASE_URL=postgres://postgres:postgres@localhost:5432/nurturehive
 PAYLOAD_SECRET=replace-this-with-a-long-random-string
+PAYLOAD_PUBLIC_SERVER_URL=http://localhost:3001
+CORS_ORIGINS=http://localhost:3001,http://127.0.0.1:3001,http://localhost:5173,http://127.0.0.1:5173
+CSRF_ORIGINS=http://localhost:3001,http://127.0.0.1:3001,http://localhost:5173,http://127.0.0.1:5173
+PAYLOAD_DB_PUSH=true
 ```
 
 `web/.env` should point to local Payload:
@@ -66,6 +70,13 @@ Local URLs:
 - Frontend: `http://localhost:5173`
 - Payload CMS: `http://localhost:3001`
 - Payload Admin: `http://localhost:3001/admin`
+
+Cloud env mapping:
+
+- `sandbox`/dev: set `PAYLOAD_PUBLIC_SERVER_URL` and `VITE_CMS_URL` to your dev Payload URL
+- `staging`: set both to staging Payload URL
+- `production`: set both to production Payload URL
+- In cloud, set `PAYLOAD_DB_PUSH=false` unless you explicitly want schema push
 
 First local run:
 

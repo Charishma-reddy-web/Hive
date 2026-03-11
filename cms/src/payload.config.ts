@@ -10,6 +10,21 @@ import { Users } from './collections/Users'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
+const defaultOrigins = [
+  'http://localhost:3001',
+  'http://127.0.0.1:3001',
+  'http://localhost:5173',
+  'http://127.0.0.1:5173',
+]
+
+const parseOrigins = (value?: string): string[] =>
+  (value || '')
+    .split(',')
+    .map((origin) => origin.trim())
+    .filter(Boolean)
+
+const corsOrigins = parseOrigins(process.env.CORS_ORIGINS)
+const csrfOrigins = parseOrigins(process.env.CSRF_ORIGINS)
 
 export default buildConfig({
   admin: {
@@ -18,20 +33,11 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  cors: [
-    'http://localhost:3001',
-    'http://127.0.0.1:3001',
-    'http://localhost:5173',
-    'http://127.0.0.1:5173',
-  ],
-  csrf: [
-    'http://localhost:3001',
-    'http://127.0.0.1:3001',
-    'http://localhost:5173',
-    'http://127.0.0.1:5173',
-  ],
+  cors: corsOrigins.length > 0 ? corsOrigins : defaultOrigins,
+  csrf: csrfOrigins.length > 0 ? csrfOrigins : defaultOrigins,
   collections: [Users, Media, Pages],
   editor: lexicalEditor(),
+  serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || 'http://localhost:3001',
   secret: process.env.PAYLOAD_SECRET || 'replace-this-with-a-long-random-string',
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
@@ -41,7 +47,7 @@ export default buildConfig({
     pool: {
       connectionString: process.env.DATABASE_URL || '',
     },
-    push: process.env.NODE_ENV !== 'production',
+    push: process.env.PAYLOAD_DB_PUSH === 'true' || process.env.NODE_ENV !== 'production',
   }),
   sharp,
 })
