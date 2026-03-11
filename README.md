@@ -120,6 +120,46 @@ Current blocks:
 - `hooks` holds reusable React logic
 - `types` defines the data shapes used by the frontend
 
+## Git workflow rules
+
+Branch naming for day-to-day work:
+
+- `feat/<short-name>` for features
+- `fix/<short-name>` for bug fixes
+- `chore/<short-name>` for maintenance work
+
+Promotion branches:
+
+- `sandbox`: integration branch for team development
+- `staging`: QA/UAT release branch
+- `production`: live branch
+
+PR flow:
+
+1. Create a feature branch from `sandbox`
+2. Open PR into `sandbox` and get it reviewed
+3. No direct pushes or direct merges into `sandbox`, `staging`, or `production`
+4. Batch approved changes by opening one PR from `sandbox` to `staging`
+5. After staging approval, open PR from `staging` to `production`
+
+Repository settings to enforce:
+
+- Protect `sandbox`, `staging`, and `production`
+- Require pull request before merge
+- Require at least one approval
+- Require status checks to pass
+
+## Git guard rails (current)
+
+Until branch protection is enabled in GitHub plan settings, follow these team rules manually:
+
+1. Do not push directly to `sandbox`, `staging`, or `production`
+2. Create work branches from `sandbox` using names like `feat/<name>`, `fix/<name>`, `chore/<name>`
+3. Open PRs to `sandbox` for all changes
+4. Merge into `staging` only via a release PR from `sandbox`
+5. Merge into `production` only via a release PR from `staging`
+6. Keep commits small and include clear PR descriptions and testing notes
+
 ## Common local reset
 
 If the CMS gets stuck after schema changes during local development:
