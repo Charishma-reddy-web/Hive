@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "dev": "concurrently \"npm run dev:web\" \"npm run dev:cms\"",
+    "sync": "git fetch --all --prune && git pull --ff-only",
     "dev:web": "npm run dev --workspace web",
     "dev:cms": "npm run dev --workspace cms",
     "build": "npm run build --workspace web && npm run build --workspace cms"

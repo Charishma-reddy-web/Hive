@@ -64,6 +64,12 @@ Install packages:
 npm install
 ```
 
+Sync your branch with remote (safe fast-forward only):
+
+```bash
+npm run sync
+```
+
 Start both apps:
 
 ```bash
