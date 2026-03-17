@@ -1,11 +1,9 @@
 import { postgresAdapter } from '@payloadcms/db-postgres'
-import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 import { Media } from './collections/Media'
-import { Pages } from './collections/Pages'
 import { Users } from './collections/Users'
 
 const filename = fileURLToPath(import.meta.url)
@@ -35,8 +33,7 @@ export default buildConfig({
   },
   cors: corsOrigins.length > 0 ? corsOrigins : defaultOrigins,
   csrf: csrfOrigins.length > 0 ? csrfOrigins : defaultOrigins,
-  collections: [Users, Media, Pages],
-  editor: lexicalEditor(),
+  collections: [Users, Media],
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || 'http://localhost:3001',
   secret: process.env.PAYLOAD_SECRET || 'replace-this-with-a-long-random-string',
   typescript: {

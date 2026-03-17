@@ -3,7 +3,7 @@ import React from 'react'
 
 export const metadata: Metadata = {
   title: 'NurtureHive CMS',
-  description: 'Payload CMS for the NurtureHive marketing website.',
+  description: 'Minimal Payload CMS starter for NurtureHive.',
 }
 
 export default function FrontendLayout({ children }: { children: React.ReactNode }) {
@@ -15,4 +15,3 @@ export default function FrontendLayout({ children }: { children: React.ReactNode
     </html>
   )
 }
-

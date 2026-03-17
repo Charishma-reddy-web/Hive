@@ -1,124 +1,110 @@
 # nurturehive
 
-Frontend marketing site with a Payload CMS backend.
+Minimal split setup for:
 
-## Stack
+- `web/`: Next.js frontend
+- `cms/`: Payload CMS on Next.js
 
-- Frontend: React, Vite, TypeScript, Tailwind CSS
-- CMS: Payload (Next.js)
-- Database: PostgreSQL
+## Current state
 
-## Repo structure
+- `web/` is now a standardized Next.js App Router starter
+- `cms/` is a clean Payload app with only `users` and `media`
+- there is no frontend-to-CMS integration yet
+
+## Frontend
+
+`web/` is Next.js App Router with a server-first structure.
+
+Standardized frontend structure:
 
 ```txt
-/web   frontend app
-/cms   Payload CMS
+web/
+  src/
+    app/
+      (site)/
+      robots.ts
+      sitemap.ts
+    components/
+      layout/
+      sections/
+      ui/
+    lib/
+      cms/
+      seo/
+    types/
 ```
 
-## Local setup (Frontend + Payload + DB)
+Team rules:
 
-Requirements:
+- use server components by default
+- add `"use client"` only for interactive UI
+- keep CMS fetching inside `src/lib/cms`
+- keep metadata logic inside `src/lib/seo`
 
-- Node.js 20+
-- npm
-- Docker Desktop
-
-Install dependencies:
+Run locally:
 
 ```bash
-npm install
+cp web/.env.example web/.env.local
+npm run dev:web
 ```
 
-Create env files:
+Frontend env vars:
+
+```env
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+NEXT_PUBLIC_CMS_URL=http://localhost:3001
+CMS_URL=http://localhost:3001
+```
+
+## CMS
+
+Run locally:
 
 ```bash
-cp cms/.env.example cms/.env
-cp web/.env.example web/.env
+cp cms/.env.example cms/.env.local
+docker compose up -d
+npm run dev:cms
 ```
 
-`cms/.env` uses PostgreSQL via:
+Local CMS URLs:
+
+- `http://localhost:3001`
+- `http://localhost:3001/admin`
+
+Required CMS env vars:
 
 ```env
 DATABASE_URL=postgres://postgres:postgres@localhost:5432/nurturehive
 PAYLOAD_SECRET=replace-this-with-a-long-random-string
 PAYLOAD_PUBLIC_SERVER_URL=http://localhost:3001
-CORS_ORIGINS=http://localhost:3001,http://127.0.0.1:3001,http://localhost:5173,http://127.0.0.1:5173
-CSRF_ORIGINS=http://localhost:3001,http://127.0.0.1:3001,http://localhost:5173,http://127.0.0.1:5173
+CORS_ORIGINS=http://localhost:3001,http://127.0.0.1:3001
+CSRF_ORIGINS=http://localhost:3001,http://127.0.0.1:3001
 PAYLOAD_DB_PUSH=true
 ```
 
-`web/.env` should point to local Payload:
+## Local setup
 
-```env
-VITE_CMS_URL=http://localhost:3001
-```
-
-Start local PostgreSQL:
+From the repo root:
 
 ```bash
+cp web/.env.example web/.env.local
+cp cms/.env.example cms/.env.local
 docker compose up -d
-```
-
-Run frontend + CMS:
-
-```bash
+npm install
 npm run dev
 ```
 
-Local URLs:
+This starts:
 
-- Frontend: `http://localhost:5173`
-- Payload CMS: `http://localhost:3001`
-- Payload Admin: `http://localhost:3001/admin`
+- frontend at `http://localhost:3000`
+- cms at `http://localhost:3001`
+- payload admin at `http://localhost:3001/admin`
 
-Cloud env mapping:
+## App Runner
 
-- `sandbox`/dev: set `PAYLOAD_PUBLIC_SERVER_URL` and `VITE_CMS_URL` to your dev Payload URL
-- `staging`: set both to staging Payload URL
-- `production`: set both to production Payload URL
-- In cloud, set `PAYLOAD_DB_PUSH=false` unless you explicitly want schema push
+Deploy `cms/` directly with the Node runtime.
 
-First local run:
-
-1. Open Payload admin and create the first admin user
-2. Create content in Payload (`Pages`, `Media`, etc.)
-3. Refresh frontend to see published content
-
-Common reset (if DB/schema gets out of sync):
-
-```bash
-docker compose down -v
-docker compose up -d
-npm run dev
-```
-
-## Daily git command
-
-Sync your branch safely (fast-forward only):
-
-```bash
-npm run sync
-```
-
-## Git workflow rules
-
-Branch naming for day-to-day work:
-
-- `feat/<short-name>` for features
-- `fix/<short-name>` for bug fixes
-- `chore/<short-name>` for maintenance work
-- `docs/<short-name>` for documentation updates
-
-Promotion branches:
-
-- `sandbox`: integration branch for team development
-- `staging`: QA/UAT release branch
-- `production`: live branch
-
-PR flow:
-
-1. Create a work branch from `sandbox`
-2. Open PR into `sandbox` and get it reviewed
-3. Do not merge directly into `staging` or `production`
-4. Batch approved changes by opening one PR from `sandbox` to `staging`
-5. After staging approval, open PR from `staging` to `production`
+- Build command: `npm install && npm run build`
+- Start command: `npm run start`
+- Port: `3000`
+- Health check: `/api/health`

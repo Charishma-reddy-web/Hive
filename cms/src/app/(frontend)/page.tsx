@@ -20,10 +20,10 @@ export default function CmsHomePage() {
       >
         <p style={{ margin: 0, color: '#0891b2', fontWeight: 600 }}>NurtureHive CMS</p>
         <h1 style={{ marginTop: '16px', marginBottom: '12px', fontSize: '2rem' }}>
-          Your marketing content lives here.
+          Payload is ready.
         </h1>
         <p style={{ margin: 0, lineHeight: 1.7, color: '#475569' }}>
-          Open the Payload admin panel to manage pages, blog posts, services, testimonials, and SEO fields.
+          Open the admin panel to create your first user and start defining collections after deployment.
         </p>
         <a
           href="/admin"
@@ -44,4 +44,3 @@ export default function CmsHomePage() {
     </main>
   )
 }
-

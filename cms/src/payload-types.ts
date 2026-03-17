@@ -69,7 +69,6 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
-    pages: Page;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -79,7 +78,6 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
-    pages: PagesSelect<false> | PagesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -165,95 +163,6 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "pages".
- */
-export interface Page {
-  id: number;
-  title: string;
-  slug: string;
-  header: {
-    brandName: string;
-    navigationLinks?:
-      | {
-          label: string;
-          url: string;
-          id?: string | null;
-        }[]
-      | null;
-    buttonLabel?: string | null;
-    buttonUrl?: string | null;
-  };
-  footer: {
-    title: string;
-    text?: string | null;
-  };
-  layout?:
-    | (
-        | {
-            eyebrow?: string | null;
-            title: string;
-            description?: string | null;
-            image?: (number | null) | Media;
-            primaryButtonLabel?: string | null;
-            primaryButtonUrl?: string | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'hero';
-          }
-        | {
-            title?: string | null;
-            items?:
-              | {
-                  title: string;
-                  description?: string | null;
-                  id?: string | null;
-                }[]
-              | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'featureGrid';
-          }
-        | {
-            title: string;
-            description?: string | null;
-            buttonLabel?: string | null;
-            buttonUrl?: string | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'cta';
-          }
-        | {
-            content: {
-              root: {
-                type: string;
-                children: {
-                  type: any;
-                  version: number;
-                  [k: string]: unknown;
-                }[];
-                direction: ('ltr' | 'rtl') | null;
-                format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-                indent: number;
-                version: number;
-              };
-              [k: string]: unknown;
-            };
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'richText';
-          }
-      )[]
-    | null;
-  seo?: {
-    title?: string | null;
-    description?: string | null;
-    image?: (number | null) | Media;
-  };
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
 export interface PayloadKv {
@@ -283,10 +192,6 @@ export interface PayloadLockedDocument {
     | ({
         relationTo: 'media';
         value: number | Media;
-      } | null)
-    | ({
-        relationTo: 'pages';
-        value: number | Page;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -369,90 +274,6 @@ export interface MediaSelect<T extends boolean = true> {
   height?: T;
   focalX?: T;
   focalY?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "pages_select".
- */
-export interface PagesSelect<T extends boolean = true> {
-  title?: T;
-  slug?: T;
-  header?:
-    | T
-    | {
-        brandName?: T;
-        navigationLinks?:
-          | T
-          | {
-              label?: T;
-              url?: T;
-              id?: T;
-            };
-        buttonLabel?: T;
-        buttonUrl?: T;
-      };
-  footer?:
-    | T
-    | {
-        title?: T;
-        text?: T;
-      };
-  layout?:
-    | T
-    | {
-        hero?:
-          | T
-          | {
-              eyebrow?: T;
-              title?: T;
-              description?: T;
-              image?: T;
-              primaryButtonLabel?: T;
-              primaryButtonUrl?: T;
-              id?: T;
-              blockName?: T;
-            };
-        featureGrid?:
-          | T
-          | {
-              title?: T;
-              items?:
-                | T
-                | {
-                    title?: T;
-                    description?: T;
-                    id?: T;
-                  };
-              id?: T;
-              blockName?: T;
-            };
-        cta?:
-          | T
-          | {
-              title?: T;
-              description?: T;
-              buttonLabel?: T;
-              buttonUrl?: T;
-              id?: T;
-              blockName?: T;
-            };
-        richText?:
-          | T
-          | {
-              content?: T;
-              id?: T;
-              blockName?: T;
-            };
-      };
-  seo?:
-    | T
-    | {
-        title?: T;
-        description?: T;
-        image?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
