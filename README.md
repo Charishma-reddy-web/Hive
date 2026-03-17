@@ -10,6 +10,7 @@ Minimal split setup for:
 - `web/` is now a standardized Next.js App Router starter
 - `cms/` is a clean Payload app with only `users` and `media`
 - there is no frontend-to-CMS integration yet
+- Payload uses local uploads in development and can use S3 in cloud when the S3 env vars are set
 
 ## Frontend
 
@@ -80,6 +81,10 @@ PAYLOAD_PUBLIC_SERVER_URL=http://localhost:3001
 CORS_ORIGINS=http://localhost:3001,http://127.0.0.1:3001
 CSRF_ORIGINS=http://localhost:3001,http://127.0.0.1:3001
 PAYLOAD_DB_PUSH=true
+S3_BUCKET=
+S3_REGION=
+S3_ACCESS_KEY_ID=
+S3_SECRET_ACCESS_KEY=
 ```
 
 ## Local setup
