@@ -1,3 +1,6 @@
+@import "tailwindcss";
+/* @source "../"; */
+
 :root {
   color-scheme: light;
 }
@@ -130,6 +133,7 @@ img {
 }
 
 @media (max-width: 720px) {
+
   .site-header__row,
   .site-footer__row {
     flex-direction: column;
