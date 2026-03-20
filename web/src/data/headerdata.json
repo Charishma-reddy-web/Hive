@@ -1,0 +1,14 @@
+{
+    "logo": {
+        "text1": "Nurture",
+        "text2": "Hive"
+    },
+    "buttonText": "Let’s Talk",
+    "buttons": {
+        "buttons-1": "About Us",
+        "buttons-2": "Services",
+        "buttons-3": "Portfolio",
+        "buttons-4": "Testimonials",
+        "buttons-5": "Blogs"
+    }
+}
