@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/Button'
 import contactData from '@/data/contactData.json'
-
+import { submitContactForm } from '@/services/contactService'
 const bottomLines = Array.from({ length: 28 }).map((_, i) => {
   const rad = (i * 180 / 27 * Math.PI) / 180
   return {
@@ -28,24 +28,16 @@ export function ContactUs() {
   }
 
   const handleSubmit = async () => {
-    if (!form.name || !form.email || !form.message) return
-    setStatus('loading')
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
-      })
-      if (res.ok) {
-        setStatus('success')
-        setForm({ name: '', email: '', message: '' })
-      } else {
-        setStatus('error')
-      }
-    } catch {
-      setStatus('error')
-    }
+  if (!form.name || !form.email || !form.message) return
+  setStatus('loading')
+  try {
+    await submitContactForm(form)
+    setStatus('success')
+    setForm({ name: '', email: '', message: '' })
+  } catch {
+    setStatus('error')
   }
+}
 
   const textFields = contactData.fields.filter(f => f.type !== 'textarea')
   const messageField = contactData.fields.find(f => f.type === 'textarea')!
