@@ -1,92 +1,103 @@
 "use client"
 
 import Link from 'next/link'
-import { Container } from '@/components/ui/container'
 import headerData from '@/data/headerdata.json'
 import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 
-
-const LogoIcon = () => (
-  <svg
-    width="50"
-    height="50"
-    viewBox="0 0 100 100"
-    className="text-green-400 shrink-0"
-    fill="none"
-  >
-    <g stroke="currentColor" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M 35 20 L 52.3 30 L 52.3 50 L 35 60 L 17.7 50 L 17.7 30 Z" />
-      <path d="M 69.6 20 L 86.9 30 L 86.9 50 L 69.6 60 L 52.3 50 L 52.3 30 Z" />
-      <path d="M 52.3 50 L 69.6 60 L 69.6 80 L 52.3 90 L 35 80 L 35 60 Z" />
-
-      <line x1="17.7" y1="50" x2="6" y2="57" />
-      <circle cx="6" cy="57" r="4.5" fill="currentColor" stroke="none" />
-      <line x1="86.9" y1="30" x2="96" y2="25" />
-      <circle cx="96" cy="25" r="4.5" fill="currentColor" stroke="none" />
-      <line x1="35" y1="80" x2="25" y2="86" />
-      <circle cx="25" cy="86" r="4.5" fill="currentColor" stroke="none" />
-      <circle cx="48" cy="8" r="3.5" fill="currentColor" stroke="none" />
-
-      <path d="M 52.3 40 L 52.3 50 L 69.6 60 L 86.9 50 L 86.9 40 Z" fill="currentColor" stroke="none" />
-      <path d="M 52.3 50 L 35 60 L 35 80 L 52.3 90 Z" fill="currentColor" stroke="none" />
-    </g>
-  </svg>
-)
 
 export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="w-full flex flex-col items-center mt-6 relative z-50">
+    <div className="w-full flex flex-col items-center mt-6 relative z-50 px-4">
 
-      <div className="w-[80%] relative flex flex-col items-end">
-        <header className="w-full bg-black text-white rounded-4xl px-8 py-9 shadow-lg relative z-20">
-          <Container className="flex justify-between items-center">
+      <div className="w-full md:w-[80%] relative flex flex-col items-end">
+        <motion.header
+          initial={{ y: -120, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 1,
+            ease: [0.22, 1, 0.36, 1]
+          }}
+          className="w-full bg-black text-white rounded-3xl md:rounded-4xl py-3 md:py-4 shadow-lg relative z-20 overflow-hidden"
+        >
+          <div className="w-full flex justify-between items-center pr-2 md:pr-6">
 
-            <Link href="/" className="text-[18px] font-bold flex items-center">
-              <div className="-mt-4">
-                <LogoIcon />
-              </div>
-
-              <div className="tracking-wide mr-16 mt-2 -ml-1 flex items-center">
-                <span>{headerData.logo.text1}</span>
-                <span className="text-green-400 ml-1.5">{headerData.logo.text2}</span>
+            <Link href="/" className="flex items-center pl-2 md:pl-4 group">
+              <div className="shrink-0 flex items-center">
+                <Image
+                  src="/logo.png"
+                  alt="Nurture Hive Logo"
+                  width={215}
+                  height={65}
+                  priority
+                  decoding="async"
+                  className="w-auto h-15 md:h-20"
+                />
+                <div className="ml-[-2.9rem] flex items-center tracking-tight translate-y-[8px]">
+                  <span className="text-white text-[16px] md:text-[19px] font-medium">
+                    {headerData.logo.text1}
+                  </span>
+                  <span className="text-[#1AE9AB] text-[16px] md:text-[18px] ml-1 font-medium">
+                    {headerData.logo.text2}
+                  </span>
+                </div>
               </div>
             </Link>
 
             <div className="flex items-center gap-3">
 
-              <button className="bg-green-400 border border-white text-black px-4 py-2 rounded-lg font-bold">
+              <button className="bg-[#1AE9AB] border border-white text-black px-4 py-2 rounded-lg transition-all active:scale-95 whitespace-nowrap">
                 {headerData.buttonText}
               </button>
 
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className={`flex flex-col gap-1.5 items-end cursor-pointer group p-1 bg-transparent border-none ${isOpen ? 'text-green-400' : 'text-white'
-                  }`}
+                aria-expanded={isOpen}
+                aria-label="Toggle Navigation Menu"
+                className="flex flex-col gap-2 items-end cursor-pointer group p-1 bg-transparent border-none focus:outline-none"
               >
-                <span className={`h-1 w-8 rounded-full transition-all duration-300 ${isOpen ? 'bg-green-400' : 'bg-white'}`}></span>
-                <span className={`h-1 w-8 rounded-full transition-all duration-300 ${isOpen ? 'bg-green-400' : 'bg-white'}`}></span>
-                <span className={`h-1 w-4 rounded-full transition-all duration-300 ${isOpen ? 'bg-green-400' : 'bg-white'}`}></span>
+                <div className={`h-1 w-8 rounded-full transition-colors duration-300 ${isOpen ? 'bg-[#1AE9AB]' : 'bg-white'}`} />
+                <div className={`h-1 w-8 rounded-full transition-colors duration-300 ${isOpen ? 'bg-[#1AE9AB]' : 'bg-white'}`} />
+                <div className={`h-1 w-4 rounded-full transition-colors duration-300 ${isOpen ? 'bg-[#1AE9AB]' : 'bg-white'}`} />
               </button>
 
             </div>
-          </Container>
-        </header>
+          </div>
+        </motion.header>
 
-        <div
-          className={`absolute top-[80%] left-1/2 -translate-x-1/2 w-max z-10 bg-white border border-black border-t-0 rounded-b-4xl shadow-xl px-12 py-6 pt-10 transition-all duration-300 origin-top flex ${isOpen ? 'opacity-100 translate-y-0 visible'
-            : 'opacity-0 -translate-y-4 invisible'
-            }`}
-        >
-          <nav className="flex justify-center gap-10 text-base font-medium text-black">
-            <button className="px-3 py-1 rounded-2xl hover:ring-2 hover:ring-black hover:text-black transition-all duration-200">{headerData.buttons["buttons-1"]}</button>
-            <button className="px-3 py-1 rounded-2xl hover:ring-2 hover:ring-black hover:text-black transition-all duration-200">{headerData.buttons["buttons-2"]}</button>
-            <button className="px-3 py-1 rounded-2xl hover:ring-2 hover:ring-black hover:text-black transition-all duration-200">{headerData.buttons["buttons-3"]}</button>
-            <button className="px-3 py-1 rounded-2xl hover:ring-2 hover:ring-black hover:text-black transition-all duration-200">{headerData.buttons["buttons-4"]}</button>
-            <button className="px-3 py-1 rounded-2xl hover:ring-2 hover:ring-black hover:text-black transition-all duration-200">{headerData.buttons["buttons-5"]}</button>
-          </nav>
-        </div>
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10, scale: 0.95, x: "-50%" }}
+              animate={{ opacity: 1, y: 0, scale: 1, x: "-50%" }}
+              exit={{ opacity: 0, y: -10, scale: 0.95, x: "-50%" }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="absolute top-[85%] left-1/2 w-[90%] md:w-max z-[19] bg-white/80 backdrop-blur-md border border-black border-t-0 rounded-b-2xl md:rounded-b-4xl shadow-xl px-4 md:px-7 py-4 pt-8 flex flex-col md:flex-row items-center"
+            >
+              <motion.nav
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+                className="flex flex-col md:flex-row justify-center gap-4 md:gap-8 text-base font-normal text-black"
+              >
+                {headerData.buttons.map((item, index) => (
+                  <div key={index}>
+                    <Link
+                      href={item.href || "#"}
+                      onClick={() => setIsOpen(false)}
+                      className="px-3 py-1 block rounded-2xl hover:ring-2 hover:ring-black transition duration-200 whitespace-nowrap"
+                    >
+                      {item.label}
+                    </Link>
+                  </div>
+                ))}
+              </motion.nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
     </div>

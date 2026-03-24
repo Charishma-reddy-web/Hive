@@ -4,11 +4,11 @@
         "text2": "Hive"
     },
     "buttonText": "Let’s Talk",
-    "buttons": {
-        "buttons-1": "About Us",
-        "buttons-2": "Services",
-        "buttons-3": "Portfolio",
-        "buttons-4": "Testimonials",
-        "buttons-5": "Blogs"
-    }
+    "buttons": [
+        {"label": "About Us","href": "/about"},
+        {"label": "Services","href": "/services"},
+        {"label": "Portfolio","href": "/portfolio"},
+        {"label": "Testimonials","href": "/testimonials"},
+        {"label": "Blogs","href": "/blogs"}
+    ]
 }
