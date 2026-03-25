@@ -5,10 +5,10 @@
     },
     "buttonText": "Let’s Talk",
     "buttons": [
-        {"label": "About Us","href": "/about"},
-        {"label": "Services","href": "/services"},
-        {"label": "Portfolio","href": "/portfolio"},
-        {"label": "Testimonials","href": "/testimonials"},
-        {"label": "Blogs","href": "/blogs"}
+        {"label": "About Us"},
+        {"label": "Services"},
+        {"label": "Portfolio"},
+        {"label": "Testimonials"},
+        {"label": "Blogs"}
     ]
 }

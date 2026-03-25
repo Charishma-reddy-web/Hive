@@ -85,13 +85,11 @@ export function SiteHeader() {
               >
                 {headerData.buttons.map((item, index) => (
                   <div key={index}>
-                    <Link
-                      href={item.href || "#"}
-                      onClick={() => setIsOpen(false)}
+                    <span
                       className="px-3 py-1 block rounded-2xl hover:ring-2 hover:ring-black transition duration-200 whitespace-nowrap"
                     >
                       {item.label}
-                    </Link>
+                    </span>
                   </div>
                 ))}
               </motion.nav>
