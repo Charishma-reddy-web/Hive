@@ -16,7 +16,7 @@ export function TextArea({ name, placeholder, value, onChange }: TextAreaProps) 
         display: 'block',
         width: '100%',
         height: '100%',
-        minHeight: '120px',
+        minHeight: '180px',
         background: 'white',
         border: '1px solid #e2e4e8',
         borderRadius: '6px',

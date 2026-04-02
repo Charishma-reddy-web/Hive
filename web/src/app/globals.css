@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   color-scheme: light;
 }
 
 * {
   box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 html,
@@ -14,9 +24,7 @@ body {
 
 body {
   font-family: Arial, sans-serif;
-  background:
-    radial-gradient(circle at top, rgba(14, 165, 233, 0.18), transparent 28%),
-    linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  background: #ffffff;
   color: #0f172a;
 }
 
@@ -41,22 +49,30 @@ img {
   margin: 0 auto;
 }
 
+/* Header pill */
 .site-header {
   position: sticky;
-  top: 0;
+  top: 16px;
   z-index: 10;
-  backdrop-filter: blur(14px);
-  background: rgba(248, 250, 252, 0.82);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.28);
+  background: transparent;
+  border-bottom: none;
+  padding: 0;
+  backdrop-filter: none;
 }
 
-.site-header__row,
-.site-footer__row {
+.site-header__row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   min-height: 72px;
   gap: 16px;
+
+  background: #0a0a0a;
+  border-radius: 22px;
+  padding: 14px 20px;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(20, 241, 149, 0.12);
 }
 
 .site-brand {
@@ -77,6 +93,66 @@ img {
   flex: 1;
 }
 
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.site-header__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-header__brand-text {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.site-header__talk {
+  background: #14f195;
+  color: #0a0a0a;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  line-height: 1;
+  box-shadow: 0 16px 30px rgba(20, 241, 149, 0.18);
+}
+
+.site-header__menu {
+  width: 46px;
+  height: 46px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-direction: column;
+}
+
+.site-header__menu span {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+}
+
+/* Existing hero styles (kept so ContactUs etc doesn't break) */
 .hero {
   padding: 96px 0;
 }
@@ -119,6 +195,7 @@ img {
   line-height: 1.8;
 }
 
+/* Footer */
 .site-footer {
   border-top: 1px solid rgba(148, 163, 184, 0.28);
   background: rgba(248, 250, 252, 0.72);
@@ -129,7 +206,11 @@ img {
   font-size: 0.95rem;
 }
 
+
+
+/* Original small-screen adjustments (kept) */
 @media (max-width: 720px) {
+
   .site-header__row,
   .site-footer__row {
     flex-direction: column;

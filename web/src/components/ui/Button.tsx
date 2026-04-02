@@ -12,10 +12,10 @@ export function Button({ label, onClick, disabled }: ButtonProps) {
       style={{
         background: '#0a0a0a',
         color: 'white',
-        fontSize: '14px',
+        fontSize: '15px',
         fontWeight: 500,
-        padding: '14px 48px',
-        borderRadius: '6px', 
+        padding: '16px 80px',
+        borderRadius: '8px', 
         border: 'none',
         cursor: disabled ? 'not-allowed' : 'pointer',
         opacity: disabled ? 0.7 : 1,

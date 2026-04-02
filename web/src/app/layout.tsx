@@ -1,5 +1,21 @@
 import type { Metadata } from 'next'
+import { Space_Grotesk, Poppins } from 'next/font/google' // Import the fonts
 import './globals.css'
+
+// Configure Space Grotesk (Headers)
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  variable: '--font-space-grotesk', // This creates a CSS variable
+  display: 'swap',
+})
+
+// Configure Poppins (Body)
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-poppins',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://example.com'),
@@ -16,8 +32,10 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    // Add font variables to the html tag
+    <html lang="en" className={`${spaceGrotesk.variable} ${poppins.variable}`}>
+      {/* Set Poppins as the default font for the body */}
+      <body className={poppins.className}>{children}</body>
     </html>
   )
 }
