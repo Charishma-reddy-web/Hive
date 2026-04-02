@@ -11,7 +11,7 @@ export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="w-full flex flex-col items-center mt-6 relative z-50 px-4">
+    <div className="w-full flex flex-col items-center pt-6 sticky top-0 relative z-50 px-4">
 
       <div className="w-full md:w-[80%] relative flex flex-col items-end">
         <motion.header
@@ -21,37 +21,32 @@ export function SiteHeader() {
             duration: 1,
             ease: [0.22, 1, 0.36, 1]
           }}
-          className="w-full bg-black text-white rounded-3xl md:rounded-4xl py-3 md:py-4 shadow-lg relative z-20 overflow-hidden"
+          className="w-full bg-black text-white rounded-3xl md:rounded-4xl py-6 md:py-8 shadow-lg relative z-20 overflow-hidden"
         >
           <div className="w-full flex justify-between items-center pr-2 md:pr-6">
 
-            <Link href="/" className="flex items-center pl-2 md:pl-4 group">
+            <Link href="/" className="flex items-center pl-8 md:pl-12 group">
               <div className="shrink-0 flex items-center">
                 <Image
-                  src="/logo.png"
+                  src="/logo.svg"
                   alt="Nurture Hive Logo"
                   width={215}
                   height={65}
                   priority
                   decoding="async"
-                  className="w-auto h-15 md:h-20"
+                  className="w-auto h-5 md:h-12"
                 />
-                <div className="ml-[-2.9rem] flex items-center tracking-tight translate-y-[8px]">
-                  <span className="text-white text-[16px] md:text-[19px] font-medium">
-                    {headerData.logo.text1}
-                  </span>
-                  <span className="text-[#1AE9AB] text-[16px] md:text-[18px] ml-1 font-medium">
-                    {headerData.logo.text2}
-                  </span>
-                </div>
               </div>
             </Link>
 
             <div className="flex items-center gap-3">
 
-              <button className="bg-[#1AE9AB] border border-white text-black px-4 py-2 rounded-lg transition-all active:scale-95 whitespace-nowrap">
+              <Link
+                href={headerData.buttonHref || "/#contact"}
+                className="bg-[#1AE9AB] border border-white !text-black hover:!text-black px-4 py-2 rounded-lg transition-all active:scale-95 whitespace-nowrap"
+              >
                 {headerData.buttonText}
-              </button>
+              </Link>
 
               <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -85,11 +80,13 @@ export function SiteHeader() {
               >
                 {headerData.buttons.map((item, index) => (
                   <div key={index}>
-                    <span
+                    <Link
+                      href={item.href || "#"}
+                      onClick={() => setIsOpen(false)}
                       className="px-3 py-1 block rounded-2xl hover:ring-2 hover:ring-black transition duration-200 whitespace-nowrap"
                     >
                       {item.label}
-                    </span>
+                    </Link>
                   </div>
                 ))}
               </motion.nav>
