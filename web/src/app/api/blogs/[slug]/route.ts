@@ -3,9 +3,10 @@ import { blogs } from '../data';
 
 export async function GET(
   _req: Request,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
-  const blog = blogs.find((b) => b.slug === params.slug);
+  const { slug } = await params;
+  const blog = blogs.find((b) => b.slug === slug);
 
   if (!blog) {
     return NextResponse.json({ error: 'Blog not found' }, { status: 404 });

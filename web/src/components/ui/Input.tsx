@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface InputProps {
   name: string
   type: string
@@ -14,19 +16,7 @@ export function Input({ name, type, placeholder, value, onChange }: InputProps) 
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      style={{
-        display: 'block',
-        width: '100%',
-        background: 'white',
-        border: '1px solid #e2e4e8',
-        borderRadius: '6px',
-        padding: '16px 20px', 
-        fontSize: '14px',
-        color: '#333',
-        outline: 'none',
-        boxSizing: 'border-box',
-        boxShadow: '0 1px 2px rgba(0,0,0,0.01)'
-      }}
+      className="block w-full bg-white border border-[#e2e4e8] rounded-[6px] px-4 py-3 md:px-5 md:py-4 text-[14px] text-[#333] outline-none shadow-sm transition-colors focus:border-[#14F195]"
     />
   )
 }

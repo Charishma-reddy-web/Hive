@@ -43,7 +43,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
     <div className="min-h-screen bg-white">
       {/* Replicating .blogWrap & .blogContainer */}
       <main className="w-[80%] mx-auto pt-[20vh] pb-24 flex flex-col items-center justify-center font-['Space_Grotesk',sans-serif]">
-        
+
         {/* Replicating .blogTitle */}
         <div className="flex flex-col justify-end items-center h-[50vmin] w-full">
           <h1 className="text-center font-normal text-[4rem] leading-tight text-black">
@@ -75,14 +75,14 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               <h2 className="text-left text-2xl font-semibold text-black leading-tight">
                 {section.heading}
               </h2>
-              
+
               {/* Replicating .contentPara p */}
               {section.body && (
                 <p className="mt-4 text-black font-light leading-tight">
                   {section.body}
                 </p>
               )}
-              
+
               {/* Bullets using the same p rules + strong rules */}
               {section.bullets && section.bullets.length > 0 && (
                 <ul className="mt-4 space-y-3 list-disc list-outside ml-6">

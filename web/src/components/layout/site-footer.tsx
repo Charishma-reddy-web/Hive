@@ -16,17 +16,31 @@ export default function SiteFooter() {
           <span className="text-[#22c55e]">{footerData.logo.highlight}</span>
         </Link>
 
-        {/* Nav */}
         <nav className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className="text-white text-[0.95rem] hover:text-[#22c55e] transition-colors duration-200"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isNonNavigable = link.label === "About us" || link.label === "Services";
+
+            if (isNonNavigable) {
+              return (
+                <span
+                  key={link.label}
+                  className="text-white text-[0.95rem] hover:text-[#22c55e] transition-colors duration-200 cursor-default"
+                >
+                  {link.label}
+                </span>
+              );
+            }
+
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                className="text-white text-[0.95rem] hover:text-[#22c55e] transition-colors duration-200 cursor-pointer"
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Social Icons */}

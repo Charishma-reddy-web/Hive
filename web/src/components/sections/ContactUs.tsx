@@ -100,30 +100,35 @@ export function ContactUs() {
 
 
         <div className="relative z-10">
-          <h2 className="text-2xl md:text-[32px] font-light text-[#1a1a1a] mb-6 md:mb-[35px] mt-0 text-center md:text-left">
+          <h2 className="text-3xl md:text-[40px] font-['Helvetica','Arial',sans-serif] font-normal text-[#222222] mb-6 md:mb-[35px] mt-0 text-center md:text-left">
             {contactData.heading || 'Contact Us'}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[40px]">
-            <div className="flex flex-col gap-4 md:gap-[20px]">
+            <div className="flex flex-col gap-6 md:gap-[32px]">
               {textFields.map(field => (
-                <Input
-                  key={field.name}
-                  name={field.name}
-                  type={field.type}
-                  placeholder={field.placeholder}
-                  value={form[field.name as keyof typeof form]}
-                  onChange={handleChange}
-                />
+                <div key={field.name} className="flex flex-col gap-2">
+                  <label className="text-[14px] font-medium text-gray-500 ml-1 uppercase tracking-wide">{field.placeholder}</label>
+                  <Input
+                    name={field.name}
+                    type={field.type}
+                    placeholder={field.placeholder}
+                    value={form[field.name as keyof typeof form]}
+                    onChange={handleChange}
+                  />
+                </div>
               ))}
             </div>
 
-            <TextArea
-              name={messageField.name}
-              placeholder={messageField.placeholder}
-              value={form.message}
-              onChange={handleChange}
-            />
+            <div className="flex flex-col gap-2 h-full">
+              <label className="text-[14px] font-medium text-gray-500 ml-1 uppercase tracking-wide">{messageField.placeholder}</label>
+              <TextArea
+                name={messageField.name}
+                placeholder={messageField.placeholder}
+                value={form.message}
+                onChange={handleChange}
+              />
+            </div>
           </div>
 
           <div className="flex justify-center mt-8 md:mt-[40px]">

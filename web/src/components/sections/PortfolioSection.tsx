@@ -91,13 +91,13 @@ const PortfolioSection: React.FC = () => {
         data-aos="fade-up"
         className="relative z-10 flex-shrink-0 w-full lg:w-[52%] pt-10 lg:pt-20 lg:backdrop-blur-[5px] bg-white/5 rounded-2xl"
       >
-        <h1 className="text-3xl lg:text-[2.5rem] font-extrabold text-[#111111] leading-[1.2] mb-4">
+        <h1 className="text-3xl lg:text-[2.5rem] font-['Helvetica','Arial',sans-serif] font-black tracking-tight text-[#111111] leading-[1.2] mb-4">
           {portfolioData.heading}
         </h1>
 
-        <p className="text-[17px] leading-[1.8] text-[#555555] max-w-[620px] mb-0">
+        <p className="text-[17px] leading-[1.8] text-[#222222] max-w-[620px] mb-0 font-medium">
           {portfolioData.paragraph.start}
-          <b className="text-[#111111]">{portfolioData.paragraph.bold}</b>
+          <b className="text-[#000000] font-bold">{portfolioData.paragraph.bold}</b>
           {portfolioData.paragraph.end}
         </p>
 
