@@ -1,0 +1,7 @@
+[
+  { "label": "About us", "href": "/#about" },
+  { "label": "Services", "href": "/#services" },
+  { "label": "Portfolio", "href": "/#portfolio" },
+  { "label": "Testimonials", "href": "/#testimonials" },
+  { "label": "Blogs", "href": "/#blog" }
+]

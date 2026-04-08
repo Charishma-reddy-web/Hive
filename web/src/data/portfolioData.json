@@ -1,0 +1,23 @@
+{
+  "heading": "Our Trophy Case",
+  "paragraph": {
+    "start": "At Nurture Hive, we're all about cultivating success for our clients. Look at our ",
+    "bold": "“Portfolio”",
+    "end": " – a showcase of how we've helped businesses like yours achieve remarkable feats. From skyrocketing website traffic to boosting sales conversions and building brand awareness, we have the expertise to make your business blossom. Explore our success stories and see how Nurture Hive can help you thrive!"
+  },
+  "logos": [
+    {
+      "imageId": "infoServices",
+      "alt": "InfoServices"
+    },
+    {
+      "imageId": "iGuroo",
+      "alt": "iGuroo"
+    },
+    {
+      "imageId": "mamaEatz",
+      "alt": "MamaEatz"
+    }
+  ],
+  "bgVector": "portVector"
+}
