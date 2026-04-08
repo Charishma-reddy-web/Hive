@@ -2,9 +2,6 @@
 
 import React, { useState, useEffect, useRef, useCallback } from "react";
 
-// ─────────────────────────────────────────────────────────────────────────────
-// Testimonials data — sourced from nurturehive.co
-// ─────────────────────────────────────────────────────────────────────────────
 const testimonials = [
   {
     quote:
