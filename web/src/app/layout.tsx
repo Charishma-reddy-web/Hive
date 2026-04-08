@@ -27,8 +27,6 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-  export default function RootLayout({ children }: { children: React.ReactNode }) {
-  return (
     <html lang="en" className={`${poppins.variable} ${spaceGrotesk.variable}`}>
       <body className={poppins.className}>
         {children}
@@ -36,4 +34,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   )
 }
-    

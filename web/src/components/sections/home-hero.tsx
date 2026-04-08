@@ -10,8 +10,8 @@ export function HomeHero() {
   const shouldReduceMotion = useReducedMotion() ?? false
   const ease = [0.22, 1, 0.36, 1] as const
 
-  const scrollToAbout = useCallback(() => {
-    const section = document.getElementById("about")
+  const scrollToContact = useCallback(() => {
+    const section = document.getElementById("contact")
     if (section) {
       const top = section.getBoundingClientRect().top + window.scrollY
       window.scrollTo({ top, behavior: "smooth" })
@@ -281,7 +281,7 @@ export function HomeHero() {
               className="z-2 mt-8 flex max-w-[80%] flex-col items-center justify-center gap-4"
             >
               <button
-                onClick={scrollToAbout}
+                onClick={scrollToContact}
                 className="rounded-[1.3rem] border border-white/20 bg-black px-6 py-4 text-[1rem] font-medium text-white shadow-[0_16px_34px_rgba(0,0,0,0.2)] transition-all duration-500 hover:border-black hover:bg-[#333333] hover:text-white"
               >
                 {hero.ctaText}
