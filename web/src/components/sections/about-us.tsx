@@ -20,8 +20,8 @@ export function AboutUs({ variant = 'home' }: AboutUsProps) {
   const ease = [0.22, 1, 0.36, 1] as const
   const sectionClassName =
     variant === 'page'
-      ? "relative flex w-full min-h-[calc(100vh-6rem)] items-center overflow-visible bg-white pt-4 pb-0"
-      : "relative -mb-10 flex w-full min-h-screen items-center overflow-visible bg-white pt-12 pb-6"
+      ? "relative flex w-full min-h-[calc(100vh-6rem)] scroll-mt-14 items-center overflow-visible bg-white pt-4 pb-0"
+      : "relative -mb-10 flex w-full min-h-screen scroll-mt-14 items-center overflow-visible bg-white pt-12 pb-6"
   const contentClassName =
     variant === 'page'
       ? "textAbout relative z-[1] w-full px-[6%] [backdrop-filter:blur(5px)] md:ml-[8%] md:px-0 lg:w-[40%] xl:max-w-[520px]"

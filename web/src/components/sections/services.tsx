@@ -54,8 +54,8 @@ export function Services({ variant = 'home' }: ServicesProps) {
 
   const sectionClassName =
     variant === 'page'
-      ? "relative self-center flex min-h-screen w-full items-center justify-end overflow-hidden bg-white pt-4 pb-0 lg:w-[80%] lg:pr-[20%]"
-      : "relative overflow-visible bg-white pt-14 pb-24"
+      ? "relative self-center flex min-h-screen w-full scroll-mt-14 items-center justify-end overflow-hidden bg-white pt-4 pb-0 lg:w-[80%] lg:pr-[20%]"
+      : "relative scroll-mt-14 overflow-visible bg-white pt-14 pb-24"
 
   const imageClassName =
     variant === 'page'
@@ -69,7 +69,7 @@ export function Services({ variant = 'home' }: ServicesProps) {
         <motion.div
           initial={shouldReduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: -400 }}
           whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
           viewport={{ once: false, amount: 0.25 }}
           style={{ y: shouldReduceMotion ? 0 : parallaxY }}
           className={imageClassName}
@@ -94,7 +94,7 @@ export function Services({ variant = 'home' }: ServicesProps) {
               <motion.div
                 initial={shouldReduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: -400 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
                 viewport={{ once: false, amount: 0.25 }}
                 className={imageClassName}
               >
