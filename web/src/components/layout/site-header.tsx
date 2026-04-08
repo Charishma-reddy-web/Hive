@@ -1,139 +1,101 @@
+"use client"
+
 import Link from 'next/link'
+import headerData from '@/data/headerdata.json'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
+
 
 export function SiteHeader() {
+  const [isOpen, setIsOpen] = useState(false)
+
   return (
-    <header className="header-outer">
-      <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+    <div className="w-full flex flex-col items-center pt-6 sticky top-0 relative z-50 px-4">
 
-        .header-outer {
-          position: fixed;
-          top: 30px;
-          left: 0;
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          z-index: 1000;
-          pointer-events: none;
-          font-family: "Space Grotesk", sans-serif;
-        }
+      <div className="w-full md:w-[80%] relative flex flex-col items-end">
+        <motion.header
+          initial={{ y: -400, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{
+            duration: 0.8,
+            ease: [0.22, 1, 0.36, 1]
+          }}
+          className="w-full bg-black text-white rounded-3xl md:rounded-4xl py-6 md:py-8 shadow-lg relative z-20 overflow-hidden"
+        >
+          <div className="w-full flex justify-between items-center pr-2 md:pr-6">
 
-        .header-pill {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 80%;
-          background-color: black;
-          border-radius: 38px;
-          padding: 1rem 2.5rem;
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-          pointer-events: auto;
-          transition: transform 0.3s ease;
-        }
+            <Link href="/" className="flex items-center pl-8 md:pl-12 group">
+              <div className="shrink-0 flex items-center">
+                <Image
+                  src="/logo.svg"
+                  alt="Nurture Hive Logo"
+                  width={215}
+                  height={65}
+                  priority
+                  decoding="async"
+                  className="w-auto h-5 md:h-12"
+                />
+              </div>
+            </Link>
 
-        .headGrp {
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
+            <div className="flex items-center gap-3">
 
-        .logo-container {
-          display: flex;
-          align-items: center;
-          text-decoration: none;
-          gap: 12px;
-        }
+              <Link
+                href={headerData.buttonHref || "/#contact"}
+                replace={(headerData.buttonHref || "/#contact").includes("#")}
+                className="bg-[#1AE9AB] border border-white !text-black hover:!text-black px-4 py-2 rounded-lg transition-all active:scale-95 whitespace-nowrap"
+              >
+                {headerData.buttonText}
+              </Link>
 
-        .logo-text {
-          color: white;
-          font-size: 1.5rem;
-          font-weight: 700;
-          letter-spacing: -0.5px;
-        }
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                aria-expanded={isOpen}
+                aria-label="Toggle Navigation Menu"
+                className="flex flex-col gap-2 items-end cursor-pointer group p-1 bg-transparent border-none focus:outline-none"
+              >
+                <div className={`h-1 w-8 rounded-full transition-colors duration-300 ${isOpen ? 'bg-[#1AE9AB]' : 'bg-white'}`} />
+                <div className={`h-1 w-8 rounded-full transition-colors duration-300 ${isOpen ? 'bg-[#1AE9AB]' : 'bg-white'}`} />
+                <div className={`h-1 w-4 rounded-full transition-colors duration-300 ${isOpen ? 'bg-[#1AE9AB]' : 'bg-white'}`} />
+              </button>
 
-        .logo-text span {
-          color: #1ae9ab;
-        }
-
-        .header-actions {
-          display: flex;
-          align-items: center;
-          gap: 24px;
-        }
-
-        .talk-btn {
-          background-color: #1ae9ab;
-          color: black;
-          padding: 10px 24px;
-          border-radius: 50px;
-          text-decoration: none;
-          font-weight: 700;
-          font-size: 1rem;
-          transition: transform 0.2s ease, background-color 0.2s ease;
-          border: 2px solid transparent;
-        }
-
-        .talk-btn:hover {
-          transform: scale(1.05);
-          background-color: #16d49b;
-        }
-
-        .hamburger-menu {
-          display: flex;
-          flex-direction: column;
-          gap: 5px;
-          cursor: pointer;
-          background: none;
-          border: none;
-          padding: 5px;
-        }
-
-        .hamburger-menu span {
-          display: block;
-          height: 3px;
-          background-color: white;
-          border-radius: 2px;
-          transition: width 0.3s ease;
-        }
-
-        .hamburger-menu span:nth-child(1) { width: 28px; }
-        .hamburger-menu span:nth-child(2) { width: 22px; }
-        .hamburger-menu span:nth-child(3) { width: 14px; align-self: flex-start; }
-
-        @media (max-width: 768px) {
-          .header-pill {
-            width: 92%;
-            padding: 0.8rem 1.5rem;
-          }
-          .logo-text { font-size: 1.2rem; }
-          .talk-btn { display: none; }
-        }
-      `}</style>
-
-      <div className="header-pill">
-        <div className="headGrp">
-          <Link href="/" className="logo-container">
-            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 5L33 12.5V27.5L20 35L7 27.5V12.5L20 5Z" stroke="#1ae9ab" strokeWidth="2.5" />
-              <path d="M20 12L27 16V24L20 28L13 24V16L20 12Z" fill="#1ae9ab" fillOpacity="0.3" stroke="#1ae9ab" strokeWidth="1.5" />
-              <circle cx="20" cy="20" r="3" fill="#1ae9ab" />
-            </svg>
-            <span className="logo-text">Nurture <span>Hive</span></span>
-          </Link>
-
-          <div className="header-actions">
-            <Link href="/#contact" className="talk-btn">Let's Talk</Link>
-            
-            <button className="hamburger-menu" aria-label="Menu">
-              <span></span>
-              <span></span>
-              <span></span>
-            </button>
+            </div>
           </div>
-        </div>
+        </motion.header>
+
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10, scale: 0.95, x: "-50%" }}
+              animate={{ opacity: 1, y: 0, scale: 1, x: "-50%" }}
+              exit={{ opacity: 0, y: -10, scale: 0.95, x: "-50%" }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="absolute top-[85%] left-1/2 w-[90%] md:w-max z-[19] bg-white/80 backdrop-blur-md border border-black border-t-0 rounded-b-2xl md:rounded-b-4xl shadow-xl px-4 md:px-7 py-4 pt-8 flex flex-col md:flex-row items-center"
+            >
+              <motion.nav
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.2, ease: "easeOut" }}
+                className="flex flex-col md:flex-row justify-center gap-4 md:gap-8 text-base font-normal text-black"
+              >
+                {headerData.buttons.map((item, index) => (
+                  <div key={index}>
+                    <Link
+                      href={item.href || "#"}
+                      replace={(item.href || "#").includes("#")}
+                      className="px-3 py-1 block rounded-2xl hover:ring-2 hover:ring-black transition duration-200 whitespace-nowrap"
+                    >
+                      {item.label}
+                    </Link>
+                  </div>
+                ))}
+              </motion.nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
-    </header>
+
+    </div>
   )
 }
