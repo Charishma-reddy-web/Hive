@@ -10,10 +10,8 @@ export const metadata: Metadata = buildMetadata({
 
 export default function AboutPage() {
   return (
-    <>
-      <div className="pt-24 min-h-screen">
-        <AboutUs />
-      </div>
-    </>
+    <div className="min-h-screen pt-10">
+      <AboutUs variant="page" />
+    </div>
   )
 }

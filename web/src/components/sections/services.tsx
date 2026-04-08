@@ -6,7 +6,11 @@ import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } fr
 import { Container } from '@/components/layout/container'
 import headerData from '@/data/headerdata.json'
 
-export function Services() {
+type ServicesProps = {
+  variant?: 'home' | 'page'
+}
+
+export function Services({ variant = 'home' }: ServicesProps) {
   const { services, servicesTitle } = headerData as any
   const sectionRef = useRef<HTMLElement | null>(null)
   const shouldReduceMotion = useReducedMotion()
@@ -48,138 +52,167 @@ export function Services() {
     }
   }
 
+  const sectionClassName =
+    variant === 'page'
+      ? "relative self-center flex min-h-screen w-full items-center justify-end overflow-hidden bg-white pt-4 pb-0 lg:w-[80%] lg:pr-[20%]"
+      : "relative overflow-visible bg-white pt-14 pb-24"
+
+  const imageClassName =
+    variant === 'page'
+      ? "pointer-events-none absolute left-0 top-1/2 z-0 hidden w-[42%] max-w-[520px] -translate-y-1/2 items-start justify-start lg:flex"
+      : "absolute left-0 -top-8 md:-top-12 md:w-[42%] max-w-[560px] pointer-events-none z-0 opacity-40 md:opacity-100 flex items-start justify-start"
+
   return (
-    <section ref={sectionRef} id="services" className="pt-28 pb-32 bg-white relative overflow-hidden">
+    <section ref={sectionRef} id="services" className={sectionClassName}>
       {/* Services Vector Graphic (Left Side) */}
-      <motion.div
-        initial={shouldReduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: -120 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-        viewport={{ once: false, amount: 0.3 }}
-        style={{ y: shouldReduceMotion ? 0 : parallaxY }}
-        className="absolute left-[0%] top-[0%] md:left-[0%] md:top-[0%] md:w-[45%] h-[50vh] pointer-events-none z-0 opacity-40 md:opacity-100 flex items-start justify-start"
-      >
-        <Image
-          src="/servicesVector.svg"
-          alt="Services Graphic"
-          width={1200}
-          height={1200}
-          className="w-full h-auto object-contain object-left-top "
-          priority
-        />
-      </motion.div>
+      {variant !== 'page' && (
+        <motion.div
+          initial={shouldReduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: -400 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+          viewport={{ once: false, amount: 0.25 }}
+          style={{ y: shouldReduceMotion ? 0 : parallaxY }}
+          className={imageClassName}
+        >
+          <Image
+            src="/servicesVector.svg"
+            alt="Services Graphic"
+            width={1200}
+            height={1200}
+            sizes="(max-width: 768px) 80vw, 45vw"
+            fetchPriority="high"
+            className="w-full h-auto object-contain object-left-top"
+            priority
+          />
+        </motion.div>
+      )}
 
       <div className="relative z-10">
-        <Container>
-          <motion.div
-            initial={shouldReduceMotion ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 24, scale: 0.98 }}
-            whileInView={{ opacity: 1, y: 0, scale: 1 }}
-            viewport={{ once: false, amount: 0.3 }}
-            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-4 md:ml-[44%] mt-12 md:mt-20 lg:mt-24"
-          >
-            <h2 className="text-[20px] md:text-[30px] lg:text-[32px] font-extrabold font-[family-name:var(--font-space-grotesk)] text-black tracking-tight mb-6">
-              {servicesTitle}
-            </h2>
-          </motion.div>
-
-          <motion.div
-            variants={{
-              hidden: { opacity: 0, y: 30 },
-              show: { opacity: 1, y: 0, transition: { staggerChildren: 0.1 } }
-            }}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: false, amount: 0.3 }}
-            className="md:ml-[45%] max-w-xl space-y-2"
-          >
-            {services.map((service: { title: string, items: { name: string, description: string }[] }, idx: number) => (
+        <Container className={variant === 'page' ? "ml-0 lg:ml-[10%]" : ""}>
+          <div className={variant === 'page' ? "relative flex min-h-screen items-center justify-between overflow-hidden" : ""}>
+            {variant === 'page' && (
               <motion.div
-                key={service.title}
-                variants={rowVariants}
-                layout
-                transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.35, ease }}
-                className={`pb-2 relative ${openSection === idx ? 'border-none' : 'border-b border-gray-200'}`}
+                initial={shouldReduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: -400 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: false, amount: 0.25 }}
+                className={imageClassName}
               >
-                <motion.button
-                  onClick={() => setOpenSection(openSection === idx ? null : idx)}
-                  className="w-full flex items-center justify-between max-w-[500px] pt-3 pb-1"
-                >
-                  <span className="text-[14px] md:text-[16px] text-black">
-                    {service.title}
-                  </span>
-
-                  <motion.div
-                    className={`w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 ${openSection === idx ? 'bg-[#1AE9AB]' : 'bg-[#1AE9AB]'}`}
-                    whileTap={shouldReduceMotion ? undefined : { scale: 0.9 }}
-                  >
-                    <motion.svg
-                      width="14" height="14" viewBox="0 0 24 24" fill="none"
-                      stroke={openSection === idx ? "black" : "black"}
-                      strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"
-                      animate={{ rotate: openSection === idx ? 90 : 0 }}
-                      transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.35, ease }}
-                    >
-                      <path d="M9 18l6-6-6-6" />
-                    </motion.svg>
-                  </motion.div>
-                </motion.button>
-
-                <AnimatePresence mode="wait">
-                  {openSection === idx && (
-                    <motion.div
-                      layout
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.45, ease }}
-                    >
-                      <motion.div
-                        variants={chipContainer}
-                        initial="hidden"
-                        animate="show"
-                        className="flex flex-wrap gap-3 py-6 pt-2 pb-6 font-[family-name:var(--font-space-grotesk)]"
-                      >
-                        {service.items.map((item, itemIdx) => (
-                          <motion.div
-                            key={item.name}
-                            className="relative group/item"
-                            variants={chipItem}
-                          >
-                            <motion.button
-                              onClick={() => setActiveItem(activeItem?.section === idx && activeItem?.index === itemIdx ? null : { section: idx, index: itemIdx })}
-                              className={`px-4 py-2 rounded-md border border-black transition-all duration-200 text-[14px] font-normal
-                              ${activeItem?.section === idx && activeItem?.index === itemIdx
-                                ? 'bg-white text-[#2a2a2a]'
-                                : 'bg-white text-[#5f5f5f]'}`}
-                              whileTap={shouldReduceMotion ? undefined : { scale: 0.95 }}
-                            >
-                              {item.name}
-                            </motion.button>
-                            <AnimatePresence>
-                              {activeItem?.section === idx && activeItem?.index === itemIdx && (
-                                <motion.div
-                                  initial={{ opacity: 0, y: 8 }}
-                                  animate={{ opacity: 1, y: 0 }}
-                                  exit={{ opacity: 0, y: 8 }}
-                                  transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.3, ease }}
-                                  className="absolute left-0 top-full z-30 mt-1 inline-block w-[220px] md:w-[240px] rounded-md border border-black bg-white px-2 py-1.5"
-                                >
-                                  <p className="text-[13px] text-[#5f5f5f] leading-relaxed font-normal font-[family-name:var(--font-space-grotesk)]">
-                                    {item.description}
-                                  </p>
-                                </motion.div>
-                              )}
-                            </AnimatePresence>
-                          </motion.div>
-                        ))}
-                      </motion.div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+                <Image
+                  src="/servicesVector.svg"
+                  alt="Services Graphic"
+                  width={1200}
+                  height={1200}
+                  sizes="(max-width: 1024px) 88vw, 42vw"
+                  fetchPriority="high"
+                  className="h-auto w-full object-contain object-left-top"
+                  priority
+                />
               </motion.div>
-            ))}
-          </motion.div>
+            )}
+
+            <div className={variant === 'page' ? "relative z-10 pt-2 lg:ml-[48%] lg:w-[52%]" : ""}>
+              <motion.div
+                initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 120 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: false, amount: 0.3 }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                className={variant === 'page' ? "mb-4 mt-0" : "textServices mb-3 md:ml-[40%] mt-3 md:mt-5 lg:mt-7"}
+                style={variant === 'page' ? { width: "auto" } : { width: "auto" }}
+              >
+                <h2
+                  className="mb-4 font-[family-name:var(--font-space-grotesk)] font-extrabold text-black tracking-tight"
+                  style={{ fontSize: "clamp(1.5rem, 2.4vw, 6rem)", width: "auto" }}
+                >
+                  {servicesTitle}
+                </h2>
+              </motion.div>
+
+              <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 200 },
+                  show: { opacity: 1, y: 0, transition: { staggerChildren: 0.1 } }
+                }}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: false, amount: 0.3 }}
+                className={variant === 'page' ? "serviceList services-list max-w-xl space-y-2 mt-0" : "serviceList services-list md:ml-[41%] max-w-xl space-y-2 mt-0 md:mt-0"}
+              >
+                {services.map((service: { title: string, items: { name: string, description: string }[] }, idx: number) => (
+                  <motion.div
+                    key={service.title}
+                    variants={rowVariants}
+                    layout
+                    transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.35, ease }}
+                    className={`service-item pb-2 relative ${openSection === idx ? 'border-none' : ''}`}
+                  >
+                    <motion.button
+                      onClick={() => setOpenSection(openSection === idx ? null : idx)}
+                      className={`service-header w-[90%] md:w-[83%] ${openSection === idx ? 'service-header--open' : ''}`}
+                    >
+                      <span className="text-[14px] md:text-[16px] text-black font-[family-name:var(--font-poppins)]">
+                        {service.title}
+                      </span>
+
+                      <motion.div
+                        className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${openSection === idx ? 'bg-[#1AE9AB]' : 'bg-[#1AE9AB]'}`}
+                        whileTap={shouldReduceMotion ? undefined : { scale: 0.9 }}
+                      >
+                        <motion.svg
+                          width="15" height="15" viewBox="0 0 24 24" fill="none"
+                          stroke={openSection === idx ? "black" : "black"}
+                          strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round"
+                          animate={{ rotate: openSection === idx ? 90 : 0 }}
+                          transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.35, ease }}
+                        >
+                          <path d="M9 18l6-6-6-6" />
+                        </motion.svg>
+                      </motion.div>
+                    </motion.button>
+
+                    <AnimatePresence mode="wait">
+                      {openSection === idx && (
+                        <motion.div
+                          layout
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.45, ease }}
+                        >
+                          <motion.div
+                            variants={chipContainer}
+                            initial="hidden"
+                            animate="show"
+                            className="service-content active w-[90%] md:w-[83%] flex flex-wrap gap-3 py-2 pt-1 pb-2 font-[family-name:var(--font-space-grotesk)]"
+                          >
+                            {service.items.map((item, itemIdx) => (
+                              <motion.div
+                                key={item.name}
+                                data-info={item.description}
+                                className={`relative group/item ${activeItem?.section === idx && activeItem?.index === itemIdx ? 'tooltip-active' : ''}`}
+                                variants={chipItem}
+                              >
+                                <motion.button
+                                  onClick={() => setActiveItem(activeItem?.section === idx && activeItem?.index === itemIdx ? null : { section: idx, index: itemIdx })}
+                                  className={`px-4 py-2 rounded-md transition-all duration-200 text-[14px] font-normal
+                              ${activeItem?.section === idx && activeItem?.index === itemIdx
+                                    ? 'bg-white text-[#2a2a2a]'
+                                    : 'bg-white text-[#5f5f5f]'}`}
+                                  whileTap={shouldReduceMotion ? undefined : { scale: 0.95 }}
+                                >
+                                  {item.name}
+                                </motion.button>
+                              </motion.div>
+                            ))}
+                          </motion.div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
         </Container>
       </div>
     </section>

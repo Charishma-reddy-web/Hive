@@ -1,11 +1,14 @@
 "use client"
 
 import { useRef } from 'react'
-import Image from 'next/image'
 import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion'
 import headerData from '@/data/headerdata.json'
 
-export function AboutUs() {
+type AboutUsProps = {
+  variant?: 'home' | 'page'
+}
+
+export function AboutUs({ variant = 'home' }: AboutUsProps) {
   const { about } = headerData as any
   const sectionRef = useRef<HTMLElement | null>(null)
   const shouldReduceMotion = useReducedMotion()
@@ -14,20 +17,33 @@ export function AboutUs() {
     offset: ["start end", "end start"]
   })
   const parallaxY = useTransform(scrollYProgress, [0, 1], [24, -24])
+  const ease = [0.22, 1, 0.36, 1] as const
+  const sectionClassName =
+    variant === 'page'
+      ? "relative flex w-full min-h-[calc(100vh-6rem)] items-center overflow-visible bg-white pt-4 pb-0"
+      : "relative -mb-10 flex w-full min-h-screen items-center overflow-visible bg-white pt-12 pb-6"
+  const contentClassName =
+    variant === 'page'
+      ? "textAbout relative z-[1] w-full px-[6%] [backdrop-filter:blur(5px)] md:ml-[8%] md:px-0 lg:w-[40%] xl:max-w-[520px]"
+      : "textAbout relative z-[1] w-full px-[5%] [backdrop-filter:blur(5px)] md:ml-[10%] md:px-0 lg:w-[36%] xl:max-w-[450px]"
+  const imageWrapperClassName =
+    variant === 'page'
+      ? "imgSec hidden right-0 bottom-0 h-auto w-[74%] max-h-none pointer-events-none opacity-100 items-end justify-end lg:flex lg:w-[45%]"
+      : "imgSec hidden right-0 bottom-0 h-auto w-[80%] max-h-none pointer-events-none opacity-100 items-end justify-end lg:flex lg:w-[43%]"
 
   return (
     <section
       ref={sectionRef}
       id="about"
-      className="relative w-full min-h-screen flex items-center overflow-hidden bg-white pt-24 pb-20"
+      className={sectionClassName}
     >
       {/* Left content: heading + paragraph */}
       <motion.div
-        initial={shouldReduceMotion ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 28, scale: 0.98 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+        initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.8, ease }}
         viewport={{ once: false, amount: 0.3 }}
-        className="relative z-10 w-full px-[5%] md:px-0 md:ml-[10%] md:w-[40%] lg:w-[35%] xl:max-w-[450px]"
+        className={contentClassName}
       >
         <h2
           className="font-extrabold text-black whitespace-nowrap leading-[1.2] tracking-wide mb-5 md:mb-7 font-[family-name:var(--font-space-grotesk)]"
@@ -36,7 +52,10 @@ export function AboutUs() {
           {about?.title}
         </h2>
 
-        <p className="text-[16px] xl:text-[17px] leading-[1.6] font-[family-name:var(--font-poppins)] text-[#1a1a1a]">
+        <p
+          className="leading-[1.5] font-[family-name:var(--font-poppins)] text-[#1a1a1a] break-words"
+          style={{ fontSize: "clamp(1rem, 1.2vw, 1.5rem)" }}
+        >
           {about?.descriptionStart}
           <strong className="font-bold text-black">{about?.descriptionHighlight}</strong>
           {about?.descriptionEnd}
@@ -45,20 +64,20 @@ export function AboutUs() {
 
       {/* Honeycomb Graphic */}
       <motion.div
-        initial={shouldReduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: 40 }}
+        initial={shouldReduceMotion ? { opacity: 1, x: 0 } : { opacity: 0, x: 180 }}
         whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-        viewport={{ once: false, amount: 0.4 }}
+        transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+        viewport={{ once: false, amount: 0.25 }}
         style={{ y: shouldReduceMotion ? 0 : parallaxY }}
-        className="absolute right-[-1%] top-[0%] md:right-[0%] md:top-[-5%] md:w-[45%] h-[110%] pointer-events-none z-0 md:opacity-100 flex items-center justify-end"
+        className={imageWrapperClassName}
       >
-        <Image
+        <img
           src="/about-vector.svg"
           alt="Honeycomb Graphic"
-          width={1200}
-          height={1200}
+          id="aboutVector"
           className="w-full h-auto object-contain object-right-top"
-          priority
+          loading="eager"
+          draggable={false}
         />
       </motion.div>
     </section>

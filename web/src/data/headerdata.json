@@ -36,18 +36,18 @@
         "titleAccentpart2": "Vincis!",
         "description": "Is your marketing stuck in the dark ages? We’re here to spark\nyour Renaissance. From SEO wizardry to social media\nmastery, we’ll craft your brand’s masterpiece across the\ndigital canvas.",
         "ctaText": "Get a Free Site Audit!",
-        "servicesLeft": [
-            "Search Engine Optimization",
-            "Email Marketing",
-            "Website Development",
-            "Mobile App Development"
-        ],
-        "servicesRight": [
-            "Social Media Marketing",
-            "Pay Per Click",
-            "UI / UX Design",
-            "Content Writing"
-        ]
+        "servicesLeft": {
+            "serviceleft1": "Search Engine Optimization",
+            "serviceleft2": "Email Marketing",
+            "serviceleft3": "Website Development",
+            "serviceleft4": "Mobile App Development"
+        },
+        "servicesRight": {
+           "serviceright1": "Social Media Marketing",
+            "serviceright2": "Pay Per Click",
+            "serviceright3": "UI / UX Design",
+            "serviceright4": "Content Writing"
+        }
     },
     "about": {
         "title": "Your Marketing Misfits",

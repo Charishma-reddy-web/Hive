@@ -54,6 +54,149 @@ img {
   display: block;
 }
 
+.serviceList {
+  padding: 2%;
+  margin-top: 5px;
+  max-height: 54vh;
+  box-sizing: border-box;
+}
+
+.serviceList::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+.serviceList::-webkit-scrollbar-track {
+  border-radius: 5px;
+  background-color: #dfe9eb;
+}
+
+.serviceList::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #a1a5a4;
+}
+
+.services-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.service-item {
+  border-bottom: none;
+}
+
+.service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 0.5rem 0;
+  cursor: pointer;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.service-header--open {
+  border-bottom: none;
+}
+
+.service-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: 0;
+  opacity: 0;
+  transition: all 0.3s ease, opacity 0s ease;
+}
+
+.service-content.active {
+  height: auto;
+  opacity: 1;
+  margin: 0 0 0;
+  padding: 0.5rem 0 8px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.service-content div {
+  background-color: #ffffff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px 10px;
+  position: relative;
+  font-size: 16px;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.service-content div.tooltip-active::after {
+  content: attr(data-info);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 5px;
+  padding: 5px;
+  z-index: 1;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  color: #333;
+}
+
+[data-aos^=slide][data-aos^=slide] {
+  transition-property: transform;
+}
+
+[data-aos=slide-up] {
+  transform: translate3d(0, 100%, 0);
+}
+
+[data-aos=slide-left] {
+  transform: translate3d(100%, 0, 0);
+}
+
+[data-aos^=slide][data-aos^=slide].aos-animate {
+  transform: translateZ(0);
+}
+
+[data-aos][data-aos-duration="400"] {
+  transition-duration: .4s;
+}
+
+[data-aos][data-aos-easing="ease"] {
+  transition-timing-function: ease;
+}
+
+.imgSec {
+  position: absolute;
+  z-index: 0;
+  display: block;
+}
+
+#about .imgSec {
+  bottom: 0%;
+  right: 0%;
+}
+
+
+.textServices {
+  padding-top: 6%;
+  z-index: 1;
+  backdrop-filter: blur(5px);
+  width: 40%;
+}
+
+.hero-text button {
+  color: white;
+  background-color: black;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.hero-text button:hover {
+  background-color: #333;
+}
+
 .shell {
   min-height: 100vh;
   display: flex;
@@ -174,3 +317,5 @@ img {
     flex-wrap: wrap;
   }
 }
+
+

@@ -15,10 +15,10 @@ export function SiteHeader() {
 
       <div className="w-full md:w-[80%] relative flex flex-col items-end">
         <motion.header
-          initial={{ y: -120, opacity: 0 }}
+          initial={{ y: -400, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{
-            duration: 1,
+            duration: 0.8,
             ease: [0.22, 1, 0.36, 1]
           }}
           className="w-full bg-black text-white rounded-3xl md:rounded-4xl py-6 md:py-8 shadow-lg relative z-20 overflow-hidden"
@@ -43,6 +43,7 @@ export function SiteHeader() {
 
               <Link
                 href={headerData.buttonHref || "/#contact"}
+                replace={(headerData.buttonHref || "/#contact").includes("#")}
                 className="bg-[#1AE9AB] border border-white !text-black hover:!text-black px-4 py-2 rounded-lg transition-all active:scale-95 whitespace-nowrap"
               >
                 {headerData.buttonText}
@@ -82,7 +83,7 @@ export function SiteHeader() {
                   <div key={index}>
                     <Link
                       href={item.href || "#"}
-                      onClick={() => setIsOpen(false)}
+                      replace={(item.href || "#").includes("#")}
                       className="px-3 py-1 block rounded-2xl hover:ring-2 hover:ring-black transition duration-200 whitespace-nowrap"
                     >
                       {item.label}
