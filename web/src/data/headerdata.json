@@ -1,0 +1,153 @@
+{
+    "logo": {
+        "text1": "Nurture",
+        "text2": "Hive"
+    },
+    "buttonText": "Let’s Talk",
+    "buttonHref": "/#contact",
+    
+    "buttons": [
+        {
+            "label": "About Us",
+            "href": "/#about"
+        },
+        {
+            "label": "Services",
+            "href": "/#services"
+        },
+        {
+            "label": "Portfolio",
+            "href": "/#portfolio"
+        },
+        {
+            "label": "Testimonials",
+            "href": "/#testimonials"
+        },
+        {
+            "label": "Blogs",
+            "href": "/#blog"
+        }
+    ],
+    "hero": {
+        "titlePart1": "Marketing",
+        "titlePart2": "Makeover?",
+        "titlePart3": "We’re the",
+        "titleAccentpart1": "Digital Da",
+        "titleAccentpart2": "Vincis!",
+        "description": "Is your marketing stuck in the dark ages? We’re here to spark\nyour Renaissance. From SEO wizardry to social media\nmastery, we’ll craft your brand’s masterpiece across the\ndigital canvas.",
+        "ctaText": "Get a Free Site Audit!",
+        "servicesLeft": {
+            "serviceleft1": "Search Engine Optimization",
+            "serviceleft2": "Email Marketing",
+            "serviceleft3": "Website Development",
+            "serviceleft4": "Mobile App Development"
+        },
+        "servicesRight": {
+           "serviceright1": "Social Media Marketing",
+            "serviceright2": "Pay Per Click",
+            "serviceright3": "UI / UX Design",
+            "serviceright4": "Content Writing"
+        }
+    },
+    "about": {
+        "title": "Your Marketing Misfits",
+        "descriptionStart": "We're obsessed with helping businesses ",
+        "descriptionHighlight": "grow like crazy.",
+        "descriptionEnd": " At Nurture Hive, we get fired up about turning lackluster websites into traffic magnets, crafting content that captivates audiences, and seeing your sales figures do a happy dance. We're a passionate bunch who geek out on data, brainstorm like bosses, and believe in the power of strategic marketing to make your brand a household name. So, ditch the status quo and jump in the hive with us - it's gonna be a wild ride to success!"
+    },
+    "services": [
+        {
+            "title": "Development",
+            "items": [
+                {
+                    "name": "Code Cadabra",
+                    "description": "Turn your ideas into reality with our coding magic."
+                },
+                {
+                    "name": "App Alchemists",
+                    "description": "We craft innovative and user-friendly apps from your ideas."
+                },
+                {
+                    "name": "Website Wizards",
+                    "description": "We design and develop websites that are beautiful and easy to use."
+                }
+            ]
+        },
+        {
+            "title": "Branding",
+            "items": [
+                {
+                    "name": "Name Alchemy",
+                    "description": "Craft the perfect brand name and identity for your business."
+                },
+                {
+                    "name": "Logo Potion",
+                    "description": "Concoct a logo that's both eye-catching and memorable."
+                },
+                {
+                    "name": "Visual VooDoo",
+                    "description": "Weave your brand story through captivating visuals."
+                },
+                {
+                    "name": "Brand Bender",
+                    "description": "Twist and turn your brand to stand out."
+                }
+            ]
+        },
+        {
+            "title": "Digital Marketing",
+            "items": [
+                {
+                    "name": "Click Magnet",
+                    "description": "Attract clicks and conversions with magnetic marketing strategies."
+                },
+                {
+                    "name": "Content Comet",
+                    "description": "Launch stellar content that rockets across the digital landscape."
+                },
+                {
+                    "name": "Social Siren",
+                    "description": "Sing your brand's praises and captivate audiences on social media."
+                },
+                {
+                    "name": "Adrenaline Ads",
+                    "description": "Craft adrenaline-pumping ad campaigns that grab attention."
+                },
+                {
+                    "name": "SEO Sorcery",
+                    "description": "Cast spells on search engines and rise to the top of the results page."
+                },
+                {
+                    "name": "Email Elixir",
+                    "description": "Brew email campaigns that leave your audience wanting more."
+                }
+            ]
+        },
+        {
+            "title": "Content Creation",
+            "items": [
+                {
+                    "name": "Blog Bon Bons",
+                    "description": "Short & sweet blog posts packed with info."
+                },
+                {
+                    "name": "White Paper Wonderlands",
+                    "description": "Deep dives into industry topics with detailed white papers."
+                },
+                {
+                    "name": "Case Study Cocktails",
+                    "description": "Success stories that showcase your brand's achievements."
+                },
+                {
+                    "name": "Infographic Infusions",
+                    "description": "Transform complex data into easy-to-understand infographics."
+                },
+                {
+                    "name": "Video Vittles",
+                    "description": "Bite-sized videos that are easy to digest & share."
+                }
+            ]
+        }
+    ],
+    "servicesTitle": "The Nurture Hive’s Hub"
+}
