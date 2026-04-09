@@ -5,13 +5,35 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { Container } from '@/components/ui/container'
 import headerData from '@/data/headerdata.json'
 
+type HeroContent = {
+  titlePart1?: string
+  titlePart2?: string
+  titlePart3?: string
+  titleAccentpart1?: string
+  titleAccentpart2?: string
+  description?: string
+  ctaText?: string
+  servicesLeft?: {
+    serviceleft1?: string
+    serviceleft2?: string
+    serviceleft3?: string
+    serviceleft4?: string
+  }
+  servicesRight?: {
+    serviceright1?: string
+    serviceright2?: string
+    serviceright3?: string
+    serviceright4?: string
+  }
+}
+
 export function HomeHero() {
-  const { hero } = headerData
+  const hero = headerData.hero as HeroContent
   const shouldReduceMotion = useReducedMotion() ?? false
   const ease = [0.22, 1, 0.36, 1] as const
 
-  const scrollToAbout = useCallback(() => {
-    const section = document.getElementById("about")
+  const scrollToContact = useCallback(() => {
+    const section = document.getElementById("contact")
     if (section) {
       const top = section.getBoundingClientRect().top + window.scrollY
       window.scrollTo({ top, behavior: "smooth" })
@@ -246,45 +268,43 @@ export function HomeHero() {
           >
             <motion.h1
               initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 22 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.6 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.55, ease }}
-              className="z-2 max-w-full font-[Poppins] text-[clamp(2rem,5vw,3rem)] font-black leading-[0.98] tracking-[-0.03em] text-black [backdrop-filter:blur(5px)] lg:max-w-[65%]"
+              className="z-[2] max-w-full font-[family-name:var(--font-poppins)] text-[clamp(2rem,5vw,3rem)] font-black leading-[0.98] tracking-[-0.03em] text-black [backdrop-filter:blur(5px)] lg:max-w-[65%]"
             >
-              {hero.titlePart1} {hero.titlePart2}
+              {hero.titlePart1 ?? 'Marketing'} {hero.titlePart2 ?? 'Makeover?'}
               <span className="mt-3 block text-black">
-                {hero.titlePart3}{" "}
-                <span className="text-[#1AE9AB]">{hero.titleAccentpart1}</span>
+                {hero.titlePart3 ?? "We’re the"}{" "}
+                <span className="text-[#1AE9AB]">{hero.titleAccentpart1 ?? 'Digital Da'}</span>
               </span>
-              <span className="mt-3 block text-[#1AE9AB]">{hero.titleAccentpart2}</span>
+              <span className="mt-3 block text-[#1AE9AB]">{hero.titleAccentpart2 ?? 'Vincis!'}</span>
             </motion.h1>
 
             <motion.p
               initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.6 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.48, delay: 0.06, ease }}
-              className="z-2 mt-8 max-w-full whitespace-pre-line font-[Poppins] text-[clamp(1rem,2vw,1.5rem)] leading-[1.5] text-black [backdrop-filter:blur(5px)] lg:max-w-[85%]"
+              className="z-[2] mt-8 max-w-full whitespace-pre-line font-[family-name:var(--font-poppins)] text-[clamp(1rem,2vw,1.5rem)] leading-[1.5] text-black [backdrop-filter:blur(5px)] lg:max-w-[85%]"
             >
-              {hero.description}
+              {hero.description ??
+                "Is your marketing stuck in the dark ages? We’re here to spark your Renaissance."}
             </motion.p>
 
             <motion.div
               initial={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 14 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
               whileHover={shouldReduceMotion ? undefined : { x: [0, 4, -4, 4, -4, 0] }}
-              viewport={{ once: false, amount: 0.6 }}
               transition={{
                 opacity: { duration: 0.42, delay: 0.12, ease },
                 x: { duration: 0.6, ease: "easeInOut" }
               }}
-              className="z-2 mt-8 flex max-w-[80%] flex-col items-center justify-center gap-4"
+              className="z-[2] mt-8 flex max-w-[80%] flex-col items-center justify-center gap-4"
             >
               <button
-                onClick={scrollToAbout}
+                onClick={scrollToContact}
                 className="rounded-[1.3rem] border border-white/20 bg-black px-6 py-4 text-[1rem] font-medium text-white shadow-[0_16px_34px_rgba(0,0,0,0.2)] transition-all duration-500 hover:border-black hover:bg-[#333333] hover:text-white"
               >
-                {hero.ctaText}
+                {hero.ctaText ?? 'Get a Free Site Audit!'}
               </button>
             </motion.div>
           </motion.div>

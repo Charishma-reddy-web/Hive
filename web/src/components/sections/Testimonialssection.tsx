@@ -1,31 +1,26 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  type MouseEvent,
+  type TouchEvent,
+} from "react";
+import testimonialsData from "@/data/testimonialsData.json";
 
-const testimonials = [
-  {
-    quote:
-      '"Working with Nurture Hive has been a game-changer for our brand. Their creative social media campaigns and targeted advertising strategies have helped us reach new audiences and increase customer engagement. We couldn\'t be happier with our choice to partner with Nurture Hive."',
-    company: "TechInnovate Solutions",
-    type: "Software Development Startup",
-  },
-  {
-    quote:
-      '"Nurture Hive has transformed our digital strategy. Their innovative approach to SEO and content marketing has significantly boosted our online visibility. The team\'s dedication and expertise have been instrumental in helping us achieve our business goals. We\'re thrilled with the results and look forward to continuing our partnership."',
-    company: "Infoservices Digitech",
-    type: "Digital Transformation IT Company",
-  },
-  {
-    quote:
-      '"We have been working with Nurture Hive for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend Nurture Hive to any company looking to grow their online presence."',
-    company: "Mama Eatz",
-    type: "Online Food Pickup App",
-  },
-];
+type Testimonial = {
+  quote: string;
+  company: string;
+  type: string;
+};
+
+const testimonials: Testimonial[] = testimonialsData.testimonials;
 
 const AUTO_PLAY_INTERVAL = 4000;
 
-const TestimonialsSection: React.FC = () => {
+export default function TestimonialsSection() {
   const [current, setCurrent] = useState(0);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -76,18 +71,18 @@ const TestimonialsSection: React.FC = () => {
     isDragging.current = false;
   };
 
-  const onMouseDown = (e: React.MouseEvent) => {
+  const onMouseDown = (e: MouseEvent<HTMLDivElement>) => {
     dragStart.current = e.clientX;
     isDragging.current = false;
     e.preventDefault();
   };
-  const onMouseMove = (e: React.MouseEvent) => {
+  const onMouseMove = (e: MouseEvent<HTMLDivElement>) => {
     if (dragStart.current === null) return;
     const diff = e.clientX - dragStart.current;
     if (!isDragging.current && Math.abs(diff) > 3) isDragging.current = true;
     if (isDragging.current) applyLiveDrag(diff);
   };
-  const onMouseUp = (e: React.MouseEvent) => {
+  const onMouseUp = (e: MouseEvent<HTMLDivElement>) => {
     if (dragStart.current === null) return;
     const diff = e.clientX - dragStart.current;
     if (isDragging.current) snapToCard(diff);
@@ -98,17 +93,17 @@ const TestimonialsSection: React.FC = () => {
     dragStart.current = null;
     isDragging.current = false;
   };
-  const onTouchStart = (e: React.TouchEvent) => {
+  const onTouchStart = (e: TouchEvent<HTMLDivElement>) => {
     dragStart.current = e.touches[0].clientX;
     isDragging.current = false;
   };
-  const onTouchMove = (e: React.TouchEvent) => {
+  const onTouchMove = (e: TouchEvent<HTMLDivElement>) => {
     if (dragStart.current === null) return;
     const diff = e.touches[0].clientX - dragStart.current;
     if (!isDragging.current && Math.abs(diff) > 3) isDragging.current = true;
     if (isDragging.current) applyLiveDrag(diff);
   };
-  const onTouchEnd = (e: React.TouchEvent) => {
+  const onTouchEnd = (e: TouchEvent<HTMLDivElement>) => {
     if (dragStart.current !== null) {
       snapToCard(e.changedTouches[0].clientX - dragStart.current);
     }
@@ -341,11 +336,11 @@ const TestimonialsSection: React.FC = () => {
             </button>
 
             {testimonials.map((_, i) => (
-              <div
+              <button
+                type="button"
                 key={i}
                 className={`dot${i === current ? " active" : ""}`}
                 onClick={() => goTo(i)}
-                role="button"
                 aria-label={`Slide ${i + 1}`}
               />
             ))}
@@ -358,6 +353,4 @@ const TestimonialsSection: React.FC = () => {
       </main>
     </>
   );
-};
-
-export default TestimonialsSection;
+}

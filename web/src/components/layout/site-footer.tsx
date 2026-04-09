@@ -18,7 +18,7 @@ export default function SiteFooter() {
 
         <nav className="flex flex-wrap items-center justify-center gap-6 md:gap-10">
           {navLinks.map((link) => {
-            const isNonNavigable = link.label === "About us" || link.label === "Services";
+            const isNonNavigable = false;
 
             if (isNonNavigable) {
               return (
