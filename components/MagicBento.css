@@ -1,0 +1,195 @@
+.bento-section {
+  --border-color: #2F293A;
+  --background-dark: #120F17;
+  --white: hsl(0, 0%, 100%);
+  position: relative;
+  display: grid;
+  gap: 0.5rem;
+  padding: 0.75rem;
+  max-width: 72rem;
+  margin: 0 auto;
+  user-select: none;
+}
+
+.card-responsive {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: 1fr;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0.25rem 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  aspect-ratio: 4 / 3;
+  min-height: 162px;
+  width: 100%;
+  max-width: 100%;
+  padding: 0.95rem 1.1rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 300;
+  overflow: hidden;
+  background-color: #120F17 !important;
+  box-shadow: 0 16px 42px rgba(var(--card-shadow-rgb), 0.16), 0 24px 58px rgba(0, 0, 0, 0.28);
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 56px rgba(var(--card-shadow-rgb), 0.28), 0 28px 70px rgba(0, 0, 0, 0.34);
+}
+
+.card__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  position: relative;
+  color: var(--white);
+  z-index: 2;
+}
+
+.card__label {
+  color: rgba(var(--glow-color), 0.95);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  color: var(--white);
+  z-index: 2;
+  gap: 0.32rem;
+}
+
+.card__title {
+  color: #f7fffc;
+  font-weight: 800;
+  font-size: clamp(1.85rem, 1.45rem + 1.25vw, 2.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+  margin: 0 0 0.32rem;
+}
+
+.card__description {
+  font-size: 0.84rem;
+  line-height: 1.28rem;
+  color: rgba(255, 255, 255, 0.68);
+  opacity: 1;
+  margin: 0;
+}
+
+@media (min-width: 600px) {
+  .card-responsive {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-responsive {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card-responsive .card:nth-child(3) {
+    grid-column: span 2;
+    grid-row: auto;
+    min-height: 170px;
+    aspect-ratio: 9 / 2.25;
+  }
+
+  .card-responsive .card:nth-child(4) {
+    grid-column: 1 / span 2;
+    grid-row: auto;
+    min-height: 170px;
+    aspect-ratio: 9 / 2.25;
+  }
+
+  .card-responsive .card:nth-child(6) {
+    grid-column: 4;
+    grid-row: 2;
+  }
+}
+
+.card--border-glow::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 6px;
+  background: radial-gradient(var(--glow-radius) circle at var(--glow-x) var(--glow-y),
+      rgba(var(--glow-color), calc(var(--glow-intensity) * 0.8)) 0%,
+      rgba(var(--glow-color), calc(var(--glow-intensity) * 0.4)) 30%,
+      transparent 60%);
+  border-radius: inherit;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.card--border-glow:hover::after {
+  opacity: 1;
+}
+
+.card--border-glow:hover {
+  box-shadow: 0 20px 56px rgba(var(--card-shadow-rgb), 0.3), 0 0 30px rgba(var(--glow-color), 0.16);
+}
+
+.particle::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: rgba(var(--glow-color), 0.2);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.particle-container:hover {
+  box-shadow: 0 4px 20px rgba(46, 24, 78, 0.2), 0 0 30px rgba(var(--glow-color), 0.2);
+}
+
+.text-clamp-1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 599px) {
+  .card-responsive {
+    grid-template-columns: 1fr;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.5rem;
+  }
+
+  .card-responsive .card {
+    width: 100%;
+    min-height: 136px;
+  }
+}
