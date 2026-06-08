@@ -134,7 +134,6 @@ export function SiteShell({ children }) {
         <ParticleBackground />
         <Navbar />
         {children}
-        <Footer />
       </main>
     </>
   );
