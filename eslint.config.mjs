@@ -2,7 +2,7 @@ import nextVitals from "eslint-config-next/core-web-vitals";
 
 const config = [
   {
-    ignores: ["web/**", "cms/**", ".next/**", "node_modules/**"]
+    ignores: ["web/**", "cms/**", "src/**", ".next/**", "node_modules/**"]
   },
   ...nextVitals
 ];
