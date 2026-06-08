@@ -11,7 +11,7 @@ export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="w-full flex flex-col items-center pt-6 sticky top-0 relative z-50 px-4">
+    <div className="w-full flex flex-col items-center pt-6 sticky top-0 z-50 px-4">
 
       <div className="w-full md:w-[80%] relative flex flex-col items-end">
         <motion.header
@@ -84,7 +84,7 @@ export function SiteHeader() {
                     <Link
                       href={item.href || "#"}
                       replace={(item.href || "#").includes("#")}
-                      className="px-3 py-1 block rounded-2xl hover:ring-2 hover:ring-black transition duration-200 whitespace-nowrap"
+                      className="px-3 py-1 block rounded-2xl hover:ring-2 hover:ring-black transition duration-200 whitespace-nowrap cursor-pointer"
                     >
                       {item.label}
                     </Link>
