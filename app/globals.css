@@ -40755,6 +40755,14 @@ body {
   font-weight: 550;
 }
 
+/* 4th page final background color */
+.modern-problem-section {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(26, 233, 171, 0.1), transparent 28%),
+    radial-gradient(circle at 86% 24%, rgba(59, 130, 246, 0.08), transparent 30%),
+    linear-gradient(180deg, #050b16 0%, #081421 100%) !important;
+}
+
 @media (max-width: 640px) {
   .who-serve-heading {
     margin-bottom: 26px;
