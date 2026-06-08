@@ -227,124 +227,95 @@ export default function MethodologyFramework() {
           </div>
 
           {/* RIGHT: Content Area */}
-          <div className="flex-1 min-w-0 flex flex-col justify-center relative z-10">
+          <div className="flex-1 min-w-0 flex flex-col relative z-10 h-[400px]">
 
+            {/* Ambient glow behind text */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00F0B5]/[0.04] blur-[120px] rounded-full pointer-events-none -z-10" />
 
-            {/* Giant watermark number */}
             <AnimatePresence>
               <motion.div
-                key={phase.num}
-                initial={{ opacity: 0, y: 32 }}
+                key={`content-${active}`}
+                initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -24, position: 'absolute' }}
-                transition={{ duration: 0.4, ease: 'easeOut' }}
-                className="absolute right-[-20px] lg:right-[-40px] top-1/2 -translate-y-1/2 pointer-events-none select-none z-[-5]"
-                style={{
-                  fontSize:           'clamp(180px, 28vw, 320px)',
-                  fontWeight:         900,
-                  lineHeight:         0.8,
-                  background:         'linear-gradient(180deg, rgba(0,240,181,0.08) 0%, rgba(3,6,12,0) 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  WebkitTextStroke:   '1px rgba(0,240,181,0.12)',
-                  fontVariantNumeric: 'tabular-nums',
-                  letterSpacing:      '-0.06em',
-                }}
+                exit={{ opacity: 0, y: -40 }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col"
               >
-                {phase.num}
-              </motion.div>
-            </AnimatePresence>
-
-            {/* Tag + counter */}
-            <AnimatePresence>
-              <motion.div
-                key={phase.tag}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10, position: 'absolute' }}
-                transition={{ duration: 0.3 }}
-                className="flex items-center gap-5 mb-6"
-              >
-                <span
-                  className="relative overflow-hidden text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full flex items-center gap-2"
+                {/* Giant watermark number */}
+                <div
+                  className="absolute right-[-20px] lg:right-[-40px] top-1/2 -translate-y-1/2 pointer-events-none select-none z-[-5]"
                   style={{
-                    background: 'linear-gradient(90deg, rgba(0,240,181,0.05), rgba(0,240,181,0.15))',
-                    border:     '0.5px solid rgba(0,240,181,0.3)',
-                    color:      '#00F0B5',
-                    boxShadow:  '0 0 20px rgba(0,240,181,0.1), inset 0 1px 1px rgba(255,255,255,0.1)',
+                    fontSize:           'clamp(180px, 28vw, 320px)',
+                    fontWeight:         900,
+                    lineHeight:         0.8,
+                    background:         'linear-gradient(180deg, rgba(0,240,181,0.08) 0%, rgba(3,6,12,0) 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    WebkitTextStroke:   '1px rgba(0,240,181,0.12)',
+                    fontVariantNumeric: 'tabular-nums',
+                    letterSpacing:      '-0.06em',
                   }}
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#00F0B5] shadow-[0_0_8px_#00F0B5] animate-pulse" />
-                  {phase.tag}
-                  
-                  <motion.div 
-                    className="absolute top-0 bottom-0 left-0 w-full"
-                    style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)' }}
-                    animate={{ x: ['-100%', '200%'] }}
-                    transition={{ duration: 2.5, ease: 'linear', repeat: Infinity, repeatDelay: 3 }}
-                  />
-                </span>
+                  {phase.num}
+                </div>
 
-                <span className="text-[12px] md:text-[13px] font-mono tracking-widest uppercase text-[#00F0B5]/60 flex items-center gap-1.5">
-                  Phase {phase.num} <span className="text-white/20">/ 05</span>
-                </span>
-              </motion.div>
-            </AnimatePresence>
+                {/* Tag + counter */}
+                <div className="flex items-center gap-5 mb-6">
+                  <span
+                    className="relative overflow-hidden text-[11px] font-semibold tracking-[0.2em] uppercase px-4 py-1.5 rounded-full flex items-center gap-2"
+                    style={{
+                      background: 'linear-gradient(90deg, rgba(0,240,181,0.05), rgba(0,240,181,0.15))',
+                      border:     '0.5px solid rgba(0,240,181,0.3)',
+                      color:      '#00F0B5',
+                      boxShadow:  '0 0 20px rgba(0,240,181,0.1), inset 0 1px 1px rgba(255,255,255,0.1)',
+                    }}
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#00F0B5] shadow-[0_0_8px_#00F0B5] animate-pulse" />
+                    {phase.tag}
+                    
+                    <motion.div 
+                      className="absolute top-0 bottom-0 left-0 w-full"
+                      style={{ background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)' }}
+                      animate={{ x: ['-100%', '200%'] }}
+                      transition={{ duration: 2.5, ease: 'linear', repeat: Infinity, repeatDelay: 3 }}
+                    />
+                  </span>
 
-            {/* Subtitle */}
-            <AnimatePresence>
-              <motion.h3
-                key={`short-${active}`}
-                initial={{ opacity: 0, y: 12, filter: 'blur(4px)' }}
-                animate={{ opacity: 1, y: 0,  filter: 'blur(0px)' }}
-                exit={{ opacity: 0, y: -8, filter: 'blur(4px)', position: 'absolute' }}
-                transition={{ duration: 0.4, ease: 'easeOut' }}
-                className="text-[28px] md:text-[36px] font-light leading-[1.15] tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-[#00F0B5]/80"
-              >
-                {phase.short}
-              </motion.h3>
-            </AnimatePresence>
+                  <span className="text-[12px] md:text-[13px] font-mono tracking-widest uppercase text-[#00F0B5]/60 flex items-center gap-1.5">
+                    Phase {phase.num} <span className="text-white/20">/ 05</span>
+                  </span>
+                </div>
 
-            {/* Detail */}
-            <AnimatePresence>
-              <motion.p
-                key={`detail-${active}`}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0  }}
-                exit={{ opacity: 0, position: 'absolute' }}
-                transition={{ duration: 0.3, delay: 0.05 }}
-                className="text-white/50 text-[14px] leading-[1.8] max-w-[480px] mb-8"
-              >
-                {phase.detail}
-              </motion.p>
-            </AnimatePresence>
+                {/* Subtitle */}
+                <h3 className="text-[28px] md:text-[36px] font-light leading-[1.15] tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-[#00F0B5]/80">
+                  {phase.short}
+                </h3>
 
-            {/* Stat Card */}
-            <AnimatePresence>
-              <motion.div
-                key={`stat-${active}`}
-                initial={{ opacity: 0, scale: 0.96, y: 10 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.98, position: 'absolute' }}
-                transition={{ duration: 0.35, delay: 0.1, ease: 'easeOut' }}
-                className="inline-flex flex-col px-6 py-4 rounded-xl relative overflow-hidden self-start"
-                style={{
-                  background: 'rgba(0,240,181,0.06)',
-                  border:     '0.5px solid rgba(0,240,181,0.2)',
-                  boxShadow:  '0 0 24px rgba(0,240,181,0.08), inset 0 1px 0 rgba(0,240,181,0.2)',
-                }}
-              >
+                {/* Detail */}
+                <p className="text-white/50 text-[14px] leading-[1.8] max-w-[480px] mb-8">
+                  {phase.detail}
+                </p>
+
+                {/* Stat Card */}
                 <div
-                  className="absolute top-0 left-4 right-4 h-[1px]"
-                  style={{ background: 'linear-gradient(90deg, transparent, rgba(0,240,181,0.6), transparent)' }}
-                />
-                <span className="text-[38px] font-semibold text-white leading-none tracking-tight tabular-nums font-mono">
-                  {phase.stat}{phase.statSuffix}
-                </span>
-                <span className="text-[11px] text-white/40 mt-1 tracking-wide">
-                  {phase.statLabel}
-                </span>
+                  className="inline-flex flex-col px-6 py-4 rounded-xl relative overflow-hidden self-start"
+                  style={{
+                    background: 'rgba(0,240,181,0.06)',
+                    border:     '0.5px solid rgba(0,240,181,0.2)',
+                    boxShadow:  '0 0 24px rgba(0,240,181,0.08), inset 0 1px 0 rgba(0,240,181,0.2)',
+                  }}
+                >
+                  <div
+                    className="absolute top-0 left-4 right-4 h-[1px]"
+                    style={{ background: 'linear-gradient(90deg, transparent, rgba(0,240,181,0.6), transparent)' }}
+                  />
+                  <span className="text-[38px] font-semibold text-white leading-none tracking-tight tabular-nums font-mono">
+                    {phase.stat}{phase.statSuffix}
+                  </span>
+                  <span className="text-[11px] text-white/40 mt-1 tracking-wide">
+                    {phase.statLabel}
+                  </span>
+                </div>
               </motion.div>
             </AnimatePresence>
           </div>
