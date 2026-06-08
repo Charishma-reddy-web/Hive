@@ -1,15 +1,26 @@
 # dependencies
 /node_modules
+node_modules/
+web/node_modules/
+cms/node_modules/
 
 # next.js
 /.next
 /out
+web/.next/
+cms/.next/
 
-# production
+# production/build output
 /build
+dist/
+web/dist/
+
+# coverage
+coverage/
 
 # misc
 .DS_Store
+Thumbs.db
 *.pem
 
 # debug
@@ -19,7 +30,10 @@ yarn-error.log*
 pnpm-debug.log*
 
 # env
+.env
 .env*
+.env.local
+.env.*.local
 
 # vercel
 .vercel

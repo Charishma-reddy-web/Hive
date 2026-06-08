@@ -1,0 +1,21 @@
+{
+  "logo": {
+    "main": "Nurture ",
+    "highlight": "Hive"
+  },
+  "contact": {
+    "buttonText": "Contact us:",
+    "href": "/#contact",
+    "email": "info@nurturehive.com",
+    "phone": "+91-6301206787",
+    "address": "Financial District Hyderabad"
+  },
+  "socials": {
+    "linkedin": "https://www.linkedin.com/company/nurturehive",
+    "x": "https://x.com/nurturehive"
+  },
+  "copyright": {
+    "bold": "Info Services © 2024.",
+    "text": "All Rights Reserved."
+  }
+}
