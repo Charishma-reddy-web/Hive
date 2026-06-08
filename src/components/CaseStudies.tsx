@@ -128,49 +128,54 @@ export default function CaseStudies() {
     let offset = ((i - active) % N + N) % N;
     if (offset > N / 2) offset -= N; // normalise to -1, 0, +1
 
+    const isHovered = hoveredIndex === i;
+    const isActive = offset === 0;
+    const isExpanded = isActive && isHovered;
+
     if (offset === 0) {
       // Front & center
       return {
         position: 'absolute',
-        left: '26%', // Centers the 48% wide card
-        width: '48%',
+        // Centers perfectly: 20% + (60/2)% = 50%, 26% + (48/2)% = 50%
+        left: isExpanded ? '20%' : '26%', 
+        width: isExpanded ? '60%' : '48%',
         height: '100%',
-        transform: 'translateX(0%) perspective(900px) rotateY(0deg) translateZ(0px) scale(1)',
+        transform: `translateX(0%) perspective(1000px) rotateY(0deg) translateZ(${isExpanded ? '20px' : '0px'}) scale(1)`,
         zIndex: 10,
         opacity: 1,
         filter: 'brightness(1)',
         cursor: 'default',
-        transition: 'all 0.75s cubic-bezier(0.16,1,0.3,1)',
+        transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)',
       };
     } else if (offset === -1 || offset === N - 1) {
       // Left card
       return {
         position: 'absolute',
-        left: '6%',
+        left: '2%',
         top: '5%',
         width: '32%',
         height: '90%',
-        transform: 'translateX(0%) perspective(900px) rotateY(28deg) translateZ(-80px) scale(0.92)',
+        transform: `translateX(0%) perspective(1000px) rotateY(28deg) translateZ(-80px) scale(${isHovered ? 0.98 : 0.92})`,
         zIndex: 5,
-        opacity: 0.55,
-        filter: 'brightness(0.55)',
+        opacity: 1, // Solid, not transparent
+        filter: `brightness(${isHovered ? 0.6 : 0.35})`, // Dynamic shading instead of transparency
         cursor: 'pointer',
-        transition: 'all 0.75s cubic-bezier(0.16,1,0.3,1)',
+        transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)',
       };
     } else {
       // Right card
       return {
         position: 'absolute',
-        right: '6%',
+        right: '2%',
         top: '5%',
         width: '32%',
         height: '90%',
-        transform: 'translateX(0%) perspective(900px) rotateY(-28deg) translateZ(-80px) scale(0.92)',
+        transform: `translateX(0%) perspective(1000px) rotateY(-28deg) translateZ(-80px) scale(${isHovered ? 0.98 : 0.92})`,
         zIndex: 5,
-        opacity: 0.55,
-        filter: 'brightness(0.55)',
+        opacity: 1, // Solid, not transparent
+        filter: `brightness(${isHovered ? 0.6 : 0.35})`, // Dynamic shading instead of transparency
         cursor: 'pointer',
-        transition: 'all 0.75s cubic-bezier(0.16,1,0.3,1)',
+        transition: 'all 0.6s cubic-bezier(0.16,1,0.3,1)',
       };
     }
   };
