@@ -530,7 +530,7 @@ export function InfrastructureSection() {
       <div style={{ marginBottom: "24px" }}>
         <SectionIntro
           tag="Growth infrastructure"
-          title="The infrastructure behind modern growth"
+          title={<>The infrastructure behind<br />modern growth</>}
           description="Architecture-grade building blocks powering your entire GTM motion - from discovery to revenue."
         />
       </div>

@@ -41650,8 +41650,7 @@ body {
 .systems-intro,
 .modern-problem-head,
 .outcomes-section-head,
-.blade-stack-section > div:first-child,
-.who-serve-heading {
+.blade-stack-section > div:first-child {
   align-items: flex-start !important;
   justify-items: start !important;
   text-align: left !important;
@@ -41668,9 +41667,7 @@ body {
 .systems-intro .sec-p,
 .modern-problem-head span,
 .modern-problem-head h2,
-.modern-problem-head p,
-.who-serve-heading h2,
-.who-serve-heading p {
+.modern-problem-head p {
   margin-left: 0 !important;
   margin-right: auto !important;
   text-align: left !important;
@@ -41741,6 +41738,35 @@ body {
   letter-spacing: 0 !important;
   color: #fff !important;
   text-shadow: 0 10px 30px rgba(29, 158, 117, 0.12) !important;
+}
+
+.blade-stack-section .sec-h {
+  max-width: 760px !important;
+}
+
+.blade-stack-section .sec-tag {
+  display: flex !important;
+  margin-bottom: 16px !important;
+}
+
+.blade-stack-section .sec-h {
+  display: block !important;
+  margin-left: 0 !important;
+}
+
+.who-serve-heading {
+  align-items: center !important;
+  justify-items: center !important;
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.who-serve-heading h2,
+.who-serve-heading p {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: center !important;
 }
 
 @media (max-width: 780px) {
