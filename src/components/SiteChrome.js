@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import ParticleBackground from "@/components/ParticleBackground";
+import SplashCursor from "@/components/SplashCursor";
 import { navItems } from "@/data/siteContent";
 
 function Logo() {
@@ -130,6 +131,18 @@ export function Footer() {
 export function SiteShell({ children }) {
   return (
     <>
+      <SplashCursor
+        DENSITY_DISSIPATION={6}
+        VELOCITY_DISSIPATION={4}
+        PRESSURE={0.5}
+        CURL={7}
+        SPLAT_RADIUS={0.14}
+        SPLAT_FORCE={3500}
+        COLOR_UPDATE_SPEED={10}
+        SHADING
+        RAINBOW_MODE={false}
+        COLOR="#1ae9ab"
+      />
       <main className="nh">
         <ParticleBackground />
         <Navbar />

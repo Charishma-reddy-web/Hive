@@ -203,14 +203,7 @@ export function SystemsSection() {
     <section className="sec" id="systems">
       <div className="systems-intro">
         <div className="sec-tag">What we actually do</div>
-        <BlurText
-          text="Intelligence systems for scalable growth"
-          delay={120}
-          animateBy="words"
-          direction="bottom"
-          className="sec-h systems-heading"
-          once
-        />
+        <h2 className="sec-h systems-heading">Intelligence systems for scalable growth</h2>
         <p className="sec-p systems-description">
           Six integrated systems that drive pipeline, authority, and revenue - not isolated campaigns.
         </p>
@@ -244,7 +237,10 @@ export function SystemsSection() {
             </div>
             <h4>{item.title}</h4>
             <p>{item.description}</p>
-            <span className="kpi">{item.kpi}</span>
+            <span className="kpi">
+              <span className="kpi-arrow">{item.kpi.slice(0, 1)}</span>
+              <span>{item.kpi.slice(1).trim()}</span>
+            </span>
           </div>
         ))}
       </div>
@@ -257,14 +253,12 @@ export function OutcomesSection() {
     <section className="sec" id="outcomes" style={{ paddingBottom: "100px", paddingTop: "40px" }}>
       <div style={{ width: "100%", maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}>
         
-        <div style={{ textAlign: "left", marginBottom: "40px" }}>
-          <span style={{ fontSize: "10px", color: "#1ae9ab", fontWeight: "700", letterSpacing: "2px", textTransform: "uppercase" }}>
-            Outcomes Telemetry
-          </span>
-          <h2 style={{ fontFamily: "var(--font-site), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif", fontSize: "clamp(28px, 4vw, 42px)", color: "#f4fffb", fontWeight: "800", lineHeight: "1.05", marginTop: "6px" }}>
+        <div className="outcomes-section-head">
+          <span className="sec-tag">Growth backed by outcomes</span>
+          <h2 className="sec-h">
             Measurable results, not vanity metrics
           </h2>
-          <p style={{ fontSize: "14px", color: "rgba(255,255,255,0.45)", marginTop: "4px" }}>
+          <p className="sec-p">
             Every engagement is tied to pipeline impact, discoverability, and revenue.
           </p>
         </div>
@@ -308,7 +302,7 @@ export function ComparisonSection() {
       <div className="modern-problem-wrap">
         <div className="modern-problem-head">
           <span>THE MODERN GROWTH PROBLEM</span>
-          <h2>Traditional marketing wasn&apos;t built for the AI era</h2>
+          <h2 className="sec-h systems-heading">Traditional marketing wasn&apos;t built for the AI era</h2>
           <p>Most growth teams are running playbooks designed for a world that no longer exists.</p>
         </div>
 
@@ -538,16 +532,15 @@ export function InfrastructureSection() {
           tag="Growth infrastructure"
           title="The infrastructure behind modern growth"
           description="Architecture-grade building blocks powering your entire GTM motion - from discovery to revenue."
-          titleStyle={{ fontFamily: "var(--font-site), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif", fontSize: "clamp(28px, 4vw, 42px)", lineHeight: "1.05", color: "#f4fffb", fontWeight: "800" }}
         />
       </div>
 
       {/* All cards — below content */}
       <div
-        className="tab-fade-in"
+        className="tab-fade-in infrastructure-card-grid"
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))",
+          gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
           gap: "18px",
           width: "100%",
         }}

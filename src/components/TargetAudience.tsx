@@ -44,17 +44,17 @@ export default function TargetAudience() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.01] blur-[100px] pointer-events-none rounded-full" />
 
-      <div className="relative z-10 w-full max-w-[1000px] mx-auto px-8 md:px-12 flex flex-col items-center text-center gap-8">
+      <div className="relative z-10 w-full max-w-[1000px] mx-auto px-8 md:px-12 flex flex-col items-start text-left gap-8">
         
         {/* Header Section */}
-        <div className="flex flex-col items-center w-full">
+        <div className="flex flex-col items-start w-full">
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#00F0B5]/25 bg-[#00F0B5]/[0.08] mb-6">
             <div className="w-1.5 h-1.5 rounded-full bg-[#00F0B5] shadow-[0_0_8px_#00F0B5] animate-pulse" />
             <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#00F0B5] font-mono">Who we serve</p>
           </div>
-          <h2 className="text-[40px] md:text-[48px] lg:text-[56px] font-bold leading-[1.1] tracking-tight text-white/80 mb-6 flex flex-col items-center">
+          <h2 className="text-[40px] md:text-[48px] lg:text-[56px] font-bold leading-[1.1] tracking-tight text-white/80 mb-6 flex flex-col items-start">
             <span>Built for</span>
-            <div className="relative h-[48px] md:h-[56px] lg:h-[64px] w-full mt-2 flex justify-center">
+            <div className="relative h-[48px] md:h-[56px] lg:h-[64px] w-full mt-2 flex justify-start">
               <AnimatePresence>
                 <motion.span
                   key={displayTitle}
@@ -73,7 +73,7 @@ export default function TargetAudience() {
               </AnimatePresence>
             </div>
           </h2>
-          <p className="text-[16px] md:text-[18px] text-white/45 font-normal leading-relaxed max-w-[460px] mx-auto">
+          <p className="text-[16px] md:text-[18px] text-white/45 font-normal leading-relaxed max-w-[460px]">
             Purpose-built for companies building authority in AI-first markets.
           </p>
         </div>

@@ -26,7 +26,7 @@ export default function Home() {
       <InfrastructureSection />
 
       {/* User's Bottom Sections */}
-      <div className="nh" style={{ marginTop: '40px' }}>
+      <div className="bottom-sections">
         <MethodologyFramework />
         <TargetAudience />
         <CaseStudies />

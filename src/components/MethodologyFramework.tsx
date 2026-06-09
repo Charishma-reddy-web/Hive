@@ -2,6 +2,10 @@
 
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring, useMotionTemplate } from 'framer-motion';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 export const phases = [
@@ -45,6 +49,7 @@ export const phases = [
 // ─── Main Component ──────────────────────────────────────────────────────────
 export default function MethodologyFramework() {
   const trackRef      = useRef<HTMLDivElement>(null);
+  const panelRef      = useRef<HTMLDivElement>(null);
   const progressRef   = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
   const activeRef     = useRef(0);
@@ -74,44 +79,39 @@ export default function MethodologyFramework() {
     cursorY.set(((e.clientY - rect.top) / rect.height) * 100);
   }, [cursorX, cursorY]);
 
-  // Bulletproof Pure React Scroll Tracking
-  // No GSAP, No Framer-Motion useScroll, No conflicts with Lenis
   useEffect(() => {
-    const handleScroll = () => {
-      if (!trackRef.current) return;
-      
-      const rect = trackRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      
-      // Calculate scroll progress through the track
-      const scrollDistance = -rect.top;
-      const maxScroll = trackRef.current.offsetHeight - windowHeight;
-      
-      if (maxScroll <= 0) return;
-      
-      let progress = scrollDistance / maxScroll;
-      progress = Math.max(0, Math.min(1, progress));
-      
-      // Update visual progress bar instantly
-      if (progressRef.current) {
-        progressRef.current.style.height = `${progress * 100}%`;
-      }
-      
-      // Determine active phase
-      const totalPhases = phases.length;
-      // We use Math.floor with a slight bump to ensure it reaches the last phase naturally
-      const idx = Math.min(Math.floor(progress * totalPhases * 0.99), totalPhases - 1);
-      
-      if (idx !== activeRef.current && idx >= 0) {
-        activeRef.current = idx;
-        setActive(idx);
-      }
-    };
+    if (!trackRef.current || !panelRef.current) return;
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // Trigger initial check
-    
-    return () => window.removeEventListener('scroll', handleScroll);
+    const ctx = gsap.context(() => {
+      ScrollTrigger.create({
+        trigger: trackRef.current,
+        start: 'top top',
+        end: 'bottom bottom',
+        pin: panelRef.current,
+        pinSpacing: false,
+        scrub: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        onUpdate: (self) => {
+          const progress = self.progress;
+
+          if (progressRef.current) {
+            gsap.set(progressRef.current, { height: `${progress * 100}%` });
+          }
+
+          const idx = Math.min(Math.floor(progress * phases.length * 0.99), phases.length - 1);
+
+          if (idx !== activeRef.current && idx >= 0) {
+            activeRef.current = idx;
+            setActive(idx);
+          }
+        },
+      });
+    }, trackRef);
+
+    ScrollTrigger.refresh();
+
+    return () => ctx.revert();
   }, []);
 
   const phase = phases[active];
@@ -119,8 +119,9 @@ export default function MethodologyFramework() {
   return (
     <div ref={trackRef} className="relative w-full h-[300vh] bg-[#060C18]">
       <div
+        ref={panelRef}
         onMouseMove={handleMouseMove}
-        className="sticky top-0 h-screen w-full overflow-hidden flex flex-col pt-8 md:pt-10 pb-16 lg:pb-24"
+        className="h-screen w-full overflow-hidden flex flex-col pt-8 md:pt-10 pb-16 lg:pb-24"
       >
         {/* ── CURSOR SPOTLIGHT ── */}
         <SpotlightLayer smoothX={smoothX} smoothY={smoothY} />
