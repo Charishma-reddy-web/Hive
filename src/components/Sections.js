@@ -527,12 +527,16 @@ export function InfrastructureSection() {
     <section className="sec blade-stack-section" id="infrastructure">
 
       {/* Content — top */}
-      <div style={{ marginBottom: "24px" }}>
-        <SectionIntro
-          tag="Growth infrastructure"
-          title={<>The infrastructure behind<br />modern growth</>}
-          description="Architecture-grade building blocks powering your entire GTM motion - from discovery to revenue."
-        />
+      <div className="infrastructure-heading-block">
+        <div className="sec-tag infrastructure-heading-tag">Growth infrastructure</div>
+        <h2 className="infrastructure-heading-title">
+          The infrastructure behind
+          <br />
+          modern growth
+        </h2>
+        <p className="infrastructure-heading-copy">
+          Architecture-grade building blocks powering your entire GTM motion - from discovery to revenue.
+        </p>
       </div>
 
       {/* All cards — below content */}
