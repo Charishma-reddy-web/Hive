@@ -3,17 +3,15 @@
 import { ReactLenis } from '@studio-freight/react-lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect, useRef } from 'react';
+import type { ReactNode } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function SmoothScrollProvider({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
-  const lenisRef = useRef<any>(null);
-
   return (
     <ReactLenis 
       root 
@@ -25,7 +23,7 @@ export default function SmoothScrollProvider({
         syncTouch: true
       }}
     >
-      {children}
+      {children as any}
     </ReactLenis>
   );
 }
