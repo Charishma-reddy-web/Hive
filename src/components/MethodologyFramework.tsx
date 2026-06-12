@@ -141,20 +141,20 @@ export default function MethodologyFramework() {
         </AnimatePresence>
 
         {/* Unified Section Header */}
-        <div className="relative z-20 w-full max-w-[1300px] mx-auto px-6 md:px-12 flex flex-col items-start mb-2 lg:mb-4 pointer-events-none">
+        <div className="relative z-20 w-full max-w-[1280px] mx-auto px-6 md:px-12 flex flex-col items-start mb-2 lg:mb-4 pointer-events-none">
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#00F0B5]/25 bg-[#00F0B5]/[0.08] mb-4 shadow-[0_0_15px_rgba(0,240,181,0.1)] pointer-events-auto">
             <div className="w-1.5 h-1.5 rounded-full bg-[#00F0B5] animate-pulse shadow-[0_0_8px_#00F0B5]" />
             <p className="text-[11px] font-bold tracking-[0.35em] uppercase text-[#00F0B5] font-mono">
               The Intelligence Framework
             </p>
           </div>
-          <h2 className="text-[40px] md:text-[56px] lg:text-[64px] font-bold tracking-tight text-white leading-[1.05] mb-2">
+          <h2 className="text-[36px] md:text-[48px] lg:text-[56px] font-bold tracking-tight text-white leading-[1.05] mb-2">
             Our proprietary<br className="hidden lg:block" /> methodology
           </h2>
         </div>
 
         {/* ── 2-COLUMN ORBITAL LAYOUT ── */}
-        <div className="relative z-10 w-full max-w-[1200px] mx-auto px-8 md:px-16 flex flex-col md:flex-row gap-6 lg:gap-16 items-center justify-center flex-1">
+        <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 md:px-12 flex flex-col md:flex-row gap-6 lg:gap-16 items-center justify-center flex-1">
 
           {/* LEFT: Phase List */}
           <div className="relative flex-1 flex items-center justify-center">
@@ -174,8 +174,8 @@ export default function MethodologyFramework() {
                   {i === active && (
                     <motion.div 
                       layoutId="active-orb-card"
-                      className="absolute w-[320px] -left-6 h-full rounded-2xl border border-[#00F0B5]/30 bg-[#00F0B5]/5 backdrop-blur-[2px]"
-                      style={{ boxShadow: '0 0 40px rgba(0,240,181,0.1)' }}
+                      className="absolute w-[320px] -left-6 h-full rounded-2xl border border-[#00F0B5]/20 bg-gradient-to-r from-[#00F0B5]/[0.08] to-transparent backdrop-blur-[4px]"
+                      style={{ boxShadow: 'inset 1px 0 0 rgba(0,240,181,0.3), 0 0 30px rgba(0,240,181,0.1)' }}
                       transition={{ type: "spring", stiffness: 200, damping: 25 }}
                     />
                   )}
@@ -185,8 +185,12 @@ export default function MethodologyFramework() {
                     <div className="flex gap-5 items-center">
                       <div className="flex flex-col ml-4">
                         <span 
-                          className="text-[20px] font-bold transition-colors duration-300" 
-                          style={{ color: i === active ? '#fff' : 'rgba(255,255,255,0.15)' }}
+                          className={`text-[20px] font-bold transition-all duration-300 transform
+                            ${i === active 
+                              ? "text-white translate-x-2 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]" 
+                              : "text-white/30 group-hover:text-white/70 group-hover:translate-x-1"
+                            }
+                          `}
                         >
                           {p.title}
                         </span>
@@ -232,13 +236,13 @@ export default function MethodologyFramework() {
             {/* Ambient glow behind text */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00F0B5]/[0.04] blur-[120px] rounded-full pointer-events-none -z-10" />
 
-            <AnimatePresence>
+            <AnimatePresence mode="wait">
               <motion.div
                 key={`content-${active}`}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -40 }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.15, ease: "easeOut" }}
                 className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col"
               >
                 {/* Giant watermark number */}

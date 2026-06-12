@@ -14,7 +14,7 @@ export default function CtaFooter() {
         {/* Subtle Infrastructure Grid Background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_20%,transparent_100%)] pointer-events-none" />
 
-        <div className="relative z-10 max-w-[1200px] mx-auto px-6 md:px-12">
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center relative">
             
             {/* Left Side: The Pitch */}
@@ -130,7 +130,7 @@ export default function CtaFooter() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[1px] bg-gradient-to-r from-transparent via-[#00F0B5]/40 to-transparent" />
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[#00F0B5]/5 blur-[120px] rounded-full pointer-events-none z-0" />
 
-        <div className="relative z-10 max-w-[1300px] mx-auto px-6 md:px-12 pb-4 md:pb-8">
+        <div className="relative z-10 max-w-[1280px] mx-auto px-6 md:px-12 pb-4 md:pb-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12">
             
@@ -233,7 +233,7 @@ export default function CtaFooter() {
 
         {/* Bottom Copyright Bar */}
         <div className="relative z-20 w-full border-t border-white/[0.05] bg-[#020408]/80 backdrop-blur-md pt-6 pb-8">
-          <div className="max-w-[1300px] mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="max-w-[1280px] mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-[13px] text-white/40 font-light">© 2026 NurtureHive. All rights reserved.</p>
             
             <div className="flex items-center gap-8">

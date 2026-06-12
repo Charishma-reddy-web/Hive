@@ -55,7 +55,6 @@ function Tile({
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
       style={{
-        /* Width drives the whole animation — CSS handles it natively */
         width:          isOpen ? EXPANDED_W : TILE_W,
         height:         TILE_H,
         borderRadius:   16,
@@ -64,7 +63,6 @@ function Tile({
         display:        'flex',
         alignItems:     'center',
         overflow:       'hidden',
-        /* All transitions on one property — GPU composited */
         transition:     `width ${DUR} ${EASE}, background-color ${DUR} ${EASE}, border-color ${DUR} ${EASE}, box-shadow ${DUR} ${EASE}`,
         backgroundColor: isOpen ? tile.bg : 'rgba(10,16,26,0.75)',
         border:         `1px solid ${isOpen ? tile.color + '68' : 'rgba(255,255,255,0.08)'}`,
@@ -108,6 +106,7 @@ function Tile({
       {/* ── Text — fades in, no layout shift ── */}
       <div style={{
         display: 'flex', alignItems: 'center',
+        flexDirection: 'row',
         /* width is fixed so no reflow; opacity + transform are composited */
         width: EXPANDED_W - TILE_W,
         opacity: isOpen ? 1 : 0,
@@ -124,7 +123,11 @@ function Tile({
         }} />
 
         {/* Labels */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 3, minWidth: 0 }}>
+        <div style={{ 
+          display: 'flex', flexDirection: 'column', gap: 3, minWidth: 0,
+          alignItems: 'flex-start',
+          textAlign: 'left'
+        }}>
           <span style={{
             fontSize: 9, fontWeight: 700, letterSpacing: '0.28em',
             textTransform: 'uppercase', color: `${tile.color}bb`, fontFamily: 'monospace',
@@ -250,7 +253,7 @@ export default function Integrations() {
         </div>
 
         {/* RIGHT — Grid */}
-        <div className="flex-1 flex justify-end items-center overflow-hidden">
+        <div className="flex-1 flex justify-start items-center ml-4 md:ml-12 overflow-visible">
           <div
             ref={gridRef}
             onMouseMove={handleMouseMove}

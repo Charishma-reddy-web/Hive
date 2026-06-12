@@ -25,6 +25,7 @@ export default function SmoothScrollProvider({
         syncTouch: true
       }}
     >
+      {/* @ts-ignore */}
       {children}
     </ReactLenis>
   );
