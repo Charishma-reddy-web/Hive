@@ -181,7 +181,7 @@ export default function CaseStudies() {
   };
 
   return (
-    <section style={{ background: '#060C18', borderTop: '1px solid rgba(255,255,255,0.05)', width: '100%', color: '#fff', position: 'relative' }}>
+    <section data-page="8" style={{ background: '#060C18', borderTop: '1px solid rgba(255,255,255,0.05)', width: '100%', color: '#fff', position: 'relative' }}>
       <div style={{ maxWidth: 1300, margin: '0 auto', padding: '52px 64px 56px' }}>
 
         {/* ── Header ── */}

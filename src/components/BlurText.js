@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 
 const buildKeyframes = (from, steps) => {
   const keys = new Set([...Object.keys(from), ...steps.flatMap((step) => Object.keys(step))]);
@@ -27,7 +27,8 @@ const BlurText = ({
   easing = (value) => value,
   onAnimationComplete,
   stepDuration = 0.35,
-  once = false
+  once = false,
+  breakBeforeWords = []
 }) => {
   const elements = animateBy === "words" ? text.split(" ") : text.split("");
   const [inView, setInView] = useState(false);
@@ -104,18 +105,22 @@ const BlurText = ({
           ease: easing
         };
 
+        const wordBreak = animateBy === "words" && breakBeforeWords.includes(segment);
+
         return (
-          <motion.span
-            className="inline-block will-change-[transform,filter,opacity]"
-            key={`${segment}-${index}-${animationCycle}`}
-            initial={fromSnapshot}
-            animate={inView || (once && hasAnimated) ? animateKeyframes : fromSnapshot}
-            transition={spanTransition}
-            onAnimationComplete={index === elements.length - 1 ? onAnimationComplete : undefined}
-          >
-            {segment === " " ? "\u00A0" : segment}
-            {animateBy === "words" && index < elements.length - 1 ? "\u00A0" : null}
-          </motion.span>
+          <Fragment key={`${segment}-${index}-${animationCycle}`}>
+            {wordBreak ? <span className="blur-word-break" aria-hidden="true" /> : null}
+            <motion.span
+              className="inline-block will-change-[transform,filter,opacity]"
+              initial={fromSnapshot}
+              animate={inView || (once && hasAnimated) ? animateKeyframes : fromSnapshot}
+              transition={spanTransition}
+              onAnimationComplete={index === elements.length - 1 ? onAnimationComplete : undefined}
+            >
+              {segment === " " ? "\u00A0" : segment}
+              {animateBy === "words" && index < elements.length - 1 ? "\u00A0" : null}
+            </motion.span>
+          </Fragment>
         );
       })}
     </p>

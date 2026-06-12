@@ -14,37 +14,43 @@ const cardData = [
     color: "#120F17",
     shadow: "26, 233, 171",
     title: "60%",
-    description: "Organic inbound contribution from intelligence-led content systems"
+    description: "Organic inbound contribution from intelligence-led content systems",
+    label: "Inbound"
   },
   {
     color: "#120F17",
     shadow: "56, 189, 248",
     title: "3X",
-    description: "Faster GTM execution with AI-native growth workflows"
+    description: "Faster GTM execution with AI-native growth workflows",
+    label: "Speed"
   },
   {
     color: "#120F17",
     shadow: "129, 140, 248",
     title: "40%",
-    description: "Reduction in manual marketing operations through agentic automation"
-  },
-  {
-    color: "#120F17",
-    shadow: "251, 146, 60",
-    title: "150K+",
-    description: "Professional audience reach built through executive branding systems"
-  },
-  {
-    color: "#120F17",
-    shadow: "167, 139, 250",
-    title: "AI-Ready",
-    description: "Search visibility architecture across SEO, GEO, and AEO surfaces"
+    description: "Reduction in manual marketing operations through agentic automation",
+    label: "Efficiency"
   },
   {
     color: "#120F17",
     shadow: "244, 114, 182",
     title: "Multi-Cloud",
-    description: "GTM systems aligned with AWS, Azure, and GCP ecosystems"
+    description: "GTM systems aligned with AWS, Azure, and GCP ecosystems",
+    label: "Infrastructure"
+  },
+  {
+    color: "#120F17",
+    shadow: "167, 139, 250",
+    title: "AI-Ready",
+    description: "Search visibility architecture across SEO, GEO, and AEO surfaces",
+    label: "Visibility"
+  },
+  {
+    color: "#120F17",
+    shadow: "251, 146, 60",
+    title: "150K+",
+    description: "Professional audience reach built through executive branding systems",
+    label: "Authority"
   }
 ];
 
@@ -541,13 +547,16 @@ const MagicBento = ({
                 clickEffect={clickEffect}
                 enableMagnetism={enableMagnetism}
               >
-                <div className="card__content">
-                  <h3 className={`card__title ${textAutoHide ? "text-clamp-1" : ""}`}>{card.title}</h3>
-                  <p className={`card__description ${textAutoHide ? "text-clamp-2" : ""}`}>{card.description}</p>
+                <div className="card__content flex flex-col relative text-white">
+                  <h3 className={`card__title font-normal text-base m-0 mb-1 ${textAutoHide ? "text-clamp-1" : ""}`}>
+                    {card.title}
+                  </h3>
+                  <p className={`card__description text-xs leading-5 opacity-90 ${textAutoHide ? "text-clamp-2" : ""}`}>
+                    {card.description}
+                  </p>
                 </div>
               </ParticleCard>
             );
-
           })}
         </div>
       </BentoCardGrid>

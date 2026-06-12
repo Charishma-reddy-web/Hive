@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import ParticleBackground from "@/components/ParticleBackground";
 import SplashCursor from "@/components/SplashCursor";
@@ -86,7 +86,7 @@ export function Navbar() {
 
 export function Footer() {
   return (
-    <footer className="footer" id="about">
+    <footer className="footer" id="about" data-page="11">
       <div className="footer-top">
         <div className="footer-brand">
           <Logo />
@@ -129,9 +129,63 @@ export function Footer() {
 }
 
 export function SiteShell({ children }) {
+  const [cursorEnabled, setCursorEnabled] = useState(false);
+
+  useEffect(() => {
+    const targetPages = new Set([1, 6, 10, 11]);
+    let rafId = 0;
+
+    const updateCursorState = () => {
+      const sections = Array.from(document.querySelectorAll(".nh [data-page]"));
+
+      if (!sections.length) {
+        setCursorEnabled(false);
+        return;
+      }
+
+      const viewportCenter = window.innerHeight / 2;
+      let bestPage = 1;
+      let bestDistance = Number.POSITIVE_INFINITY;
+
+      sections.forEach((element) => {
+        const rect = element.getBoundingClientRect();
+        const center = rect.top + rect.height / 2;
+        const distance = Math.abs(center - viewportCenter);
+        const page = Number(element.getAttribute("data-page"));
+
+        if (distance < bestDistance) {
+          bestDistance = distance;
+          bestPage = Number.isFinite(page) ? page : bestPage;
+        }
+      });
+
+      setCursorEnabled(targetPages.has(bestPage));
+    };
+
+    const scheduleUpdate = () => {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
+      rafId = requestAnimationFrame(updateCursorState);
+    };
+
+    scheduleUpdate();
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+
+    return () => {
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+    };
+  }, []);
+
   return (
     <>
       <SplashCursor
+        enabled={cursorEnabled}
         DENSITY_DISSIPATION={6}
         VELOCITY_DISSIPATION={4}
         PRESSURE={0.5}

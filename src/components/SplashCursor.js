@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 
 function SplashCursor({
+  enabled = true,
   SIM_RESOLUTION = 128,
   DYE_RESOLUTION = 1440,
   CAPTURE_RESOLUTION = 512,
@@ -26,6 +27,10 @@ function SplashCursor({
   const activityTimeoutRef = useRef(null);
 
   useEffect(() => {
+    if (!enabled) {
+      return undefined;
+    }
+
     const canvas = canvasRef.current;
     if (!canvas) return undefined;
 
@@ -1051,6 +1056,7 @@ function SplashCursor({
       window.removeEventListener("touchend", handleTouchEnd);
     };
   }, [
+    enabled,
     BACK_COLOR,
     CAPTURE_RESOLUTION,
     COLOR,
@@ -1070,9 +1076,11 @@ function SplashCursor({
   ]);
 
   return (
+    enabled ? (
     <div className="splash-cursor" ref={shellRef}>
       <canvas ref={canvasRef} id="fluid" />
     </div>
+    ) : null
   );
 }
 

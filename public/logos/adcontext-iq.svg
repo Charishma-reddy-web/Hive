@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" fill="none">
+  <defs>
+    <linearGradient id="g1" x1="120" y1="40" x2="1080" y2="620" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7c5cff"/>
+      <stop offset="0.55" stop-color="#27b6ff"/>
+      <stop offset="1" stop-color="#31e7d7"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="470" y1="200" x2="820" y2="460" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4e88ff"/>
+      <stop offset="1" stop-color="#11d8ff"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(150 40)">
+    <path d="M300 70 L470 70 L540 140 L540 260 L640 260 L640 390 L540 390 L540 510 L470 580 L300 580 L230 510 L230 390 L130 390 L130 260 L230 260 L230 140 Z" stroke="url(#g1)" stroke-width="18" stroke-linejoin="round" opacity="0.78"/>
+    <path d="M340 175 L485 175 L600 290 L485 405 L340 405 Z" stroke="url(#g2)" stroke-width="18" stroke-linejoin="round" opacity="0.92"/>
+    <path d="M386 232 L386 348 M456 202 L456 378 M526 232 L526 308" stroke="url(#g2)" stroke-width="16" stroke-linecap="round"/>
+    <path d="M540 258 L700 338 L540 418 Z" fill="url(#g2)" opacity="0.98"/>
+    <circle cx="215" cy="452" r="48" fill="url(#g1)"/>
+  </g>
+  <text x="80" y="662" font-family="Inter, Arial, sans-serif" font-size="118" font-weight="700" fill="#ffffff">AdContext</text>
+  <text x="955" y="662" font-family="Inter, Arial, sans-serif" font-size="118" font-weight="700" fill="url(#g2)">IQ</text>
+</svg>

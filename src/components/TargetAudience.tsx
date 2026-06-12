@@ -38,7 +38,7 @@ export default function TargetAudience() {
   const displayTitle = activeAudience ? activeAudience.name : 'modern growth teams';
 
   return (
-    <section className="relative w-full py-12 md:py-16 bg-[#060C18] border-t border-white/[0.04] flex items-center justify-center">
+    <section data-page="7" className="relative w-full py-12 md:py-16 bg-[#060C18] border-t border-white/[0.04] flex items-center justify-center">
       
       {/* Subtle top light wash */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />

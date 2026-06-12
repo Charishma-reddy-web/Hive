@@ -78,9 +78,9 @@ export const outcomes = [
     label: "Reduction in manual marketing operations through agentic automation"
   },
   {
-    value: "150K+",
-    accent: "150",
-    label: "Professional audience reach built through executive branding systems"
+    value: "Multi-Cloud",
+    accent: "-",
+    label: "GTM systems aligned with AWS, Azure, and GCP ecosystems"
   },
   {
     value: "AI-Ready",
@@ -88,9 +88,9 @@ export const outcomes = [
     label: "Search visibility architecture across SEO, GEO, and AEO surfaces"
   },
   {
-    value: "Multi-Cloud",
-    accent: "-",
-    label: "GTM systems aligned with AWS, Azure, and GCP ecosystems"
+    value: "150K+",
+    accent: "150",
+    label: "Professional audience reach built through executive branding systems"
   }
 ];
 

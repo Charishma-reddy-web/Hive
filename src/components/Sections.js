@@ -19,18 +19,15 @@ import {
 } from "@/data/siteContent";
 
 const partnerLogos = [
-  { name: "InfoServices", src: "https://www.infoservices.com/assets/images/layout/InfoServices-Logo.svg" },
-  { name: "Disney+", src: "https://www.infoservices.com/assets/images/home/logos/Disney.svg" },
-  { name: "Katalon", src: "https://www.infoservices.com/assets/images/home/logos/katalon.svg" },
-  { name: "ADP", src: "https://www.infoservices.com/assets/images/home/logos/adplogo.svg" },
-  { name: "KCF Technologies", src: "https://www.infoservices.com/assets/images/home/logos/kcflogo.svg" },
-  { name: "Cisco", src: "https://www.infoservices.com/assets/images/home/logos/Cisco.svg" },
-  { name: "Ford", src: "https://www.infoservices.com/assets/images/home/logos/ford.svg" },
-  { name: "GM", src: "https://www.infoservices.com/assets/images/home/logos/gm.svg" },
-  { name: "Harry's", src: "https://www.infoservices.com/assets/images/home/logos/Harrys.svg" },
-  { name: "Hyundai", src: "https://www.infoservices.com/assets/images/home/logos/hyundia.svg" },
-  { name: "Ralph Lauren", src: "https://www.infoservices.com/assets/images/home/logos/ralphlauren.svg" },
-  { name: "T-Mobile", src: "https://www.infoservices.com/assets/images/home/logos/t-mobile.svg" }
+  { name: "AdContext IQ", src: "/logos/adcontext-iq.png" },
+  { name: "Clair AI", src: "/logos/clair-ai.png" },
+  { name: "The Lockout Co.", src: "/logos/the-lockout-co.png" },
+  { name: "D2P 2Pay", src: "/logos/d2p-2pay.png" },
+  { name: "Megan Soft", src: "/logos/megan-soft.png" },
+  { name: "iGuroo", src: "/logos/iguroo.png" },
+  { name: "Mamaeatz", src: "/logos/mamaeatz.png" },
+  { name: "Cloud Gear", src: "/logos/cloud-gear.png" },
+  { name: "TNT Crane & Rigging", src: "/logos/tnt-crane.png" }
 ];
 
 function SectionIntro({ tag, title, description, centered = false, titleStyle = {} }) {
@@ -158,8 +155,68 @@ function SystemIcon({ title }) {
 
 
 export function HeroSection() {
+  const logoStageRef = useRef(null);
+
+  useEffect(() => {
+    if (!logoStageRef.current) return undefined;
+
+    const ctx = gsap.context(() => {
+      const track = logoStageRef.current.querySelector(".logo-scroll-track");
+      const logos = gsap.utils.toArray(".gsap-logo-scroll .partner-logo");
+
+      gsap.set(logos, {
+        opacity: 0,
+        opacity: 0,
+        y: 28,
+        scale: 0.82,
+        rotateY: -18
+      });
+
+      gsap.to(logos, {
+        opacity: 1,
+        scale: 1,
+        y: 0,
+        rotateY: 0,
+        duration: 0.75,
+        ease: "power3.out",
+        stagger: {
+          each: 0.07,
+          from: "center"
+        }
+      });
+
+      logos.forEach((logo, index) => {
+        gsap.to(logo, {
+          y: index % 2 === 0 ? -8 : 8,
+          rotateY: index % 2 === 0 ? 7 : -7,
+          rotateZ: index % 3 === 0 ? 1.2 : -1.2,
+          duration: 3 + index * 0.12,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut",
+          delay: 0.6 + index * 0.08
+        });
+      });
+
+      if (track) {
+        gsap.fromTo(
+          track,
+          { xPercent: 0 },
+          {
+            xPercent: -50,
+            duration: 24,
+            repeat: -1,
+            ease: "none"
+          }
+        );
+      }
+    }, logoStageRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <>
+    <section data-page="1" className="hero-page">
       <div className="hero-wrap">
         <div className="hero-left">
           <div className="badge">
@@ -182,17 +239,21 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="hero-partners">
-        <div className="partners-marquee" aria-label="Partner logos">
+      <div ref={logoStageRef} className="hero-partners gsap-logo-scroll" aria-label="Partner logos">
+        <div className="logo-scroll-track">
           {[...partnerLogos, ...partnerLogos].map((partner, index) => (
             <div className="partner-logo" key={`${partner.name}-${index}`}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={partner.src} alt={partner.name} loading="lazy" />
+              <img
+                src={partner.src}
+                alt={partner.name}
+                className="filter-logo-monochrome"
+                loading="lazy"
+              />
             </div>
           ))}
         </div>
       </div>
-    </>
+    </section>
   );
 }
 
@@ -200,7 +261,7 @@ export function SystemsSection() {
   const [selectedSystem, setSelectedSystem] = useState("");
 
   return (
-    <section className="sec" id="systems">
+    <section data-page="2" className="sec" id="systems">
       <div className="systems-intro">
         <div className="sec-tag">What we actually do</div>
         <h2 className="sec-h systems-heading">Intelligence systems for scalable growth</h2>
@@ -250,7 +311,7 @@ export function SystemsSection() {
 
 export function OutcomesSection() {
   return (
-    <section className="sec" id="outcomes" style={{ paddingBottom: "100px", paddingTop: "40px" }}>
+    <section data-page="3" className="sec" id="outcomes" style={{ paddingBottom: "100px", paddingTop: "40px" }}>
       <div style={{ width: "100%", maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}>
         
         <div className="outcomes-section-head">
@@ -290,19 +351,21 @@ export function ComparisonSection() {
   ];
 
   const modernItems = [
+    "Built for AI-first search: SEO + GEO + AEO",
     "Integrated intelligence-driven growth systems",
     "Measurable pipeline impact with full attribution",
     "AI-native automation that scales with your team",
-    "Predictive, proactive GTM operations",
-    "Built for AI-first search: SEO + GEO + AEO"
+    "Predictive, proactive GTM operations"
   ];
 
   return (
-    <section className="sec modern-problem-section" id="comparison">
+    <section data-page="4" className="sec modern-problem-section" id="comparison">
       <div className="modern-problem-wrap">
         <div className="modern-problem-head">
           <span>THE MODERN GROWTH PROBLEM</span>
-          <h2 className="sec-h systems-heading">Traditional marketing wasn&apos;t built for the AI era</h2>
+          <h2 className="sec-h systems-heading comparison-heading-line">
+            Traditional marketing wasn&apos;t built for the AI era
+          </h2>
           <p>Most growth teams are running playbooks designed for a world that no longer exists.</p>
         </div>
 
@@ -524,15 +587,13 @@ const infraColors = {
 
 export function InfrastructureSection() {
   return (
-    <section className="sec blade-stack-section" id="infrastructure">
+    <section data-page="5" className="sec blade-stack-section" id="infrastructure">
 
       {/* Content — top */}
       <div className="infrastructure-heading-block">
         <div className="sec-tag infrastructure-heading-tag">Growth infrastructure</div>
-        <h2 className="infrastructure-heading-title">
-          The infrastructure behind
-          <br />
-          modern growth
+        <h2 className="infrastructure-heading-title infrastructure-heading-line">
+          The infrastructure behind modern growth
         </h2>
         <p className="infrastructure-heading-copy">
           Architecture-grade building blocks powering your entire GTM motion - from discovery to revenue.

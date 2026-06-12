@@ -85,12 +85,9 @@ export default function MethodologyFramework() {
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         trigger: trackRef.current,
-        start: 'top top',
+        start: 'top center',
         end: 'bottom bottom',
-        pin: panelRef.current,
-        pinSpacing: false,
         scrub: true,
-        anticipatePin: 1,
         invalidateOnRefresh: true,
         onUpdate: (self) => {
           const progress = self.progress;
@@ -117,11 +114,12 @@ export default function MethodologyFramework() {
   const phase = phases[active];
 
   return (
-    <div ref={trackRef} className="relative w-full h-[300vh] bg-[#060C18]">
+    <div ref={trackRef} className="methodology-track relative w-full min-h-screen bg-[#060C18]">
       <div
         ref={panelRef}
+        data-page="6"
         onMouseMove={handleMouseMove}
-        className="h-screen w-full overflow-hidden flex flex-col pt-8 md:pt-10 pb-16 lg:pb-24"
+        className="methodology-panel h-screen w-full overflow-hidden flex flex-col pt-8 md:pt-10 pb-16 lg:pb-24"
       >
         {/* ── CURSOR SPOTLIGHT ── */}
         <SpotlightLayer smoothX={smoothX} smoothY={smoothY} />
@@ -142,7 +140,7 @@ export default function MethodologyFramework() {
         </AnimatePresence>
 
         {/* Unified Section Header */}
-        <div className="relative z-20 w-full max-w-[1300px] mx-auto px-6 md:px-12 flex flex-col items-start mb-2 lg:mb-4 pointer-events-none">
+        <div className="relative z-20 w-full max-w-[1120px] mx-auto px-6 md:px-10 flex flex-col items-start mb-2 lg:mb-4 pointer-events-none">
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#00F0B5]/25 bg-[#00F0B5]/[0.08] mb-4 shadow-[0_0_15px_rgba(0,240,181,0.1)] pointer-events-auto">
             <div className="w-1.5 h-1.5 rounded-full bg-[#00F0B5] animate-pulse shadow-[0_0_8px_#00F0B5]" />
             <p className="text-[11px] font-bold tracking-[0.35em] uppercase text-[#00F0B5] font-mono">
@@ -155,7 +153,7 @@ export default function MethodologyFramework() {
         </div>
 
         {/* ── 2-COLUMN ORBITAL LAYOUT ── */}
-        <div className="relative z-10 w-full max-w-[1200px] mx-auto px-8 md:px-16 flex flex-col md:flex-row gap-6 lg:gap-16 items-center justify-center flex-1">
+        <div className="relative z-10 w-full max-w-[1080px] mx-auto px-6 md:px-10 flex flex-col md:flex-row gap-6 lg:gap-10 items-center justify-center flex-1">
 
           {/* LEFT: Phase List */}
           <div className="relative flex-1 flex items-center justify-center">

@@ -9,7 +9,7 @@ export default function CtaFooter() {
   return (
     <>
       {/* Option 2: The "Asymmetrical Overlap" CTA (Now standard layout with tight gaps) */}
-      <section className="relative z-20 w-full py-12 md:py-16 bg-[#060C18]">
+      <section data-page="10" className="relative z-20 w-full py-12 md:py-16 bg-[#060C18]">
         
         {/* Subtle Infrastructure Grid Background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_20%,transparent_100%)] pointer-events-none" />
@@ -124,7 +124,7 @@ export default function CtaFooter() {
       </section>
 
       {/* Ultra-Premium Modern Footer */}
-      <footer className="relative bg-[#020408] pt-24 md:pt-32 overflow-hidden border-t border-white/[0.02]">
+      <footer data-page="11" className="relative bg-[#020408] pt-24 md:pt-32 overflow-hidden border-t border-white/[0.02]">
         
         {/* Ethereal Top Glow Divider */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[1px] bg-gradient-to-r from-transparent via-[#00F0B5]/40 to-transparent" />
