@@ -72,8 +72,8 @@ export default function DynamicBento() {
   };
 
   return (
-    <section className="bg-[#060C18] text-white py-16 md:py-24 flex flex-col justify-center selection:bg-[#00F0B5]/30">
-      <div className="max-w-[1280px] mx-auto w-full px-6 md:px-12">
+    <section id="cases" data-page="8" className="sec bg-[#060C18] text-white py-16 md:py-24 flex flex-col justify-center selection:bg-[#00F0B5]/30">
+      <div className="max-w-[1200px] mx-auto w-full px-8 md:px-14">
         
         {/* EXACT MATCH HEADER */}
         <div className="w-full flex flex-col items-start mb-10 md:mb-12">
