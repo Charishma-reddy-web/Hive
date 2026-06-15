@@ -207,7 +207,7 @@ export default function Integrations() {
         transition={{ duration: 1.0, ease: 'easeInOut' }}
       />
 
-      <div className="relative z-10 w-full max-w-[1280px] mx-auto px-8 md:px-12 flex flex-col lg:flex-row items-center gap-16 lg:gap-12">
+      <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-16 lg:gap-12">
 
         {/* LEFT */}
         <div className="flex flex-col items-start flex-shrink-0 lg:w-[380px]">

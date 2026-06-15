@@ -97,12 +97,12 @@ export default function MethodologyFramework() {
         progressRef.current.style.height = `${progress * 100}%`;
       }
       
-      // Determine active phase
+      // Determine active phase based on precise intervals
       const totalPhases = phases.length;
-      // We use Math.floor with a slight bump to ensure it reaches the last phase naturally
-      const idx = Math.min(Math.floor(progress * totalPhases * 0.99), totalPhases - 1);
+      // Math.round snaps the active state when the line is halfway to the next dot
+      const idx = Math.max(0, Math.min(Math.round(progress * (totalPhases - 1)), totalPhases - 1));
       
-      if (idx !== activeRef.current && idx >= 0) {
+      if (idx !== activeRef.current) {
         activeRef.current = idx;
         setActive(idx);
       }
@@ -158,12 +158,23 @@ export default function MethodologyFramework() {
 
           {/* LEFT: Phase List */}
           <div className="relative flex-1 flex items-center justify-center">
-            {/* Vertical Stack of Phases */}
-            <div className="relative z-10 flex flex-col gap-2">
+            
+            {/* Vertical Stack of Phases - Added explicit width to hold the line perfectly */}
+            <div className="relative z-10 flex flex-col gap-2 w-[280px]">
+              
+              {/* Progress bar line connecting dots - Now locked to the list container */}
+              <div className="absolute right-[5px] top-[24px] bottom-[24px] w-[2px] bg-white/[0.05] rounded-full overflow-hidden z-0">
+                <div 
+                  ref={progressRef}
+                  className="w-full bg-gradient-to-b from-[#00F0B5] to-[#157A5A] rounded-full origin-top transition-all duration-[50ms]"
+                  style={{ height: '0%' }}
+                />
+              </div>
+
               {phases.map((p, i) => (
                 <div 
                   key={i} 
-                  className="relative flex items-center h-[48px] md:h-[56px] cursor-pointer group"
+                  className="relative flex items-center h-[48px] md:h-[56px] cursor-pointer group z-10"
                   onMouseEnter={() => {
                     if (!hasMouseMoved) return;
                     activeRef.current = i;
@@ -174,14 +185,14 @@ export default function MethodologyFramework() {
                   {i === active && (
                     <motion.div 
                       layoutId="active-orb-card"
-                      className="absolute w-[320px] -left-6 h-full rounded-2xl border border-[#00F0B5]/20 bg-gradient-to-r from-[#00F0B5]/[0.08] to-transparent backdrop-blur-[4px]"
+                      className="absolute w-[320px] -left-6 h-full rounded-2xl border border-[#00F0B5]/20 bg-gradient-to-r from-[#00F0B5]/[0.08] to-transparent backdrop-blur-[4px] -z-10"
                       style={{ boxShadow: 'inset 1px 0 0 rgba(0,240,181,0.3), 0 0 30px rgba(0,240,181,0.1)' }}
                       transition={{ type: "spring", stiffness: 200, damping: 25 }}
                     />
                   )}
                   
                   {/* Item Content */}
-                  <div className="relative z-10 w-[280px] flex items-center justify-between">
+                  <div className="relative z-10 w-full flex items-center justify-between">
                     <div className="flex gap-5 items-center">
                       <div className="flex flex-col ml-4">
                         <span 
@@ -201,7 +212,7 @@ export default function MethodologyFramework() {
                     {i === active && (
                       <motion.div 
                         layoutId="active-dot"
-                        className="w-3 h-3 rounded-full flex-shrink-0 ml-4 relative flex items-center justify-center"
+                        className="w-3 h-3 rounded-full flex-shrink-0 ml-4 relative flex items-center justify-center bg-[#060C18]"
                         style={{ 
                           background: 'radial-gradient(circle, #00F0B5 0%, #157A5A 100%)',
                           boxShadow: '0 0 12px 1px rgba(0,240,181,0.5), inset 0 1px 1px rgba(255,255,255,0.4)' 
@@ -218,15 +229,6 @@ export default function MethodologyFramework() {
                   </div>
                 </div>
               ))}
-            </div>
-
-            {/* Progress bar line connecting dots */}
-            <div className="absolute right-[43px] top-[24px] bottom-[24px] w-[2px] bg-white/[0.05] rounded-full overflow-hidden z-0">
-              <div 
-                ref={progressRef}
-                className="w-full bg-gradient-to-b from-[#00F0B5] to-[#157A5A] rounded-full origin-top transition-all duration-300"
-                style={{ height: '0%' }}
-              />
             </div>
           </div>
 

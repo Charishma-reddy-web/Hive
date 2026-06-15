@@ -109,7 +109,7 @@ export default function TargetAudience() {
                     />
                   )}
                   <div 
-                    className="w-[22px] h-[22px] relative z-10 transition-transform duration-300"
+                    className="w-[28px] h-[28px] relative z-10 transition-transform duration-300"
                     style={{ transform: isActive ? 'scale(1.15)' : 'scale(1)' }}
                   >
                     <aud.icon />
@@ -121,51 +121,59 @@ export default function TargetAudience() {
 
           {/* Text Content Area */}
           <div className="flex flex-col items-center w-full -mt-2 md:-mt-3 relative z-10">
-            {/* Reduced font size slightly so the longest text fits inside the bounding box */}
-            <h2 className="text-[22px] md:text-[28px] lg:text-[34px] font-bold leading-[1.1] tracking-tight text-white/80 mb-0 w-full flex justify-center">
+            
+            {/* Inner Wrapper: Centers the entire block on the page, but left-aligns the text inside it */}
+            <div className="flex flex-col items-start mx-auto md:translate-x-6 lg:translate-x-10">
               
-              {/* Centered container, nudged right to balance the empty space of shorter words */}
-              <div className="flex flex-row items-center justify-center w-full mx-auto md:translate-x-10 lg:translate-x-16">
+              {/* Medium-large font size for perfect visual balance */}
+              <h2 className="text-[24px] md:text-[30px] lg:text-[38px] font-bold leading-[1.1] tracking-tight text-white/80 mb-0 flex justify-start">
                 
-                <div className="shrink-0 flex justify-end items-center pr-2 md:pr-3">
-                  <span>Built for</span>
-                </div>
-                
-                {/* Right Side: Animated text. */}
-                <div 
-                  className="w-[250px] md:w-[320px] lg:w-[370px] shrink-0 relative h-[46px] md:h-[60px] overflow-hidden text-left" 
-                  style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)' }}
-                >
-                  <motion.div
-                    animate={{ y: `-${((allTitles.length - 1 - activeIndex) / allTitles.length) * 100}%` }}
-                    transition={{ 
-                      duration: activeIndex === 0 ? 0.3 : 0.4, // Fast fly-back on reset, snappy slide otherwise
-                      ease: [0.2, 0.65, 0.3, 0.9]
-                    }}
-                    className="absolute top-0 left-0 flex flex-col justify-start text-left whitespace-nowrap"
+                {/* Row container */}
+                <div className="flex flex-row items-center justify-start w-full">
+                  
+                  <div className="shrink-0 flex justify-start items-center pr-2 md:pr-3">
+                    <span>Built for</span>
+                  </div>
+                  
+                  {/* Right Side: Animated text. Medium-large width and height */}
+                  <div 
+                    className="w-[265px] md:w-[350px] lg:w-[420px] shrink-0 relative h-[48px] md:h-[64px] lg:h-[72px] overflow-hidden text-left" 
+                    style={{ maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)' }}
                   >
-                    {allTitles.slice().reverse().map((title, idx) => {
-                      const aud = audiences.find(a => a.name === title);
-                      return (
-                        <div 
-                          key={`${title}-${idx}`}
-                          className="h-[46px] md:h-[60px] shrink-0 flex items-center justify-start whitespace-nowrap"
-                          style={{
-                            color: aud ? aud.color : '#FFFFFF',
-                            textShadow: aud ? `0 0 30px ${aud.color}80, 0 0 10px ${aud.color}40` : 'none'
-                          }}
-                        >
-                          {title}
-                        </div>
-                      );
-                    })}
-                  </motion.div>
+                    <motion.div
+                      animate={{ y: `-${((allTitles.length - 1 - activeIndex) / allTitles.length) * 100}%` }}
+                      transition={{ 
+                        duration: activeIndex === 0 ? 0.3 : 0.4, // Fast fly-back on reset, snappy slide otherwise
+                        ease: [0.2, 0.65, 0.3, 0.9]
+                      }}
+                      className="absolute top-0 left-0 flex flex-col justify-start text-left whitespace-nowrap"
+                    >
+                      {allTitles.slice().reverse().map((title, idx) => {
+                        const aud = audiences.find(a => a.name === title);
+                        return (
+                          <div 
+                            key={`${title}-${idx}`}
+                            className="h-[48px] md:h-[64px] lg:h-[72px] shrink-0 flex items-center justify-start whitespace-nowrap"
+                            style={{
+                              color: aud ? aud.color : '#FFFFFF',
+                              textShadow: aud ? `0 0 30px ${aud.color}80, 0 0 10px ${aud.color}40` : 'none'
+                            }}
+                          >
+                            {title}
+                          </div>
+                        );
+                      })}
+                    </motion.div>
+                  </div>
                 </div>
-              </div>
-            </h2>
-            <p className="text-[15px] md:text-[16px] text-white/45 font-normal leading-relaxed max-w-[600px] mx-auto text-center mt-1">
-              Purpose-built for companies building authority in AI-first markets.
-            </p>
+              </h2>
+
+              {/* 3rd Line: Now perfectly left-aligned with "Built for" */}
+              <p className="text-[15px] md:text-[16px] text-white/45 font-normal leading-relaxed max-w-[600px] text-left mt-2 pl-0.5">
+                Purpose-built for companies building authority in AI-first markets.
+              </p>
+              
+            </div>
           </div>
         </div>
 

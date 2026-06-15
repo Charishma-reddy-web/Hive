@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState, MouseEvent } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useState, MouseEvent, useEffect } from "react";
+import { motion, AnimatePresence, useMotionValue, useTransform, animate } from "framer-motion";
 const caseStudies = [
   {
     id: "01",
@@ -28,6 +28,34 @@ const caseStudies = [
     metricLabel: "audience reach",
   },
 ];
+
+// --- Custom Animated Number Component ---
+function AnimatedMetric({ value }: { value: string }) {
+  // Parse prefix (e.g. "+"), the number, and suffix (e.g. "%", "X", "K+")
+  const match = value.match(/^([^0-9]*)([0-9]+)([^0-9]*)$/);
+  
+  if (!match) return <span>{value}</span>;
+  
+  const prefix = match[1];
+  const num = parseInt(match[2], 10);
+  const suffix = match[3];
+
+  const count = useMotionValue(0);
+  const rounded = useTransform(count, (latest) => Math.round(latest));
+
+  useEffect(() => {
+    const controls = animate(count, num, { duration: 1.2, ease: "easeOut" });
+    return controls.stop;
+  }, [num, count]);
+
+  return (
+    <span>
+      {prefix}
+      <motion.span>{rounded}</motion.span>
+      {suffix}
+    </span>
+  );
+}
 
 export default function DynamicBento() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -126,32 +154,26 @@ export default function DynamicBento() {
             {/* OUTER BORDER WRAPPER FOR MAIN CARD */}
             <div 
               onMouseMove={handleMouseMove}
-              className="group relative p-[1px] rounded-3xl bg-gradient-to-b from-[#00F0B5]/30 via-white/10 to-white/5 transition-all duration-500 hover:-translate-y-1 shadow-[0_10px_40px_rgba(0,0,0,0.5),0_0_30px_rgba(0,240,181,0.05)] overflow-hidden"
+              className="group relative p-[2px] rounded-3xl transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.6),0_0_60px_rgba(0,240,181,0.3)] overflow-hidden bg-[#060C18]"
             >
               
-              {/* Subtle Border Spotlight (Follows mouse along the edge) */}
-              <div 
-                className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                style={{
-                  background: "radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0,240,181,0.15), transparent 40%)"
-                }}
-              />
+              {/* Animated Spinning Gradient Border (Thicker and Brighter) */}
+              <div className="absolute inset-[-100%] animate-[spin_4s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,rgba(0,240,181,0.15)_0%,rgba(0,240,181,0.4)_40%,#00F0B5_50%,rgba(0,240,181,0.15)_60%,rgba(0,240,181,0.15)_100%)] group-hover:bg-[conic-gradient(from_90deg_at_50%_50%,rgba(0,240,181,0.25)_0%,rgba(0,240,181,0.6)_40%,#00F0B5_50%,#ffffff_52%,rgba(0,240,181,0.25)_60%,rgba(0,240,181,0.25)_100%)] transition-colors duration-500" />
 
               {/* INNER CARD SURFACE (Upgraded to Translucent Glass) */}
-              <div className="relative z-10 w-full bg-[#060C18]/70 backdrop-blur-xl rounded-[calc(1.5rem-1px)] overflow-hidden">
+              <div className="relative z-10 w-full bg-[#060C18]/85 backdrop-blur-3xl rounded-[calc(1.5rem-1px)] overflow-hidden">
                 
-                {/* Subtle Inner Glass Surface Spotlight */}
+                {/* Dynamic Inner Glass Surface Spotlight */}
                 <div 
-                  className="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  className="absolute inset-0 z-0 opacity-40 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                   style={{
-                    background: "radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0,240,181,0.02), transparent 40%)"
+                    background: "radial-gradient(600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(0,240,181,0.08), transparent 50%)"
                   }}
                 />
 
-
                 {/* Decorative Corner Accents */}
-                <div className="absolute top-0 left-0 w-8 h-8 bg-gradient-to-br from-[#00F0B5]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                <div className="absolute bottom-0 right-0 w-8 h-8 bg-gradient-to-tl from-[#00F0B5]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute top-0 left-0 w-12 h-12 bg-gradient-to-br from-[#00F0B5]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute bottom-0 right-0 w-12 h-12 bg-gradient-to-tl from-[#00F0B5]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                 {/* Data Content */}
                 <AnimatePresence mode="wait">
@@ -178,7 +200,7 @@ export default function DynamicBento() {
                     {/* METRIC */}
                     <div className="flex flex-col">
                       <p className="font-sans text-6xl md:text-[84px] font-black tracking-tighter bg-gradient-to-br from-[#00F0B5] to-[#00F0B5]/40 bg-clip-text text-transparent leading-none mb-3 drop-shadow-[0_0_20px_rgba(0,240,181,0.1)]">
-                        {activeStudy.metric}
+                        <AnimatedMetric value={activeStudy.metric} />
                       </p>
                       <div className="flex items-center gap-3">
                         <span className="text-[#00F0B5]">›</span>
