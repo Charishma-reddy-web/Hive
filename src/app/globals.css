@@ -40837,6 +40837,7 @@ body {
 
 .modern-problem-card {
   position: relative;
+  overflow: hidden;
   min-height: 248px;
   padding: 28px 30px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -41022,7 +41023,7 @@ body {
 }
 
 .modern-problem-card {
-  
+  overflow: hidden;
   border-radius: 18px;
   padding: 30px 32px;
   background: rgba(7, 16, 29, 0.66);
@@ -47571,8 +47572,8 @@ body,
 
 .bottom-sections > * > * {
   width: 100% !important;
-  max-width: min(100%, 1320px) !important;
-  margin-left: 0 !important;
+  max-width: min(100%, 1200px) !important;
+  margin-left: auto !important;
   margin-right: auto !important;
   box-sizing: border-box !important;
 }
@@ -47593,8 +47594,8 @@ body,
   padding-right: 30px !important;
   box-sizing: border-box !important;
   width: 100% !important;
-  max-width: min(100%, 1320px) !important;
-  margin-left: 0 !important;
+  max-width: min(100%, 1200px) !important;
+  margin-left: auto !important;
   margin-right: auto !important;
 }
 
@@ -47616,7 +47617,7 @@ body,
 /* FORCE FIX FOR STICKY */
 html, body, .nh, .bottom-sections { 
   overflow: visible !important; 
-  overflow-x: visible !important; 
+  overflow-x: clip !important; 
   overflow-y: visible !important; 
   perspective: none !important; 
   contain: none !important; 
