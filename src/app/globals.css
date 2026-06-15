@@ -3970,6 +3970,7 @@ body {
 
 #systems .systems-bento .systems-card,
 #systems .systems-bento .systems-card:nth-child(n) {
+  position: relative;
   grid-column: auto;
   grid-row: auto;
   min-height: 118px;
@@ -4179,20 +4180,33 @@ body {
   grid-column: auto;
   grid-row: auto;
   order: -1;
-  width: 44px;
-  height: 44px;
-  margin: 0;
-  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 14px;
+  border-radius: 0;
+  clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
+  background: rgba(10, 20, 34, 0.96);
+  box-shadow: inset 0 0 0 1px rgba(157, 244, 216, 0.12), 0 0 18px rgba(26, 233, 171, 0.08);
+  display: grid;
+  place-items: center;
+  z-index: 2;
+}
+
+#systems .systems-bento .systems-card .card-icon svg {
+  width: 34px;
+  height: 34px;
 }
 
 #systems .systems-bento .systems-card .hex-border-svg {
   position: absolute;
-  inset: 2px;
-  z-index: 1;
-  width: calc(100% - 4px);
-  height: calc(100% - 4px);
-  overflow: visible;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 96px;
+  height: 96px;
+  z-index: 0;
   pointer-events: none;
+  display: block;
 }
 
 #systems .systems-bento .systems-card .hex-border-base,
@@ -4203,8 +4217,8 @@ body {
 }
 
 #systems .systems-bento .systems-card .hex-border-base {
-  stroke: rgba(255, 255, 255, 0.14);
-  stroke-width: 1;
+  stroke: rgba(255, 255, 255, 0.12);
+  stroke-width: 1.6;
   filter: none;
   transition: stroke 220ms ease, filter 220ms ease;
 }
@@ -4217,13 +4231,13 @@ body {
 }
 
 #systems .systems-bento .systems-card .hex-border-trace {
-  stroke: #f3fffb;
-  stroke-width: 2;
+  stroke: rgba(26,233,171,0.95);
+  stroke-width: 2.6;
   stroke-linecap: round;
-  stroke-dasharray: 48 312;
+  stroke-dasharray: 40 300;
   stroke-dashoffset: 0;
   opacity: 0;
-  filter: drop-shadow(0 0 4px rgba(243, 255, 251, 0.75)) drop-shadow(0 0 9px rgba(210, 255, 242, 0.28));
+  filter: drop-shadow(0 0 6px rgba(26,233,171,0.18));
   transition: opacity 220ms ease, filter 220ms ease;
 }
 
@@ -41711,57 +41725,63 @@ body {
 /* Page 2: screenshot-style card internals */
 #systems .systems-bento .systems-card,
 #systems .systems-bento .systems-card:nth-child(n) {
-  align-content: start !important;
-  justify-items: center !important;
-  min-height: 292px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  min-height: 370px !important;
   padding: 34px 34px 28px !important;
   text-align: center !important;
   clip-path: none !important;
-  border: none !important;
+  border: 0.5px solid rgba(255, 255, 255, 0.07) !important;
   border-radius: 0 !important;
+  min-width: 280px !important;
 }
 
 #systems .systems-bento .systems-card .hex-border-svg {
-  display: block !important;
+  display: none !important;
 }
 
 #systems .systems-bento .systems-card .card-icon {
-  width: 73px !important;
-  height: 75px !important;
-  margin: -10px auto 22px !important;
+  position: relative !important;
+  isolation: isolate !important;
+  width: 70px !important;
+  height: 73px !important;
+  margin: 0 auto 20px !important;
   border-radius: 0 !important;
+  -webkit-clip-path: polygon(50% 0, 94% 25%, 94% 75%, 50% 100%, 6% 75%, 6% 25%) !important;
   clip-path: polygon(50% 0, 94% 25%, 94% 75%, 50% 100%, 6% 75%, 6% 25%) !important;
-  background: rgba(10, 20, 34, 0.96) !important;
-  box-shadow: inset 0 0 0 1px rgba(157, 244, 216, 0.09) !important;
+  background: rgba(26, 233, 171, 0.4) !important;
+  box-shadow: none !important;
+  flex-shrink: 0 !important;
 }
 
-#systems .systems-bento .systems-card .card-icon::before {
-  inset: 0 !important;
+#systems .systems-bento .systems-card .card-icon::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 1.5px !important;
+  z-index: -1 !important;
+  -webkit-clip-path: inherit !important;
   clip-path: inherit !important;
-  background: rgba(29, 158, 117, 0.16) !important;
-  opacity: 0.85 !important;
+  background: rgba(26, 233, 171, 0.12) !important;
 }
 
 #systems .systems-bento .systems-card .card-icon svg {
-  width: 34px !important;
-  height: 34px !important;
+  position: relative !important;
+  z-index: 1 !important;
+  width: 30px !important;
+  height: 30px !important;
 }
 
 #systems .systems-bento .systems-card h4 {
-  max-width: 360px !important;
-  margin: 0 auto 8px !important;
-  font-size: 16.5px !important;
-  line-height: 1.18 !important;
-  text-align: center !important;
+  font-size: 15.5px !important;
+  margin-bottom: 8px !important;
 }
 
 #systems .systems-bento .systems-card p {
-  max-width: 360px !important;
-  margin: 0 auto !important;
+  font-size: 11px !important;
+  line-height: 1.45 !important;
   color: rgba(255, 255, 255, 0.54) !important;
-  font-size: 12.5px !important;
-  line-height: 1.48 !important;
-  text-align: center !important;
 }
 
 #systems .systems-bento .systems-card .kpi {
@@ -47659,36 +47679,4 @@ html, body, .nh, .bottom-sections {
   box-sizing: border-box !important;
 }
 
-/* FORCE HEXAGON SHAPE AND LARGE SIZE FOR SYSTEM CARD ICONS */
-#systems .systems-bento .systems-card .card-icon,
-#systems .systems-bento .systems-card:nth-child(n) .card-icon {
-  position: relative !important;
-  isolation: isolate !important;
-  width: 105px !important;
-  height: 108px !important;
-  margin: 12px auto 24px !important;
-  border-radius: 0 !important;
-  -webkit-clip-path: polygon(50% 0, 94% 25%, 94% 75%, 50% 100%, 6% 75%, 6% 25%) !important;
-  clip-path: polygon(50% 0, 94% 25%, 94% 75%, 50% 100%, 6% 75%, 6% 25%) !important;
-  background: rgba(26, 233, 171, 0.4) !important;
-  box-shadow: none !important;
-}
 
-#systems .systems-bento .systems-card .card-icon::after,
-#systems .systems-bento .systems-card:nth-child(n) .card-icon::after {
-  content: "" !important;
-  position: absolute !important;
-  inset: 1.5px !important;
-  z-index: -1 !important;
-  -webkit-clip-path: inherit !important;
-  clip-path: inherit !important;
-  background: rgba(26, 233, 171, 0.12) !important;
-}
-
-#systems .systems-bento .systems-card .card-icon svg,
-#systems .systems-bento .systems-card:nth-child(n) .card-icon svg {
-  position: relative !important;
-  z-index: 1 !important;
-  width: 38px !important;
-  height: 38px !important;
-}

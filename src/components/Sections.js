@@ -273,7 +273,7 @@ export function SystemsSection() {
 
   return (
     <section data-page="2" className="sec" id="systems">
-      <div className="w-full max-w-[1200px] mx-auto px-8 md:px-14">
+      <div className="w-full max-w-[1300px] mx-auto px-8 md:px-14">
       <div className="systems-intro">
         <div className="sec-tag">What we actually do</div>
         <h2 className="sec-h systems-heading">Intelligence systems for scalable growth</h2>

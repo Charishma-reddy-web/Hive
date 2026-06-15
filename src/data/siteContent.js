@@ -3,7 +3,8 @@ export const navItems = [
   { label: "Outcomes", href: "#outcomes" },
   { label: "Comparison", href: "#comparison" },
   { label: "Insights", href: "#insights" },
-  { label: "About", href: "#about" }
+  { label: "About", href: "#about" },
+  { label: "Second Page", href: "/second-page" }
 ];
 
 export const hero = {
