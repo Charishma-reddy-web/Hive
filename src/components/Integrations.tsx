@@ -1,5 +1,5 @@
-/* eslint-disable */
 'use client';
+/* eslint-disable */
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
@@ -310,4 +310,5 @@ export default function Integrations() {
     </section>
   );
 }
+
 

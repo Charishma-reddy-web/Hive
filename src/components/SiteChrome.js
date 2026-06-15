@@ -1,5 +1,5 @@
-/* eslint-disable */
 "use client";
+/* eslint-disable */
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -209,4 +209,5 @@ export function SiteShell({ children }) {
     </>
   );
 }
+
 

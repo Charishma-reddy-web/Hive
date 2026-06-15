@@ -1,5 +1,5 @@
-/* eslint-disable */
 'use client';
+/* eslint-disable */
 
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring, useMotionTemplate } from 'framer-motion';
@@ -343,3 +343,4 @@ function SpotlightLayer({ smoothX, smoothY }: { smoothX: any; smoothY: any }) {
     />
   );
 }
+

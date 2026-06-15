@@ -1,5 +1,5 @@
-/* eslint-disable */
 'use client';
+/* eslint-disable */
 
 import React from 'react';
 import { motion } from 'framer-motion';
@@ -248,4 +248,5 @@ export default function CtaFooter() {
     </>
   );
 }
+
 

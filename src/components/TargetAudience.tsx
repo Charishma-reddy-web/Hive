@@ -1,5 +1,5 @@
-/* eslint-disable */
 'use client';
+/* eslint-disable */
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -179,5 +179,6 @@ export default function TargetAudience() {
     </section>
   );
 }
+
 
 
