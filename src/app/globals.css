@@ -47566,8 +47566,6 @@ body,
   max-width: none !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
-  padding-left: 30px !important;
-  padding-right: 30px !important;
   box-sizing: border-box !important;
 }
 
@@ -47577,13 +47575,6 @@ body,
   margin-left: 0 !important;
   margin-right: auto !important;
   box-sizing: border-box !important;
-}
-
-@media (max-width: 700px) {
-  .bottom-sections > * {
-    padding-left: 22px !important;
-    padding-right: 22px !important;
-  }
 }
 
 /* Framework Sticky Full-Width Reset */
@@ -47607,10 +47598,17 @@ body,
   margin-right: auto !important;
 }
 
+@media (max-width: 900px) {
+  #framework.sec > div.sticky > div {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+}
+
 @media (max-width: 700px) {
   #framework.sec > div.sticky > div {
-    padding-left: 22px !important;
-    padding-right: 22px !important;
+    padding-left: 14px !important;
+    padding-right: 14px !important;
   }
 }
 
