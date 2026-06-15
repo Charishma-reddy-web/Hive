@@ -7,7 +7,7 @@ import { integrationData } from './IntegrationIcons';
 
 const TILE_H      = 80;
 const TILE_W      = 80;
-const EXPANDED_W  = 300;   // fixed px — CSS transition works perfectly with fixed values
+const EXPANDED_W  = 320;   // fixed px — CSS transition works perfectly with fixed values
 const TILE_GAP    = 8;
 const CYCLE_MS    = 2400;
 
@@ -115,7 +115,7 @@ function Tile({
         transition: `opacity ${DUR} ${EASE}, transform ${DUR} ${EASE}`,
         pointerEvents: 'none',
         overflow: 'hidden',
-        whiteSpace: 'nowrap',
+        whiteSpace: 'normal',
       }}>
         {/* Divider */}
         <div style={{
