@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Outfit, JetBrains_Mono } from "next/font/google";
+import { Sora, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 
-const primaryFont = Outfit({
-  variable: "--font-geist-sans", // Keeping variable name mapped to globals.css for compatibility
+const primaryFont = Sora({
+  variable: "--font-site",
   subsets: ["latin"],
   display: "swap",
 });

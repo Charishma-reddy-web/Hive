@@ -225,13 +225,23 @@ export function HeroSection() {
             </svg>
             {hero.badge}
           </div>
-          <BlurText
-            text={hero.title}
-            delay={150}
-            animateBy="words"
-            direction="bottom"
-            className="hero-h1 blur-heading"
-          />
+          <div className="hero-h1">
+            <BlurText
+              text="The Intelligence Layer"
+              delay={150}
+              animateBy="words"
+              direction="bottom"
+              className="hero-h1-line"
+            />
+            <BlurText
+              text="Behind Modern Growth"
+              delay={150}
+              animateBy="words"
+              direction="bottom"
+              className="hero-h1-line"
+              initialDelay={0.45}
+            />
+          </div>
           <p className="hero-sub">{hero.description}</p>
         </div>
         <div className="hero-right">
@@ -311,7 +321,7 @@ export function SystemsSection() {
 
 export function OutcomesSection() {
   return (
-    <section data-page="3" className="sec" id="outcomes" style={{ paddingBottom: "100px", paddingTop: "40px" }}>
+    <section data-page="3" className="sec" id="outcomes" style={{ paddingBottom: "24px", paddingTop: "40px" }}>
       <div style={{ width: "100%", maxWidth: "1200px", margin: "0 auto", padding: "0 20px" }}>
         
         <div className="outcomes-section-head">

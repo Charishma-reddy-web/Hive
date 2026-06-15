@@ -28,7 +28,8 @@ const BlurText = ({
   onAnimationComplete,
   stepDuration = 0.35,
   once = false,
-  breakBeforeWords = []
+  breakBeforeWords = [],
+  initialDelay = 0
 }) => {
   const elements = animateBy === "words" ? text.split(" ") : text.split("");
   const [inView, setInView] = useState(false);
@@ -101,7 +102,7 @@ const BlurText = ({
         const spanTransition = {
           duration: totalDuration,
           times,
-          delay: (index * delay) / 1000,
+          delay: initialDelay + (index * delay) / 1000,
           ease: easing
         };
 

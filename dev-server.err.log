@@ -1,0 +1,810 @@
+[browser] The final argument passed to useEffect changed size between renders. The order and size of this array must remain constant.
+
+Previous: [[object Object], 512, #1ae9ab, 10, 7, 6, 1440, 0.5, 20, false, true, 128, 3500, 0.14, true, 4]
+Incoming: [true, [object Object], 512, #1ae9ab, 10, 7, 6, 1440, 0.5, 20, false, true, 128, 3500, 0.14, true, 4] 
+    at SplashCursor (src/components/SplashCursor.js:31:14)
+    at Set.forEach (<anonymous>)
+  29 |   useEffect(() => {
+  30 |     if (!enabled) {
+> 31 |       return undefined;
+     |              ^
+  32 |     }
+  33 |
+  34 |     const canvas = canvasRef.current; (src/components/SplashCursor.js:31:14)
+⚠ Fast Refresh had to perform a full reload when ./src/components/MethodologyFramework.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./src/components/MethodologyFramework.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[browser] Uncaught Error: Internal Next.js error: Router action dispatched before initialization.
+⚠ Fast Refresh had to perform a full reload when ./src/components/MethodologyFramework.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./src/components/MethodologyFramework.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⨯ ./src/app/page.tsx:13:1
+Module not found: Can't resolve '@/components/MethodologyFramework'
+  [90m11 |[0m [36mimport[0m [33mIntegrations[0m [36mfrom[0m [32m'@/components/Integrations'[0m;
+  [90m12 |[0m [36mimport[0m [33mCtaFooter[0m [36mfrom[0m [32m'@/components/CtaFooter'[0m;
+[31m[1m>[0m [90m13 |[0m [36mimport[0m [33mMethodologyFramework[0m [36mfrom[0m [32m'@/components/MethodologyFramework'[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m14 |[0m
+  [90m15 |[0m [36mexport[0m [36mdefault[0m [36mfunction[0m [33mHome[0m() {
+  [90m16 |[0m   [36mreturn[0m (
+
+Import map: aliased to relative './src/components/MethodologyFramework' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+⚠ Fast Refresh had to perform a full reload when ./src/components/MethodologyFramework.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./src/components/MethodologyFramework.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./src/components/MethodologyFramework.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./src/components/MethodologyFramework.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./src/components/MethodologyFramework.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./src/components/MethodologyFramework.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./src/components/MethodologyFramework.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./src/components/MethodologyFramework.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./src/components/MethodologyFramework.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./src/components/MethodologyFramework.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./src/components/MethodologyFramework.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⚠ Fast Refresh had to perform a full reload when ./src/components/MethodologyFramework.tsx changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⨯ ./src/components/Sections.js:352:12
+Expected ',', got 'ident'
+  [90m350 |[0m       </div>
+  [90m351 |[0m     </section>
+[31m[1m>[0m [90m352 |[0m       <div className=[32m"systems-bento"[0m>
+  [90m    |[0m            [31m[1m^^^^^^^^^[0m
+  [90m353 |[0m         {systems.map((item, index) => (
+  [90m354 |[0m           <div
+  [90m355 |[0m             className={[32m`card systems-card systems-card-[0m${index + [35m1[0m[32m}[0m${selectedSystem === i...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/Sections.js
+    ./src/app/page.tsx
+
+
+⨯ ./src/components/Sections.js:352:12
+Expected ',', got 'ident'
+  [90m350 |[0m       </div>
+  [90m351 |[0m     </section>
+[31m[1m>[0m [90m352 |[0m       <div className=[32m"systems-bento"[0m>
+  [90m    |[0m            [31m[1m^^^^^^^^^[0m
+  [90m353 |[0m         {systems.map((item, index) => (
+  [90m354 |[0m           <div
+  [90m355 |[0m             className={[32m`card systems-card systems-card-[0m${index + [35m1[0m[32m}[0m${selectedSystem === i...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/Sections.js
+    ./src/app/page.tsx
+
+
+⨯ ./src/components/Sections.js:352:12
+Expected ',', got 'ident'
+  [90m350 |[0m       </div>
+  [90m351 |[0m     </section>
+[31m[1m>[0m [90m352 |[0m       <div className=[32m"systems-bento"[0m>
+  [90m    |[0m            [31m[1m^^^^^^^^^[0m
+  [90m353 |[0m         {systems.map((item, index) => (
+  [90m354 |[0m           <div
+  [90m355 |[0m             className={[32m`card systems-card systems-card-[0m${index + [35m1[0m[32m}[0m${selectedSystem === i...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/Sections.js
+    ./src/app/page.tsx
+
+
+⨯ ./src/components/Sections.js:352:12
+Expected ',', got 'ident'
+  [90m350 |[0m       </div>
+  [90m351 |[0m     </section>
+[31m[1m>[0m [90m352 |[0m       <div className=[32m"systems-bento"[0m>
+  [90m    |[0m            [31m[1m^^^^^^^^^[0m
+  [90m353 |[0m         {systems.map((item, index) => (
+  [90m354 |[0m           <div
+  [90m355 |[0m             className={[32m`card systems-card systems-card-[0m${index + [35m1[0m[32m}[0m${selectedSystem === i...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/Sections.js
+    ./src/app/page.tsx
+
+
+⨯ ./src/components/Sections.js:352:12
+Expected ',', got 'ident'
+  [90m350 |[0m       </div>
+  [90m351 |[0m     </section>
+[31m[1m>[0m [90m352 |[0m       <div className=[32m"systems-bento"[0m>
+  [90m    |[0m            [31m[1m^^^^^^^^^[0m
+  [90m353 |[0m         {systems.map((item, index) => (
+  [90m354 |[0m           <div
+  [90m355 |[0m             className={[32m`card systems-card systems-card-[0m${index + [35m1[0m[32m}[0m${selectedSystem === i...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/Sections.js
+    ./src/app/page.tsx
+
+
+⨯ ./src/components/Sections.js:352:12
+Expected ',', got 'ident'
+  [90m350 |[0m       </div>
+  [90m351 |[0m     </section>
+[31m[1m>[0m [90m352 |[0m       <div className=[32m"systems-bento"[0m>
+  [90m    |[0m            [31m[1m^^^^^^^^^[0m
+  [90m353 |[0m         {systems.map((item, index) => (
+  [90m354 |[0m           <div
+  [90m355 |[0m             className={[32m`card systems-card systems-card-[0m${index + [35m1[0m[32m}[0m${selectedSystem === i...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/Sections.js
+    ./src/app/page.tsx
+
+
+[browser] Uncaught Error: ./src/components/Sections.js:352:12
+Expected ',', got 'ident'
+  350 |       </div>
+  351 |     </section>
+> 352 |       <div className="systems-bento">
+      |            ^^^^^^^^^
+  353 |         {systems.map((item, index) => (
+  354 |           <div
+  355 |             className={`card systems-card systems-card-${index + 1}${selectedSystem === i...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/Sections.js
+    ./src/app/page.tsx
+
+
+    at <unknown> (Error: ./src/components/Sections.js:352:12)
+    at <unknown> (Error: (./src/components/Sections.js:352:12)
+[browser] Uncaught Error: ./src/components/Sections.js:352:12
+Expected ',', got 'ident'
+  350 |       </div>
+  351 |     </section>
+> 352 |       <div className="systems-bento">
+      |            ^^^^^^^^^
+  353 |         {systems.map((item, index) => (
+  354 |           <div
+  355 |             className={`card systems-card systems-card-${index + 1}${selectedSystem === i...
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/Sections.js
+    ./src/app/page.tsx
+
+
+    at <unknown> (Error: ./src/components/Sections.js:352:12)
+    at <unknown> (Error: (./src/components/Sections.js:352:12)
+⨯ ./src/components/Sections.js:15:7
+Unexpected token `<`. Expected identifier or string
+  [90m13 |[0m   hero,
+  [90m14 |[0m   industries,
+[31m[1m>[0m [90m15 |[0m       <div className={[32m`sec-tag[0m${centered ? [32m" center"[0m : [32m""[0m[32m}`[0m}>{tag}</div>
+  [90m   |[0m       [31m[1m^[0m
+  [90m16 |[0m       <div className={[32m`sec-h[0m${centered ? [32m" center"[0m : [32m""[0m[32m}`[0m} style={titleStyle}>{title}</div>
+  [90m17 |[0m       {description ? <p className={[32m`sec-p[0m${centered ? [32m" center"[0m : [32m""[0m[32m}`[0m}>{description}</p> ..[36m.[0m
+  [90m18 |[0m     </>
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/Sections.js
+    ./src/app/page.tsx
+
+
+⨯ ./src/components/Sections.js:15:7
+Unexpected token `<`. Expected identifier or string
+  [90m13 |[0m   hero,
+  [90m14 |[0m   industries,
+[31m[1m>[0m [90m15 |[0m       <div className={[32m`sec-tag[0m${centered ? [32m" center"[0m : [32m""[0m[32m}`[0m}>{tag}</div>
+  [90m   |[0m       [31m[1m^[0m
+  [90m16 |[0m       <div className={[32m`sec-h[0m${centered ? [32m" center"[0m : [32m""[0m[32m}`[0m} style={titleStyle}>{title}</div>
+  [90m17 |[0m       {description ? <p className={[32m`sec-p[0m${centered ? [32m" center"[0m : [32m""[0m[32m}`[0m}>{description}</p> ..[36m.[0m
+  [90m18 |[0m     </>
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/Sections.js
+    ./src/app/page.tsx
+
+
+⨯ ./src/components/Sections.js:15:7
+Unexpected token `<`. Expected identifier or string
+  [90m13 |[0m   hero,
+  [90m14 |[0m   industries,
+[31m[1m>[0m [90m15 |[0m       <div className={[32m`sec-tag[0m${centered ? [32m" center"[0m : [32m""[0m[32m}`[0m}>{tag}</div>
+  [90m   |[0m       [31m[1m^[0m
+  [90m16 |[0m       <div className={[32m`sec-h[0m${centered ? [32m" center"[0m : [32m""[0m[32m}`[0m} style={titleStyle}>{title}</div>
+  [90m17 |[0m       {description ? <p className={[32m`sec-p[0m${centered ? [32m" center"[0m : [32m""[0m[32m}`[0m}>{description}</p> ..[36m.[0m
+  [90m18 |[0m     </>
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/Sections.js
+    ./src/app/page.tsx
+
+
+⨯ ./src/components/Sections.js:15:7
+Unexpected token `<`. Expected identifier or string
+  [90m13 |[0m   hero,
+  [90m14 |[0m   industries,
+[31m[1m>[0m [90m15 |[0m       <div className={[32m`sec-tag[0m${centered ? [32m" center"[0m : [32m""[0m[32m}`[0m}>{tag}</div>
+  [90m   |[0m       [31m[1m^[0m
+  [90m16 |[0m       <div className={[32m`sec-h[0m${centered ? [32m" center"[0m : [32m""[0m[32m}`[0m} style={titleStyle}>{title}</div>
+  [90m17 |[0m       {description ? <p className={[32m`sec-p[0m${centered ? [32m" center"[0m : [32m""[0m[32m}`[0m}>{description}</p> ..[36m.[0m
+  [90m18 |[0m     </>
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/Sections.js
+    ./src/app/page.tsx
+
+
+⨯ ./src/components/Sections.js:15:7
+Unexpected token `<`. Expected identifier or string
+  [90m13 |[0m   hero,
+  [90m14 |[0m   industries,
+[31m[1m>[0m [90m15 |[0m       <div className={[32m`sec-tag[0m${centered ? [32m" center"[0m : [32m""[0m[32m}`[0m}>{tag}</div>
+  [90m   |[0m       [31m[1m^[0m
+  [90m16 |[0m       <div className={[32m`sec-h[0m${centered ? [32m" center"[0m : [32m""[0m[32m}`[0m} style={titleStyle}>{title}</div>
+  [90m17 |[0m       {description ? <p className={[32m`sec-p[0m${centered ? [32m" center"[0m : [32m""[0m[32m}`[0m}>{description}</p> ..[36m.[0m
+  [90m18 |[0m     </>
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/Sections.js
+    ./src/app/page.tsx
+
+
+[browser] Uncaught Error: ./src/components/Sections.js:15:7
+Unexpected token `<`. Expected identifier or string
+  13 |   hero,
+  14 |   industries,
+> 15 |       <div className={`sec-tag${centered ? " center" : ""}`}>{tag}</div>
+     |       ^
+  16 |       <div className={`sec-h${centered ? " center" : ""}`} style={titleStyle}>{title}</div>
+  17 |       {description ? <p className={`sec-p${centered ? " center" : ""}`}>{description}</p> ...
+  18 |     </>
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/Sections.js
+    ./src/app/page.tsx
+
+
+    at <unknown> (Error: ./src/components/Sections.js:15:7)
+    at <unknown> (Error: (./src/components/Sections.js:15:7)
+⨯ ./src/components/Sections.js:15:7
+Unexpected token `<`. Expected identifier or string
+  [90m13 |[0m   hero,
+  [90m14 |[0m   industries,
+[31m[1m>[0m [90m15 |[0m       <div className={[32m`sec-tag[0m${centered ? [32m" center"[0m : [32m""[0m[32m}`[0m}>{tag}</div>
+  [90m   |[0m       [31m[1m^[0m
+  [90m16 |[0m       <div className={[32m`sec-h[0m${centered ? [32m" center"[0m : [32m""[0m[32m}`[0m} style={titleStyle}>{title}</div>
+  [90m17 |[0m       {description ? <p className={[32m`sec-p[0m${centered ? [32m" center"[0m : [32m""[0m[32m}`[0m}>{description}</p> ..[36m.[0m
+  [90m18 |[0m     </>
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/Sections.js
+    ./src/app/page.tsx
+
+
+[browser] Uncaught Error: ./src/components/Sections.js:15:7
+Unexpected token `<`. Expected identifier or string
+  13 |   hero,
+  14 |   industries,
+> 15 |       <div className={`sec-tag${centered ? " center" : ""}`}>{tag}</div>
+     |       ^
+  16 |       <div className={`sec-h${centered ? " center" : ""}`} style={titleStyle}>{title}</div>
+  17 |       {description ? <p className={`sec-p${centered ? " center" : ""}`}>{description}</p> ...
+  18 |     </>
+
+Parsing ecmascript source code failed
+
+Import trace:
+  Server Component:
+    ./src/components/Sections.js
+    ./src/app/page.tsx
+
+
+    at <unknown> (Error: ./src/components/Sections.js:15:7)
+    at <unknown> (Error: (./src/components/Sections.js:15:7)
+[browser] ./src/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\CharishmaReddy\nurturehive-ui\Hive\src\app\globals.css:41975:1: Unclosed block
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unclosedBlock (turbopack:///[project]/node_modules/postcss/lib/parser.js:582:22)]
+    [at Parser.endFile (turbopack:///[project]/node_modules/postcss/lib/parser.js:342:35)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:483:10)]
+    [at parser (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:29)]
+    [at run (turbopack:///[turbopack-node]/child_process/evaluate.ts:112:11)]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component] 
+[browser] ./src/app/globals.css
+Error evaluating Node.js code
+CssSyntaxError: C:\Users\CharishmaReddy\nurturehive-ui\Hive\src\app\globals.css:41975:1: Unclosed block
+    [at Input.error (turbopack:///[project]/node_modules/postcss/lib/input.js:135:16)]
+    [at Parser.unclosedBlock (turbopack:///[project]/node_modules/postcss/lib/parser.js:582:22)]
+    [at Parser.endFile (turbopack:///[project]/node_modules/postcss/lib/parser.js:342:35)]
+    [at Parser.parse (turbopack:///[project]/node_modules/postcss/lib/parser.js:483:10)]
+    [at parser (turbopack:///[project]/node_modules/postcss/lib/parse.js:11:12)]
+    [at new LazyResult (turbopack:///[project]/node_modules/postcss/lib/lazy-result.js:165:16)]
+    [at Processor.process (turbopack:///[project]/node_modules/postcss/lib/processor.js:53:14)]
+    [at transform (turbopack:///[turbopack-node]/transforms/postcss.ts:70:51)]
+    [at run (turbopack:///[turbopack-node]/child_process/evaluate.ts:89:29)]
+    [at run (turbopack:///[turbopack-node]/child_process/evaluate.ts:112:11)]
+
+Import trace:
+  Client Component Browser:
+    ./src/app/globals.css [Client Component Browser]
+    ./src/app/layout.tsx [Server Component] 

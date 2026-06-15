@@ -3,13 +3,13 @@
 :root {
   --background: #060C18;
   --foreground: #DDE2EE;
-  --font-site: var(--font-geist-sans);
+  --font-site: var(--font-site);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-site);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -23,15 +23,14 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans, 'Inter', sans-serif);
+  font-family: var(--font-site, var(--font-sans, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif));
 }
 
 /* Base Styles */
 .nh {
   background: #060C18;
   color: #DDE2EE;
-  font-family: var(--font-sans, 'Inter', sans-serif);
-  border-radius: 12px;
+  font-family: var(--font-site, var(--font-sans, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif));
   min-height: 100vh;
 }
 
@@ -432,14 +431,12 @@ body {
 
 * { box-sizing: border-box; }
 
-html {
-  /* Removed scroll-behavior: smooth as it conflicts with Lenis */
-}
+
 
 body {
   min-height: 100vh;
   margin: 0;
-  background: #0d0f1c;
+  background: #060c18;
   color: var(--text);
   font-family: var(--font-site), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   padding: 0;
@@ -759,7 +756,8 @@ body {
 }
 
 .hero-right {
-  width: 320px;
+  width: clamp(360px, 36vw, 480px);
+  flex: 0 0 clamp(360px, 36vw, 480px);
   flex-shrink: 0;
   height: 350px;
   position: relative;
@@ -4507,7 +4505,6 @@ body {
 
 /* First five homepage sections: distinct page-like treatments */
 .hero-wrap {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   background:
     linear-gradient(90deg, rgba(29, 158, 117, 0.08), transparent 42%),
     radial-gradient(circle at 84% 42%, rgba(29, 158, 117, 0.16), transparent 28%);
@@ -4519,16 +4516,14 @@ body {
 
 #systems.sec {
   position: relative;
-  padding-top: 48px;
+  padding-top: 36px !important;
+  margin-top: 0 !important;
   background: transparent;
 }
 
 #systems.sec::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 18% 10%, rgba(29, 158, 117, 0.06), transparent 34%);
-  pointer-events: none;
+  display: none !important;
+  content: none !important;
 }
 
 #systems .systems-intro,
@@ -4744,6 +4739,8 @@ body {
   position: relative;
   overflow-x: hidden;
   background:
+    radial-gradient(ellipse at 0% 30%, rgba(26, 233, 171, 0.22), transparent 48%),
+    radial-gradient(ellipse at 0% 75%, rgba(26, 233, 171, 0.12), transparent 42%),
     linear-gradient(135deg, #050d15 0%, #080a18 46%, #06120f 100%);
 }
 
@@ -4989,15 +4986,28 @@ body::after {
 }
 
 .hero-partners {
-  display: block;
-  margin: -18px 40px 18px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 24px 40px 40px;
+  padding: 10px 0 0;
   overflow: hidden;
+  border-radius: 0;
   border: 0;
-  border-left: 0;
-  border-right: 0;
   background: transparent;
   box-shadow: none;
   animation: toriiContentRise 0.86s cubic-bezier(0.16, 1, 0.3, 1) 0.82s both;
+}
+
+.hero-partners::before {
+  display: none;
+  content: none;
+}
+
+.hero-partners::after {
+  display: none;
+  content: none;
 }
 
 .partners-copy {
@@ -5028,8 +5038,8 @@ body::after {
   display: flex;
   width: max-content;
   min-width: 100%;
-  gap: 64px;
-  padding: 18px 42px;
+  gap: 18px;
+  padding: 8px 20px 0;
   animation: partnersMarquee 24s linear infinite;
   mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
@@ -5051,8 +5061,6 @@ body::after {
   transform: none;
 }
 
-.hero-partners::before,
-.hero-partners::after,
 .partners-marquee::before,
 .partners-marquee::after,
 .partner-logo::before,
@@ -32813,6 +32821,7 @@ body {
   font-size: 60px !important;
   background: linear-gradient(135deg, #fff 30%, #1ae9ab 100%) !important;
   -webkit-background-clip: text !important;
+  background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
 }
 
@@ -35768,6 +35777,7 @@ body {
   letter-spacing: -0.07em;
   background: linear-gradient(135deg, #ffffff 30%, #1ae9ab 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-top: 12px;
   margin-bottom: 12px;
@@ -35777,6 +35787,7 @@ body {
 .bento-widget-card:hover .bento-widget-val {
   background: linear-gradient(135deg, #1ae9ab 0%, #378add 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -36154,7 +36165,7 @@ body {
 .infrastructure-heading-title {
   margin: 0 !important;
   color: #f4fffb !important;
-  font-family: var(--font-site), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif !important;
   font-size: clamp(34px, 4.8vw, 52px) !important;
   font-weight: 800 !important;
   line-height: 1.04 !important;
@@ -38345,6 +38356,7 @@ body {
 
 .slider-custom {
   -webkit-appearance: none;
+  appearance: none;
   width: 100%;
   height: 6px;
   background: rgba(255, 255, 255, 0.08);
@@ -38783,6 +38795,7 @@ body {
   padding: 1px;
   background: linear-gradient(135deg, var(--accent-color), transparent 60%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
@@ -38843,6 +38856,7 @@ body {
   margin-bottom: 8px;
   background: linear-gradient(135deg, #fff 40%, rgba(255, 255, 255, 0.6) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -41909,7 +41923,7 @@ body {
 }
 
 .hero-partners .partners-title {
-  font-family: var(--font-sans, 'Inter', sans-serif) !important;
+  font-family: var(--font-site, var(--font-sans, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif)) !important;
   font-size: 11px !important;
   font-weight: 600 !important;
   letter-spacing: 0.18em !important;
@@ -46253,32 +46267,38 @@ body,
 .hero-partners.gsap-logo-scroll:focus-within {
   width: min(1180px, calc(100% - 72px)) !important;
   min-height: 112px !important;
-  margin: 24px auto 42px !important;
-  padding: 10px 0 !important;
+  margin: 24px auto 34px !important;
+  padding: 8px 0 !important;
   display: block !important;
   background: transparent !important;
   border: 0 !important;
+  border-radius: 0 !important;
   box-shadow: none !important;
   overflow: hidden !important;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent) !important;
-  mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent) !important;
+  -webkit-mask-image: none !important;
+  mask-image: none !important;
 }
 
-.hero-partners.gsap-logo-scroll::before,
-.hero-partners.gsap-logo-scroll::after,
 .hero-partners.gsap-logo-scroll .partner-logo::before,
 .hero-partners.gsap-logo-scroll .partner-logo::after {
   display: none !important;
   content: none !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
+}
+
+.hero-partners.gsap-logo-scroll::before {
+  display: none !important;
+  content: none !important;
+}
+
+.hero-partners.gsap-logo-scroll::after {
+  display: none !important;
+  content: none !important;
 }
 
 .hero-partners.gsap-logo-scroll .logo-scroll-track {
   display: flex !important;
   align-items: center !important;
-  gap: clamp(44px, 5vw, 76px) !important;
+  gap: clamp(12px, 1.6vw, 18px) !important;
   width: max-content !important;
   will-change: transform !important;
 }
@@ -46297,6 +46317,10 @@ body,
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
+  min-width: auto !important;
+  min-height: auto !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
@@ -46304,33 +46328,54 @@ body,
   animation: none !important;
   transform: none !important;
   will-change: transform, opacity !important;
+  transition: transform 180ms ease, opacity 180ms ease !important;
+}
+
+.hero-partners.gsap-logo-scroll .partner-logo:hover,
+.hero-partners.gsap-logo-scroll .partner-logo:focus-visible {
+  transform: translateY(-3px) scale(1.02) !important;
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
 }
 
 .hero-partners.gsap-logo-scroll .partner-logo img,
 .hero-partners.gsap-logo-scroll .partner-logo:hover img {
   width: auto !important;
-  height: clamp(42px, 4.2vw, 60px) !important;
+  height: clamp(34px, 3.6vw, 48px) !important;
   max-width: 170px !important;
   object-fit: contain !important;
   filter: none !important;
   opacity: 1 !important;
+  transition: opacity 180ms ease, filter 180ms ease, transform 180ms ease !important;
+}
+
+.hero-partners.gsap-logo-scroll .partner-logo:hover img {
+  opacity: 1 !important;
+  filter: none !important;
 }
 
 @media (max-width: 900px) {
   .hero-partners.gsap-logo-scroll {
     width: calc(100% - 32px) !important;
-    min-height: 84px !important;
-    margin: 22px auto 34px !important;
+    min-height: 92px !important;
+    margin: 20px auto 28px !important;
+    padding: 0 !important;
   }
 
   .hero-partners.gsap-logo-scroll .logo-scroll-track {
-    gap: 34px !important;
+    gap: 22px !important;
   }
 
   .hero-partners.gsap-logo-scroll .partner-logo img {
-    height: 38px !important;
+    height: 32px !important;
     max-width: 136px !important;
   }
+}
+
+.hero-partners.gsap-logo-scroll .filter-logo-monochrome {
+  filter: none !important;
+  opacity: 1 !important;
 }
 
 /* TRUE FINAL: responsive fit for laptop, tablet, and mobile screens */
@@ -46521,7 +46566,7 @@ body,
   }
 
   .hero-h1 {
-    font-size: clamp(38px, 11vw, 56px) !important;
+    font-size: clamp(38px, 9.5vw, 56px) !important;
     line-height: 1.06 !important;
     max-width: 100% !important;
   }
@@ -46623,7 +46668,7 @@ body,
   }
 
   .hero-h1 {
-    font-size: clamp(34px, 12vw, 44px) !important;
+    font-size: clamp(30px, 9.5vw, 42px) !important;
   }
 
   .hero-partners.gsap-logo-scroll {
@@ -46649,7 +46694,7 @@ body,
 /* TRUE FINAL: remove extra space under landing logos */
 .hero-partners.gsap-logo-scroll {
   min-height: 78px !important;
-  margin-bottom: 8px !important;
+  margin-bottom: 0 !important;
   padding-bottom: 0 !important;
 }
 
@@ -46667,18 +46712,9 @@ body,
 }
 
 .hero-page::before {
-  content: "" !important;
-  position: absolute !important;
-  left: 0 !important;
-  top: 74px !important;
-  bottom: 0 !important;
-  width: min(48vw, 620px) !important;
-  pointer-events: none !important;
-  z-index: 0 !important;
-  background:
-    radial-gradient(circle at 0% 38%, rgba(26, 233, 171, 0.34), transparent 46%),
-    linear-gradient(90deg, rgba(26, 233, 171, 0.22), rgba(26, 233, 171, 0.08) 44%, transparent 82%) !important;
-  filter: blur(4px) !important;
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
 }
 
 .hero-page .hero-wrap,
@@ -46687,27 +46723,11 @@ body,
   z-index: 1 !important;
 }
 
-@media (max-width: 900px) {
-  .hero-page::before {
-    width: 86vw !important;
-    top: 72px !important;
-    background:
-      radial-gradient(circle at 0% 32%, rgba(26, 233, 171, 0.28), transparent 52%),
-      linear-gradient(90deg, rgba(26, 233, 171, 0.18), transparent 82%) !important;
-  }
-}
-
-/* TRUE FINAL: remove landing green gradient */
-.hero-page::before {
-  display: none !important;
-  content: none !important;
-  background: transparent !important;
-}
-
 /* TRUE FINAL: move landing hero content slightly left */
 @media (min-width: 901px) {
   .hero-page .hero-wrap {
-    transform: translateX(-24px) !important;
+    transform: translateX(-34px) !important;
+    min-height: 430px !important;
   }
 }
 
@@ -46786,11 +46806,11 @@ body,
 .hero-page .hero-partners.gsap-logo-scroll:focus,
 .hero-page .hero-partners.gsap-logo-scroll:focus-within,
 .hero-page .hero-partners.gsap-logo-scroll:active {
-  height: 78px !important;
-  min-height: 78px !important;
-  max-height: 78px !important;
-  margin-top: 24px !important;
-  margin-bottom: 8px !important;
+  height: 58px !important;
+  min-height: 58px !important;
+  max-height: 58px !important;
+  margin-top: 10px !important;
+  margin-bottom: 0 !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   overflow: hidden !important;
@@ -46800,9 +46820,9 @@ body,
 .hero-page .hero-partners.gsap-logo-scroll .logo-scroll-track,
 .hero-page .hero-partners.gsap-logo-scroll:hover .logo-scroll-track,
 .hero-page .hero-partners.gsap-logo-scroll:focus-within .logo-scroll-track {
-  height: 78px !important;
-  min-height: 78px !important;
-  max-height: 78px !important;
+  height: 58px !important;
+  min-height: 58px !important;
+  max-height: 58px !important;
 }
 
 .hero-page .hero-partners.gsap-logo-scroll .partner-logo,
@@ -46811,9 +46831,9 @@ body,
 .hero-page .hero-partners.gsap-logo-scroll .partner-logo:active,
 .hero-page .hero-partners.gsap-logo-scroll:hover .partner-logo,
 .hero-page .hero-partners.gsap-logo-scroll:focus-within .partner-logo {
-  height: 70px !important;
-  min-height: 70px !important;
-  max-height: 70px !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
   padding: 0 !important;
   margin: 0 !important;
   transform: none !important;
@@ -46825,26 +46845,26 @@ body,
   .hero-page .hero-partners.gsap-logo-scroll:focus,
   .hero-page .hero-partners.gsap-logo-scroll:focus-within,
   .hero-page .hero-partners.gsap-logo-scroll:active {
-    height: 66px !important;
-    min-height: 66px !important;
-    max-height: 66px !important;
-    margin-top: 18px !important;
-    margin-bottom: 6px !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    max-height: 50px !important;
+    margin-top: 8px !important;
+    margin-bottom: 0 !important;
   }
 
   .hero-page .hero-partners.gsap-logo-scroll .logo-scroll-track,
   .hero-page .hero-partners.gsap-logo-scroll:hover .logo-scroll-track,
   .hero-page .hero-partners.gsap-logo-scroll:focus-within .logo-scroll-track {
-    height: 66px !important;
-    min-height: 66px !important;
-    max-height: 66px !important;
+    height: 50px !important;
+    min-height: 50px !important;
+    max-height: 50px !important;
   }
 }
 
 /* TRUE FINAL: reduce gap between landing logos */
 .hero-page .hero-partners.gsap-logo-scroll .logo-scroll-track,
 .hero-partners.gsap-logo-scroll .logo-scroll-track {
-  gap: 24px !important;
+  gap: 18px !important;
 }
 
 .hero-page .hero-partners.gsap-logo-scroll .partner-logo,
@@ -46885,14 +46905,14 @@ body,
 /* TRUE FINAL: enlarge and move landing right visual */
 @media (min-width: 901px) {
   .hero-page .hero-right {
-    transform: translateX(36px) scale(1.08) !important;
+    transform: translateX(52px) scale(1.08) !important;
     transform-origin: center right !important;
   }
 }
 
 @media (min-width: 1200px) {
   .hero-page .hero-right {
-    transform: translateX(54px) scale(1.12) !important;
+    transform: translateX(76px) scale(1.12) !important;
   }
 }
 
@@ -46919,3 +46939,622 @@ body,
     grid-template-columns: minmax(0, 0.88fr) minmax(540px, 1.12fr) !important;
   }
 }
+
+/* TRUE FINAL: increase header width only */
+@media (min-width: 901px) {
+  .nav {
+    width: min(98.5vw, 1400px) !important;
+    max-width: 1400px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* TRUE FINAL: responsive website behavior for tablet and mobile */
+html,
+body,
+.nh {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (min-width: 901px) and (max-width: 1199px) {
+  .nav {
+    width: calc(100% - 32px) !important;
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+    gap: 18px !important;
+  }
+
+  .nav-links {
+    gap: 18px !important;
+    font-size: 14px !important;
+  }
+
+  .nav-cta {
+    padding: 13px 18px !important;
+    font-size: 13px !important;
+  }
+
+  .hero-wrap {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr) !important;
+    gap: 26px !important;
+    padding-left: 28px !important;
+    padding-right: 28px !important;
+  }
+
+  .hero-h1 {
+    font-size: clamp(48px, 5.2vw, 62px) !important;
+    line-height: 1.05 !important;
+  }
+
+  .hero-sub {
+    max-width: 720px !important;
+    font-size: 17px !important;
+  }
+
+  .hero-page .hero-right {
+    transform: translateX(34px) scale(1) !important;
+  }
+
+  #systems .systems-bento,
+  #infrastructure .infrastructure-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  #outcomes .bento-section {
+    transform: none !important;
+  }
+
+  #outcomes .card-responsive {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-auto-rows: 190px !important;
+  }
+
+  #comparison .modern-problem-grid,
+  .modern-problem-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav {
+    position: sticky !important;
+    top: 0 !important;
+    width: 100% !important;
+    min-height: 74px !important;
+    padding: 12px 16px !important;
+    border-radius: 0 !important;
+    gap: 12px !important;
+  }
+
+  .logo-mark {
+    width: 46px !important;
+    height: 40px !important;
+  }
+
+  .logo-name {
+    font-size: 20px !important;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  .nav-cta {
+    margin-left: auto !important;
+    max-width: 170px !important;
+    padding: 11px 13px !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    white-space: normal !important;
+  }
+
+  .hero-wrap {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    min-height: auto !important;
+    gap: 28px !important;
+    padding: 24px 18px 16px !important;
+    transform: none !important;
+  }
+
+  .hero-left,
+  .hero-right {
+    width: 100% !important;
+    min-width: 0 !important;
+    transform: none !important;
+  }
+
+  .badge {
+    max-width: 100% !important;
+    white-space: normal !important;
+    font-size: 11px !important;
+    letter-spacing: 0.08em !important;
+  }
+
+  .hero-h1 {
+    max-width: 100% !important;
+    font-size: clamp(38px, 9.5vw, 56px) !important;
+    line-height: 1.06 !important;
+  }
+
+  .hero-sub {
+    max-width: 100% !important;
+    font-size: 15.5px !important;
+    line-height: 1.65 !important;
+  }
+
+  .hero-right {
+    min-height: 270px !important;
+    max-height: 360px !important;
+    overflow: hidden !important;
+  }
+
+  .hero-partners.gsap-logo-scroll {
+    width: calc(100% - 28px) !important;
+  }
+
+  #systems,
+  #outcomes,
+  #comparison,
+  #infrastructure,
+  .modern-problem-section {
+    width: 100% !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+
+  .sec-h,
+  #systems .systems-intro .systems-heading,
+  #comparison .modern-problem-head h2,
+  #infrastructure .infrastructure-heading-title {
+    max-width: 100% !important;
+    width: 100% !important;
+    white-space: normal !important;
+    font-size: clamp(32px, 9vw, 44px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .sec-p,
+  #systems .systems-intro .systems-description,
+  #outcomes .outcomes-section-head .sec-p,
+  .modern-problem-head p,
+  .infrastructure-heading-copy {
+    max-width: 100% !important;
+    font-size: 15.5px !important;
+    line-height: 1.65 !important;
+  }
+
+  #systems .systems-bento,
+  #outcomes .card-responsive,
+  #comparison .modern-problem-grid,
+  .modern-problem-grid,
+  #infrastructure .infrastructure-card-grid {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    gap: 16px !important;
+  }
+
+  #outcomes .bento-section {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    transform: none !important;
+  }
+
+  #outcomes .card-responsive .card,
+  #outcomes .card-responsive .card:nth-child(n),
+  #systems .systems-bento .systems-card,
+  #systems .systems-bento .systems-card:nth-child(n) {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    width: 100% !important;
+    min-height: 188px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .nav {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .logo-name {
+    font-size: 18px !important;
+  }
+
+  .nav-cta {
+    max-width: 136px !important;
+    padding: 10px 11px !important;
+    font-size: 11px !important;
+  }
+
+  .hero-wrap {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .hero-h1 {
+    font-size: clamp(30px, 9.5vw, 42px) !important;
+  }
+
+  #systems,
+  #outcomes,
+  #comparison,
+  #infrastructure,
+  .modern-problem-section {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+}
+
+/* FINAL: rebalance landing hero so the right visual does not crowd the heading */
+@media (min-width: 901px) {
+  .hero-page .hero-wrap {
+    grid-template-columns: minmax(560px, 1.08fr) minmax(380px, 0.92fr) !important;
+    gap: clamp(28px, 4.5vw, 72px) !important;
+  }
+
+  .hero-page .hero-right {
+    width: min(100%, 500px) !important;
+    max-width: 500px !important;
+    min-width: 0 !important;
+    justify-self: end !important;
+    transform: translateX(88px) scale(1.06) !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-page .hero-wrap {
+    grid-template-columns: minmax(660px, 1.02fr) minmax(420px, 0.98fr) !important;
+  }
+
+  .hero-page .hero-right {
+    width: min(100%, 540px) !important;
+    max-width: 540px !important;
+    transform: translateX(104px) scale(1.08) !important;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1199px) {
+  .hero-page .hero-right {
+    transform: translateX(72px) scale(1.04) !important;
+  }
+}
+
+/* FINAL: stop locked two-line hero title from clipping and apply larger sizing */
+.hero-page .hero-h1 {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: clamp(8px, 1.2vw, 16px) !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+  font-size: inherit !important;
+  line-height: inherit !important;
+  height: auto !important;
+}
+
+.hero-page .hero-h1-line {
+  white-space: nowrap !important;
+  flex-wrap: nowrap !important;
+  font-family: var(--font-site, var(--font-sans, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif));
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: -0.04em;
+  text-shadow: 0 10px 30px rgba(29, 158, 117, 0.12);
+  line-height: 1.05 !important;
+  margin: 0 !important;
+}
+
+.hero-page .hero-h1-line span {
+  display: inline-block !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+@media (min-width: 1200px) {
+  .hero-page .hero-h1-line {
+    font-size: clamp(62px, 5.4vw, 88px) !important;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1199px) {
+  .hero-page .hero-h1-line {
+    font-size: clamp(50px, 4.9vw, 72px) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-page .hero-h1-line {
+    font-size: clamp(40px, 7vw, 60px) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .hero-page .hero-h1-line {
+    font-size: clamp(30px, 8.5vw, 44px) !important;
+  }
+}
+
+/* FINAL: page 5 card content spacing */
+#infrastructure .infra-grid-card {
+  display: grid !important;
+  grid-template-columns: 50px minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 18px !important;
+}
+
+#infrastructure .infra-grid-card > div:first-child {
+  height: auto !important;
+  margin-bottom: 0 !important;
+}
+
+#infrastructure .infra-grid-card h3 {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif !important;
+  font-weight: 700 !important;
+  margin-bottom: 5px !important;
+}
+
+#infrastructure .infra-grid-card p {
+  max-width: 100% !important;
+}
+
+@media (max-width: 700px) {
+  #infrastructure .infra-grid-card {
+    grid-template-columns: 48px minmax(0, 1fr) !important;
+    padding: 16px !important;
+  }
+}
+
+/* FINAL LANDING HERO OVERRIDE: right side bigger and farther right */
+@media (min-width: 901px) {
+  .hero-page .hero-wrap {
+    grid-template-columns: minmax(640px, 1.28fr) minmax(280px, 0.72fr) !important;
+    gap: clamp(24px, 3.8vw, 56px) !important;
+    overflow: visible !important;
+  }
+
+  .hero-page .hero-left {
+    transform: translateX(12px) translateY(-75px) !important;
+  }
+
+  .hero-page .hero-right {
+    width: min(100%, 640px) !important;
+    max-width: 640px !important;
+    height: 520px !important;
+    min-height: 520px !important;
+    min-width: 0 !important;
+    justify-self: end !important;
+    transform: translateX(56px) translateY(-30px) scale(1.05) !important;
+    transform-origin: center right !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-page .hero-wrap {
+    grid-template-columns: minmax(720px, 1.32fr) minmax(320px, 0.68fr) !important;
+  }
+
+  .hero-page .hero-left {
+    transform: translateX(18px) translateY(-85px) !important;
+  }
+
+  .hero-page .hero-right {
+    width: min(100%, 740px) !important;
+    max-width: 740px !important;
+    height: 600px !important;
+    min-height: 600px !important;
+    transform: translateX(82px) translateY(-30px) scale(1.1) !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-page .hero-right {
+    width: 100% !important;
+    max-width: 100% !important;
+    transform: none !important;
+  }
+}
+
+/* FINAL CLEANUP: remove all borders, outlines and box shadows from the main wrapper .nh */
+.nh {
+  border: none !important;
+  border-left: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* FINAL LANDING HERO CLEANUP: remove the visible seam/shade line */
+.hero-page .hero-wrap {
+  background: transparent !important;
+}
+
+.hero-page .hero-wrap::after,
+.hero-page .hero-right::before,
+.hero-page .hero-right::after {
+  display: none !important;
+  content: none !important;
+}
+
+
+
+/* Remove all horizontal separator lines, borders and seams from the landing page sections */
+.sec::before,
+.sec::after {
+  display: none !important;
+  content: none !important;
+  height: 0 !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.sec,
+#systems.sec,
+.outcomes-board-section,
+.comparison-stage,
+.infrastructure-console {
+  border-top: none !important;
+  border-bottom: none !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Tighten vertical spacing under landing page hero content and logos */
+.hero-page .hero-partners {
+  position: relative !important;
+  top: -152px !important;
+  margin-top: -340px !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  transform: translateY(-60px) !important;
+}
+
+#systems.sec {
+  padding-top: 60px !important;
+  margin-top: -20px !important;
+}
+
+/* Header brand nudge: move the logo mark right and the name slightly down */
+.nav .logo-mark {
+  transform: translateX(16px) !important;
+}
+
+.nav .logo-name {
+  transform: translateX(-2px) translateY(9px) !important;
+}
+
+/* FINAL LANDING PAGE SHADOW BACKGROUND - glows applied like 5th page */
+.hero-page {
+  position: relative !important;
+  overflow: hidden !important;
+  background:
+    radial-gradient(circle at 14% 20%, rgba(26, 233, 171, 0.15), transparent 30%),
+    radial-gradient(circle at 84% 76%, rgba(26, 233, 171, 0.08), transparent 34%),
+    linear-gradient(180deg, #020812 0%, #04121b 100%) !important;
+}
+
+.hero-page .hero-partners::before,
+.hero-page .hero-partners::after,
+.hero-page .hero-partners.gsap-logo-scroll::before {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.hero-page::after {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* FINAL LOGO BORDERS CLEANUP: keep bottom line, remove top line, and remove gap under it */
+.hero-partners {
+  border-top: none !important;
+  border-bottom: none !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* FINAL: remove the empty space below the landing logos */
+.hero-page .hero-partners.gsap-logo-scroll,
+.hero-page .hero-partners.gsap-logo-scroll:hover,
+.hero-page .hero-partners.gsap-logo-scroll:focus,
+.hero-page .hero-partners.gsap-logo-scroll:focus-within,
+.hero-page .hero-partners.gsap-logo-scroll:active {
+  position: relative !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
+  margin-bottom: -22px !important;
+  padding-bottom: 0 !important;
+  overflow: visible !important;
+}
+
+.hero-page .hero-partners.gsap-logo-scroll .logo-scroll-track,
+.hero-page .hero-partners.gsap-logo-scroll:hover .logo-scroll-track,
+.hero-page .hero-partners.gsap-logo-scroll:focus-within .logo-scroll-track {
+  height: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.hero-page .hero-partners.gsap-logo-scroll::after {
+  display: none !important;
+  content: none !important;
+}
+
+#systems.sec {
+  padding-top: 60px !important;
+  margin-top: -20px !important;
+}
+
+/* FINAL: Remove all shadow, border, background and glow from landing page partner logos */
+.hero-page .partner-logo,
+.hero-page .partner-logo:hover,
+.hero-page .partner-logo:focus,
+.hero-page .partner-logo:active,
+.hero-partners .partner-logo,
+.hero-partners .partner-logo:hover,
+.hero-partners .partner-logo:focus,
+.hero-partners .partner-logo:active,
+.hero-partners .partner-logo:nth-child(n) {
+  background: transparent !important;
+  background-image: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  outline: none !important;
+  filter: none !important;
+  text-shadow: none !important;
+}
+
+.hero-page .partner-logo img,
+.hero-page .partner-logo:hover img,
+.hero-partners .partner-logo img,
+.hero-partners .partner-logo:hover img {
+  filter: none !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+}
+
+/* Remove space below logos */
+.hero-page {
+  padding-bottom: 0 !important;
+}
+
+/* Beautiful premium glows covering the entire landing page - matching 5th page style exactly */
+.hero-page::before {
+  display: none !important;
+  content: none !important;
+}
+
+.hero-page::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Match 3rd page (Outcomes Section) background glow to the 5th page */
+.outcomes-board-section {
+  background:
+    radial-gradient(circle at 14% 20%, rgba(26, 233, 171, 0.15), transparent 30%),
+    radial-gradient(circle at 84% 76%, rgba(26, 233, 171, 0.08), transparent 34%),
+    linear-gradient(180deg, #020812 0%, #04121b 100%) !important;
+}
+
+
+

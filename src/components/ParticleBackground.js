@@ -41,12 +41,6 @@ export default function ParticleBackground() {
 
       context.clearRect(0, 0, width, height);
 
-      const background = context.createRadialGradient(width * 0.12, height * 0.62, 0, width * 0.12, height * 0.62, width * 0.42);
-      background.addColorStop(0, "rgba(29, 158, 117, 0.1)");
-      background.addColorStop(1, "rgba(29, 158, 117, 0)");
-      context.fillStyle = background;
-      context.fillRect(0, 0, width, height);
-
       particles.forEach((particle) => {
         particle.x += particle.vx;
         particle.y += particle.vy;
