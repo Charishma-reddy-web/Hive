@@ -36164,7 +36164,7 @@ body {
 .infrastructure-heading-title {
   margin: 0 !important;
   color: #f4fffb !important;
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif !important;
+  font-family: var(--font-site), sans-serif !important;
   font-size: clamp(34px, 4.8vw, 52px) !important;
   font-weight: 800 !important;
   line-height: 1.04 !important;
@@ -47298,7 +47298,7 @@ body,
 }
 
 #infrastructure .infra-grid-card h3 {
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif !important;
+  font-family: var(--font-site), sans-serif !important;
   font-weight: 700 !important;
   margin-bottom: 5px !important;
 }
