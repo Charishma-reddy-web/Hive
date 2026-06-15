@@ -41682,14 +41682,14 @@ body {
 }
 
 #systems .systems-bento .systems-card .card-icon {
-  width: 72px !important;
-  height: 72px !important;
+  width: 58px !important;
+  height: 58px !important;
   border-radius: 16px !important;
 }
 
 #systems .systems-bento .systems-card .card-icon svg {
-  width: 34px !important;
-  height: 34px !important;
+  width: 26px !important;
+  height: 26px !important;
 }
 
 #systems .systems-bento .systems-card .card-icon::before {
