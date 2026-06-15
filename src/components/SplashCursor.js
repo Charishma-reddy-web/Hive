@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 
 function SplashCursor({
+  enabled = true,
   SIM_RESOLUTION = 128,
   DYE_RESOLUTION = 1440,
   CAPTURE_RESOLUTION = 512,
@@ -21,9 +22,15 @@ function SplashCursor({
   COLOR = "#ff0000"
 }) {
   const canvasRef = useRef(null);
+  const shellRef = useRef(null);
   const animationFrameId = useRef(null);
+  const activityTimeoutRef = useRef(null);
 
   useEffect(() => {
+    if (!enabled) {
+      return undefined;
+    }
+
     const canvas = canvasRef.current;
     if (!canvas) return undefined;
 
@@ -977,6 +984,12 @@ function SplashCursor({
 
     let firstMouseMoveHandled = false;
     function handleMouseMove(event) {
+      shellRef.current?.classList.add("is-active");
+      if (activityTimeoutRef.current) window.clearTimeout(activityTimeoutRef.current);
+      activityTimeoutRef.current = window.setTimeout(() => {
+        shellRef.current?.classList.remove("is-active");
+      }, 420);
+
       const pointer = pointers[0];
       const { x: posX, y: posY } = getCanvasPointerPosition(event.clientX, event.clientY);
       if (!firstMouseMoveHandled) {
@@ -998,6 +1011,12 @@ function SplashCursor({
     }
 
     function handleTouchMove(event) {
+      shellRef.current?.classList.add("is-active");
+      if (activityTimeoutRef.current) window.clearTimeout(activityTimeoutRef.current);
+      activityTimeoutRef.current = window.setTimeout(() => {
+        shellRef.current?.classList.remove("is-active");
+      }, 420);
+
       const touches = event.targetTouches;
       const pointer = pointers[0];
       for (let i = 0; i < touches.length; i += 1) {
@@ -1026,6 +1045,10 @@ function SplashCursor({
         cancelAnimationFrame(animationFrameId.current);
         animationFrameId.current = null;
       }
+      if (activityTimeoutRef.current) {
+        window.clearTimeout(activityTimeoutRef.current);
+        activityTimeoutRef.current = null;
+      }
       window.removeEventListener("mousedown", handleMouseDown);
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("touchstart", handleTouchStart);
@@ -1033,6 +1056,7 @@ function SplashCursor({
       window.removeEventListener("touchend", handleTouchEnd);
     };
   }, [
+    enabled,
     BACK_COLOR,
     CAPTURE_RESOLUTION,
     COLOR,
@@ -1052,9 +1076,11 @@ function SplashCursor({
   ]);
 
   return (
-    <div className="splash-cursor">
+    enabled ? (
+    <div className="splash-cursor" ref={shellRef}>
       <canvas ref={canvasRef} id="fluid" />
     </div>
+    ) : null
   );
 }
 

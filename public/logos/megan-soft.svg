@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 520" fill="none">
+  <defs>
+    <linearGradient id="m1" x1="100" y1="50" x2="1300" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5c78cf"/>
+      <stop offset="0.55" stop-color="#22c7df"/>
+      <stop offset="1" stop-color="#22d3a6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1400" height="520" rx="24" fill="white"/>
+  <g transform="translate(110 40)">
+    <path d="M190 20L300 220L410 20L520 220" stroke="url(#m1)" stroke-width="68" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="120" cy="245" r="22" fill="url(#m1)"/>
+  </g>
+  <text x="72" y="440" font-family="Inter, Arial, sans-serif" font-size="136" font-weight="800" fill="url(#m1)">MEGAN</text>
+  <text x="820" y="440" font-family="Inter, Arial, sans-serif" font-size="136" font-weight="800" fill="#1cc6e7">SOFT</text>
+</svg>

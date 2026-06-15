@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" fill="none">
+  <defs>
+    <linearGradient id="e1" x1="80" y1="30" x2="1120" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5b71ff"/>
+      <stop offset="0.45" stop-color="#26d6ff"/>
+      <stop offset="1" stop-color="#43d37b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="360" rx="24" fill="white"/>
+  <g transform="translate(120 30)">
+    <path d="M220 30 C160 68, 118 128, 118 188 C118 248, 160 308, 220 346" stroke="url(#e1)" stroke-width="48" stroke-linecap="round" opacity="0.7"/>
+    <path d="M396 30 C456 68, 498 128, 498 188 C498 248, 456 308, 396 346" stroke="url(#e1)" stroke-width="48" stroke-linecap="round" opacity="0.85"/>
+    <circle cx="298" cy="188" r="18" fill="#fff" opacity="0.95"/>
+    <path d="M298 82 L350 188 L298 294 L246 188 Z" fill="white" opacity="0.85"/>
+  </g>
+  <text x="78" y="265" font-family="Inter, Arial, sans-serif" font-size="112" font-weight="700" fill="#111827">Edge AI</text>
+</svg>

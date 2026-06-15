@@ -195,6 +195,7 @@ export default function Integrations() {
   return (
     <section
       ref={sectionRef}
+      data-page="9"
       className="relative z-10 w-full py-24 md:py-32 bg-[#060C18] border-t border-white/[0.04] overflow-hidden"
     >
       {/* Dot grid */}

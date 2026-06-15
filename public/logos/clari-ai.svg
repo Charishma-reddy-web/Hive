@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" fill="none">
+  <defs>
+    <linearGradient id="c1" x1="40" y1="40" x2="1160" y2="320" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b93bff"/>
+      <stop offset="0.55" stop-color="#3f8cff"/>
+      <stop offset="1" stop-color="#1de0ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="360" rx="24" fill="white"/>
+  <g transform="translate(74 66)">
+    <circle cx="56" cy="64" r="56" fill="url(#c1)" opacity="0.12"/>
+    <circle cx="56" cy="64" r="38" fill="none" stroke="url(#c1)" stroke-width="10"/>
+    <circle cx="168" cy="64" r="36" fill="none" stroke="url(#c1)" stroke-width="10"/>
+    <rect x="214" y="28" width="70" height="72" rx="18" fill="#1a9dff"/>
+    <text x="252" y="83" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="44" font-weight="700" fill="white">AI</text>
+    <path d="M346 52 C380 28, 420 28, 448 48" stroke="url(#c1)" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <text x="84" y="253" font-family="Inter, Arial, sans-serif" font-size="120" font-weight="700" fill="url(#c1)">Clari</text>
+</svg>

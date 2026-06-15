@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" fill="none">
+  <defs>
+    <linearGradient id="d1" x1="80" y1="50" x2="1120" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4b67d1"/>
+      <stop offset="0.45" stop-color="#18c7d7"/>
+      <stop offset="1" stop-color="#39c86f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="420" rx="24" fill="white"/>
+  <g transform="translate(54 36)">
+    <path d="M92 40H20C20 40 0 60 0 120C0 180 20 200 20 200H92C148 200 192 156 192 120C192 84 148 40 92 40Z" fill="#415fbe"/>
+    <path d="M238 40H170C170 40 138 72 138 120C138 168 170 200 170 200H238C282 200 318 164 318 120C318 76 282 40 238 40Z" fill="url(#d1)"/>
+    <path d="M338 40H408C408 40 440 72 440 120C440 168 408 200 408 200H338C294 200 258 164 258 120C258 76 294 40 338 40Z" fill="#5bd16e"/>
+  </g>
+  <text x="86" y="338" font-family="Inter, Arial, sans-serif" font-size="114" font-style="italic" font-weight="800" fill="#ffffff" stroke="#000" stroke-width="1.2" paint-order="stroke">Deal</text>
+  <text x="452" y="338" font-family="Inter, Arial, sans-serif" font-size="114" font-style="italic" font-weight="800" fill="url(#d1)">2</text>
+  <text x="522" y="338" font-family="Inter, Arial, sans-serif" font-size="114" font-style="italic" font-weight="800" fill="#39c86f">Pay</text>
+</svg>

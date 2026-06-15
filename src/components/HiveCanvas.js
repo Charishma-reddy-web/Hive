@@ -47,7 +47,7 @@ export default function HiveCanvas() {
       const rowHeight = radius * 1.5;
       const cols = 5;
       const rows = 6;
-      const offsetX = width - cols * columnWidth - 5;
+      const offsetX = Math.max(10, width - cols * columnWidth - 42);
       const offsetY = -15;
       let index = 0;
 
@@ -87,14 +87,17 @@ export default function HiveCanvas() {
         const drawX = cx;
         const drawY = cy;
 
+        // Calculate a smooth fade-out factor for cells on the left edge of the grid
+        const fadeFactor = Math.min(1, Math.max(0, (cx - width * 0.04) / (width * 0.24)));
+
         hexPath(drawX, drawY, r - 3);
         if (isActive) {
-          ctx.fillStyle = `rgba(29,158,117,${(0.06 + localPulse * 0.12) * reveal})`;
-          ctx.strokeStyle = `rgba(29,158,117,${(0.25 + localPulse * 0.55) * reveal})`;
+          ctx.fillStyle = `rgba(29,158,117,${(0.06 + localPulse * 0.12) * reveal * fadeFactor})`;
+          ctx.strokeStyle = `rgba(29,158,117,${(0.25 + localPulse * 0.55) * reveal * fadeFactor})`;
           ctx.lineWidth = 0.8;
         } else {
-          ctx.fillStyle = `rgba(255,255,255,${0.025 * reveal})`;
-          ctx.strokeStyle = `rgba(255,255,255,${0.07 * reveal})`;
+          ctx.fillStyle = `rgba(255,255,255,${0.025 * reveal * fadeFactor})`;
+          ctx.strokeStyle = `rgba(255,255,255,${0.07 * reveal * fadeFactor})`;
           ctx.lineWidth = 0.5;
         }
         ctx.fill();
@@ -102,8 +105,8 @@ export default function HiveCanvas() {
 
         if (isActive && label) {
           const lines = label.split("\n");
-          ctx.fillStyle = `rgba(29,158,117,${(0.55 + localPulse * 0.45) * reveal})`;
-          ctx.font = "500 9.5px Arial";
+          ctx.fillStyle = `rgba(29,158,117,${(0.55 + localPulse * 0.45) * reveal * fadeFactor})`;
+          ctx.font = '500 9.5px "Sora"';
           ctx.textAlign = "center";
           ctx.textBaseline = "middle";
           const lineHeight = 12;
@@ -113,12 +116,6 @@ export default function HiveCanvas() {
           });
         }
       });
-
-      const gradient = ctx.createLinearGradient(0, 0, width * 0.5, 0);
-      gradient.addColorStop(0, "#060C18");
-      gradient.addColorStop(1, "rgba(6,12,24,0)");
-      ctx.fillStyle = gradient;
-      ctx.fillRect(0, 0, width, height);
 
       pulse += 1;
       animationFrame = window.requestAnimationFrame(draw);
