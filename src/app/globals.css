@@ -4109,11 +4109,11 @@ body {
 #systems .systems-bento .systems-card:nth-child(n) {
   --systems-border-angle: 0deg;
   min-height: 238px;
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
-  align-content: center;
-  justify-items: center;
+  align-items: center;
+  justify-content: flex-start;
   text-align: center;
   margin-left: 0;
   padding: 28px 22px;
@@ -4286,7 +4286,9 @@ body {
 #systems .systems-bento .systems-card,
 #systems .systems-bento .systems-card:nth-child(n) {
   min-height: 220px;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 28px;
   margin-left: 0;
   text-align: left;
@@ -4486,7 +4488,7 @@ body {
 
 #systems .systems-bento .systems-card .kpi {
   display: inline-block;
-  margin-top: 14px;
+  margin-top: auto;
   padding: 3px 10px;
   border-radius: 20px;
   border: 1px solid rgba(29, 158, 117, 0.18);
