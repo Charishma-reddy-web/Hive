@@ -196,8 +196,9 @@ export default function Integrations() {
   return (
     <section
       ref={sectionRef}
+      id="insights"
       data-page="9"
-      className="relative z-10 w-full py-24 md:py-32 bg-[#060C18] border-t border-white/[0.04] overflow-hidden"
+      className="sec relative z-10 w-full py-24 md:py-32 bg-[#060C18] border-t border-white/[0.04] overflow-hidden"
     >
       {/* Dot grid */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.016] [background-image:radial-gradient(rgba(255,255,255,1)_1px,transparent_1px)] [background-size:28px_28px]" />
@@ -209,14 +210,11 @@ export default function Integrations() {
         transition={{ duration: 1.0, ease: 'easeInOut' }}
       />
 
-      <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-16 lg:gap-12">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-8 md:px-14 flex flex-col lg:flex-row items-center gap-16 lg:gap-12">
 
         {/* LEFT */}
         <div className="flex flex-col items-start flex-shrink-0 lg:w-[380px]">
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#00F0B5]/25 bg-[#00F0B5]/[0.08] mb-6">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#00F0B5] animate-pulse shadow-[0_0_8px_#00F0B5]" />
-            <p className="text-[11px] font-bold tracking-[0.35em] uppercase text-[#00F0B5] font-mono">Growth Infrastructure</p>
-          </div>
+          <div className="sec-tag">Growth Infrastructure</div>
 
           <h2 className="text-[48px] md:text-[64px] font-bold tracking-tight text-white leading-[1.05]">
             We don't just<br />use tools.

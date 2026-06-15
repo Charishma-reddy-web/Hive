@@ -48,20 +48,17 @@ export default function TargetAudience() {
   const displayTitle = activeAudience ? activeAudience.name : 'AI-first enterprises';
 
   return (
-    <section className="relative w-full py-8 md:py-10 bg-[#060C18] border-t border-white/[0.04] flex items-center justify-center overflow-hidden">
+    <section id="industries" data-page="7" className="sec relative w-full py-8 md:py-10 bg-[#060C18] border-t border-white/[0.04] flex items-center justify-center overflow-hidden">
       
       {/* Subtle top light wash */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.01] blur-[100px] pointer-events-none rounded-full" />
 
-      <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 md:px-12 flex flex-col items-center text-center gap-6">
+      <div className="relative z-10 w-full max-w-[1200px] mx-auto px-8 md:px-14 flex flex-col items-center text-center gap-6">
         
         <div className="flex flex-col items-center w-full gap-3">
-          {/* Who We Serve Pill */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#00F0B5]/25 bg-[#00F0B5]/[0.08] mb-5 md:mb-6">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#00F0B5] shadow-[0_0_8px_#00F0B5] animate-pulse" />
-            <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#00F0B5] font-mono">Who we serve</p>
-          </div>
+          {/* Who We Serve Tag */}
+          <div className="sec-tag">Who we serve</div>
 
           {/* Icons Row */}
           <div className="flex flex-row flex-nowrap items-center justify-center gap-3 md:gap-5 lg:gap-7 w-full mx-auto overflow-x-auto no-scrollbar py-4 relative z-10">

@@ -118,7 +118,7 @@ export default function MethodologyFramework() {
   const phase = phases[active];
 
   return (
-    <div ref={trackRef} className="relative w-full h-[300vh] bg-[#060C18]">
+    <section ref={trackRef} id="framework" data-page="6" className="sec relative w-full h-[300vh] bg-[#060C18]">
       <div
         onMouseMove={handleMouseMove}
         className="sticky top-0 h-screen w-full overflow-hidden flex flex-col pt-8 md:pt-10 pb-16 lg:pb-24"
@@ -142,12 +142,9 @@ export default function MethodologyFramework() {
         </AnimatePresence>
 
         {/* Unified Section Header */}
-        <div className="relative z-20 w-full max-w-[1280px] mx-auto px-6 md:px-12 flex flex-col items-start mb-2 lg:mb-4 pointer-events-none">
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#00F0B5]/25 bg-[#00F0B5]/[0.08] mb-4 shadow-[0_0_15px_rgba(0,240,181,0.1)] pointer-events-auto">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#00F0B5] animate-pulse shadow-[0_0_8px_#00F0B5]" />
-            <p className="text-[11px] font-bold tracking-[0.35em] uppercase text-[#00F0B5] font-mono">
-              The Intelligence Framework
-            </p>
+        <div className="relative z-20 w-full flex flex-col items-start mb-2 lg:mb-4 pointer-events-none">
+          <div className="sec-tag pointer-events-auto">
+            The Intelligence Framework
           </div>
           <h2 className="text-[36px] md:text-[48px] lg:text-[56px] font-bold tracking-tight text-white leading-[1.05] mb-2">
             Our proprietary<br className="hidden lg:block" /> methodology
@@ -155,7 +152,7 @@ export default function MethodologyFramework() {
         </div>
 
         {/* ── 2-COLUMN ORBITAL LAYOUT ── */}
-        <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 md:px-12 flex flex-col md:flex-row gap-6 lg:gap-16 items-center justify-center flex-1">
+        <div className="relative z-10 w-full flex flex-col md:flex-row gap-6 lg:gap-16 items-center justify-center flex-1">
 
           {/* LEFT: Phase List */}
           <div className="relative flex-1 flex items-center justify-center">
@@ -328,7 +325,7 @@ export default function MethodologyFramework() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

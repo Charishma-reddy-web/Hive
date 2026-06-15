@@ -3,7 +3,6 @@
 :root {
   --background: #060C18;
   --foreground: #DDE2EE;
-  --font-site: var(--font-site);
 }
 
 @theme inline {
@@ -1370,8 +1369,8 @@ body {
 .systems-bento {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr 1fr;
-  grid-auto-rows: minmax(120px, auto);
-  gap: 12px;
+  grid-auto-rows: minmax(100px, auto);
+  gap: 10px;
   align-items: stretch;
 }
 
@@ -1393,7 +1392,7 @@ body {
 }
 
 .systems-bento .systems-card {
-  min-height: 138px;
+  min-height: 110px;
   display: grid;
   align-content: start;
   border-radius: 6px;
@@ -1402,22 +1401,22 @@ body {
 
 .systems-bento .systems-card-1 {
   grid-row: span 2;
-  min-height: 292px;
-  padding: 24px;
+  min-height: 230px;
+  padding: 16px;
   background: linear-gradient(145deg, rgba(29, 158, 117, 0.18), rgba(255, 255, 255, 0.03));
 }
 
 .systems-bento .systems-card-2 {
   grid-column: span 2;
-  min-height: 138px;
+  min-height: 110px;
 }
 
 .systems-bento .systems-card-3 {
-  min-height: 180px;
+  min-height: 140px;
 }
 
 .systems-bento .systems-card-4 {
-  min-height: 180px;
+  min-height: 140px;
 }
 
 .systems-bento .systems-card-5 {
@@ -1430,13 +1429,13 @@ body {
 
 .systems-bento .systems-card-1 h4 {
   max-width: 240px;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.25;
 }
 
 .systems-bento .systems-card-1 p {
   max-width: 280px;
-  font-size: 12px;
+  font-size: 10.5px;
 }
 
 .systems-card::before {
@@ -3965,7 +3964,7 @@ body {
 #systems .systems-bento {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 14px;
+  gap: 10px;
   perspective: 1200px;
 }
 
@@ -3973,12 +3972,12 @@ body {
 #systems .systems-bento .systems-card:nth-child(n) {
   grid-column: auto;
   grid-row: auto;
-  min-height: 118px;
+  min-height: 98px;
   display: grid;
   grid-template-columns: 72px 42px minmax(0, 1fr) auto;
   gap: 16px;
   align-items: center;
-  padding: 18px 22px;
+  padding: 12px 16px;
   border-radius: 0;
   border: none;
   border-left: 4px solid rgba(122, 232, 196, 0.78);
@@ -4014,7 +4013,7 @@ body {
 #systems .systems-bento .systems-card h4 {
   grid-column: 3;
   margin: 0;
-  font-size: 16px;
+  font-size: 13.5px;
   line-height: 1.25;
 }
 
@@ -4022,7 +4021,7 @@ body {
   grid-column: 3;
   margin: 0;
   max-width: 540px;
-  font-size: 11px;
+  font-size: 9.5px;
 }
 
 #systems .systems-bento .systems-card .kpi {
@@ -36165,7 +36164,7 @@ body {
 .infrastructure-heading-title {
   margin: 0 !important;
   color: #f4fffb !important;
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif !important;
+  font-family: var(--font-site), sans-serif !important;
   font-size: clamp(34px, 4.8vw, 52px) !important;
   font-weight: 800 !important;
   line-height: 1.04 !important;
@@ -40838,6 +40837,7 @@ body {
 
 .modern-problem-card {
   position: relative;
+  overflow: hidden;
   min-height: 248px;
   padding: 28px 30px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -41023,7 +41023,7 @@ body {
 }
 
 .modern-problem-card {
-  
+  overflow: hidden;
   border-radius: 18px;
   padding: 30px 32px;
   background: rgba(7, 16, 29, 0.66);
@@ -47299,7 +47299,7 @@ body,
 }
 
 #infrastructure .infra-grid-card h3 {
-  font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif !important;
+  font-family: var(--font-site), sans-serif !important;
   font-weight: 700 !important;
   margin-bottom: 5px !important;
 }
@@ -47561,6 +47561,61 @@ body,
 @keyframes sweep { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
 
 
+/* Layout Alignment Override for Bottom Sections (Pages 6, 7, 8, 9, 10, 11) */
+.bottom-sections > * {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.bottom-sections > * > * {
+  width: 100% !important;
+  max-width: min(100%, 1200px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Framework Sticky Full-Width Reset */
+#framework.sec {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+#framework.sec > div.sticky {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+#framework.sec > div.sticky > div {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: min(100%, 1200px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (max-width: 900px) {
+  #framework.sec > div.sticky > div {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+@media (max-width: 700px) {
+  #framework.sec > div.sticky > div {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}
+
+
 /* FORCE FIX FOR STICKY */
 html, body, .nh, .bottom-sections { 
   overflow: visible !important; 
@@ -47569,4 +47624,26 @@ html, body, .nh, .bottom-sections {
   perspective: none !important; 
   contain: none !important; 
   isolation: auto !important; 
+}
+
+/* CLIP HORIZONTAL OVERFLOW ON NON-STICKY SECTIONS */
+#systems,
+#outcomes,
+#comparison,
+#infrastructure,
+#industries,
+#cases,
+#integrations,
+#contact,
+#about {
+  overflow-x: clip !important;
+}
+
+/* NO-SCROLLBAR UTILITY */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
 }
