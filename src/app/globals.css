@@ -47561,16 +47561,51 @@ body,
 @keyframes sweep { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
 
 
-/* Framework Sticky Padding Override */
+/* Layout Alignment Override for Bottom Sections (Pages 6, 7, 8, 9, 10, 11) */
+.bottom-sections > * {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  box-sizing: border-box !important;
+}
+
+.bottom-sections > * > * {
+  width: 100% !important;
+  max-width: min(100%, 1320px) !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 700px) {
+  .bottom-sections > * {
+    padding-left: 22px !important;
+    padding-right: 22px !important;
+  }
+}
+
+/* Framework Sticky Full-Width Reset */
 #framework.sec {
   padding-left: 0 !important;
   padding-right: 0 !important;
+}
+
+#framework.sec > div.sticky {
+  width: 100% !important;
+  max-width: none !important;
 }
 
 #framework.sec > div.sticky > div {
   padding-left: 30px !important;
   padding-right: 30px !important;
   box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: min(100%, 1320px) !important;
+  margin-left: 0 !important;
+  margin-right: auto !important;
 }
 
 @media (max-width: 700px) {
