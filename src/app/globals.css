@@ -4348,8 +4348,7 @@ body {
 
 #systems .systems-bento .systems-card:hover::before,
 #systems .systems-bento .systems-card:focus-visible::before,
-#systems .systems-bento .systems-card.is-selected::before,
-#systems .systems-bento .systems-card .hex-border-svg {
+#systems .systems-bento .systems-card.is-selected::before {
   display: none;
 }
 
@@ -41718,12 +41717,12 @@ body {
   padding: 34px 34px 28px !important;
   text-align: center !important;
   clip-path: none !important;
-  border: 0.5px solid rgba(255, 255, 255, 0.07) !important;
+  border: none !important;
   border-radius: 0 !important;
 }
 
 #systems .systems-bento .systems-card .hex-border-svg {
-  display: none !important;
+  display: block !important;
 }
 
 #systems .systems-bento .systems-card .card-icon {
