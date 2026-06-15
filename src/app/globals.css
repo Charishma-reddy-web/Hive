@@ -47657,9 +47657,20 @@ html, body, .nh, .bottom-sections {
   box-sizing: border-box !important;
 }
 
-/* FORCE HEXAGON SHAPE FOR SYSTEM CARD ICONS */
+/* FORCE HEXAGON SHAPE AND LARGE SIZE FOR SYSTEM CARD ICONS */
 #systems .systems-bento .systems-card .card-icon,
 #systems .systems-bento .systems-card:nth-child(n) .card-icon {
+  width: 73px !important;
+  height: 75px !important;
+  margin: 12px auto 24px !important;
   border-radius: 0 !important;
-  clip-path: polygon(50% 0, 94% 23%, 94% 77%, 50% 100%, 6% 77%, 6% 23%) !important;
+  clip-path: polygon(50% 0, 94% 25%, 94% 75%, 50% 100%, 6% 75%, 6% 25%) !important;
+  background: rgba(10, 20, 34, 0.96) !important;
+  box-shadow: inset 0 0 0 1px rgba(157, 244, 216, 0.35) !important;
+}
+
+#systems .systems-bento .systems-card .card-icon svg,
+#systems .systems-bento .systems-card:nth-child(n) .card-icon svg {
+  width: 34px !important;
+  height: 34px !important;
 }
