@@ -41669,14 +41669,14 @@ body {
 }
 
 #systems .systems-bento .systems-card .card-icon {
-  width: 72px !important;
-  height: 72px !important;
+  width: 58px !important;
+  height: 58px !important;
   border-radius: 16px !important;
 }
 
 #systems .systems-bento .systems-card .card-icon svg {
-  width: 34px !important;
-  height: 34px !important;
+  width: 26px !important;
+  height: 26px !important;
 }
 
 #systems .systems-bento .systems-card .card-icon::before {
@@ -41727,10 +41727,10 @@ body {
 }
 
 #systems .systems-bento .systems-card .card-icon {
-  width: 73px !important;
-  height: 75px !important;
+  width: 58px !important;
+  height: 60px !important;
   flex-shrink: 0 !important;
-  margin: -10px auto 22px !important;
+  margin: -6px auto 16px !important;
   border-radius: 0 !important;
   clip-path: polygon(50% 0, 94% 25%, 94% 75%, 50% 100%, 6% 75%, 6% 25%) !important;
   background: rgba(10, 20, 34, 0.96) !important;
@@ -41745,8 +41745,8 @@ body {
 }
 
 #systems .systems-bento .systems-card .card-icon svg {
-  width: 34px !important;
-  height: 34px !important;
+  width: 26px !important;
+  height: 26px !important;
 }
 
 #systems .systems-bento .systems-card h4 {
