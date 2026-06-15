@@ -47576,6 +47576,8 @@ body,
   margin-left: auto !important;
   margin-right: auto !important;
   box-sizing: border-box !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 /* Framework Sticky Full-Width Reset */
@@ -47590,8 +47592,8 @@ body,
 }
 
 #framework.sec > div.sticky > div {
-  padding-left: 30px !important;
-  padding-right: 30px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
   box-sizing: border-box !important;
   width: 100% !important;
   max-width: min(100%, 1200px) !important;
@@ -47601,15 +47603,15 @@ body,
 
 @media (max-width: 900px) {
   #framework.sec > div.sticky > div {
-    padding-left: 18px !important;
-    padding-right: 18px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
 @media (max-width: 700px) {
   #framework.sec > div.sticky > div {
-    padding-left: 14px !important;
-    padding-right: 14px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 }
 
