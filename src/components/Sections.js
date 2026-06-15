@@ -301,7 +301,7 @@ export function SystemsSection() {
               <rect className="card-outline-base" x="0.5" y="0.5" width="99" height="99" rx="0" pathLength="400" />
               <rect className="card-outline-trace" x="0.5" y="0.5" width="99" height="99" rx="0" pathLength="400" />
             </svg>
-            <svg className="hex-border-svg" viewBox="0 0 100 100" aria-hidden="true">
+            <svg className="hex-border-svg" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
               <path className="hex-border-base" d="M50 3 L94 25 L94 75 L50 97 L6 75 L6 25 Z" pathLength="360" />
               <path className="hex-border-trace" d="M50 3 L94 25 L94 75 L50 97 L6 75 L6 25 Z" pathLength="360" />
             </svg>
