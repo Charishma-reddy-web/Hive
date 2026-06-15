@@ -47,7 +47,7 @@ body {
   transform-origin: center top;
   /* Smooth scale-down as next card pushes over it */
   transition: transform 0.1s linear, border-radius 0.1s linear;
-  overflow: hidden;
+  
 }
 
 /* When a section is being "stacked" (next card on top),
@@ -586,7 +586,7 @@ body {
   align-items: center;
   min-height: 350px;
   position: relative;
-  overflow: hidden;
+  
 }
 
 .hero-left {
@@ -613,7 +613,7 @@ body {
   box-shadow: 0 10px 24px rgba(29, 158, 117, 0.12);
   backdrop-filter: blur(10px);
   position: relative;
-  overflow: hidden;
+  
 }
 
 .badge::after {
@@ -699,7 +699,7 @@ body {
 .hero-btn-primary,
 .hero-btn-secondary {
   position: relative;
-  overflow: hidden;
+  
   animation: heroButtonRise 0.9s ease both;
   transform-origin: center bottom;
   transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background-position 260ms ease;
@@ -781,7 +781,7 @@ body {
   border-left: 0.5px solid rgba(255, 255, 255, 0.08);
   border-right: 0.5px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
-  overflow: hidden;
+  
   background: rgba(255, 255, 255, 0.015);
 }
 
@@ -790,7 +790,7 @@ body {
   text-align: center;
   border-right: 0.5px solid rgba(255, 255, 255, 0.06);
   position: relative;
-  overflow: hidden;
+  
   animation: metricReveal 0.8s ease both;
   transition: transform 220ms ease, background 220ms ease, box-shadow 220ms ease;
 }
@@ -935,12 +935,12 @@ body {
   padding: 18px 18px 20px;
   text-align: left;
   border-left: none;
-  overflow: hidden;
+  
 }
 
 .outcomes-sec {
   position: relative;
-  overflow: hidden;
+  
 }
 
 .outcomes-sec::before {
@@ -981,7 +981,7 @@ body {
 .outcomes-kicker {
   position: relative;
   gap: 7px;
-  overflow: hidden;
+  
 }
 
 .outcomes-kicker::before {
@@ -1043,7 +1043,7 @@ body {
   border-left: 3px solid var(--brand);
   background: linear-gradient(90deg, rgba(29, 158, 117, 0.1), rgba(255, 255, 255, 0.02));
   border-radius: 0 10px 10px 0;
-  overflow: hidden;
+  
   animation: outcomesDescriptionReveal 0.7s ease both;
 }
 
@@ -1080,7 +1080,7 @@ body {
   background:
     radial-gradient(circle at 50% 50%, rgba(29, 158, 117, 0.16), transparent 34%),
     linear-gradient(135deg, rgba(255, 255, 255, 0.035), rgba(255, 255, 255, 0.01));
-  overflow: hidden;
+  
 }
 
 .outcomes-scoreboard {
@@ -1233,7 +1233,7 @@ body {
 
 .outcome-card {
   position: relative;
-  overflow: hidden;
+  
   animation: outcomeCardPop 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
   border-left: none;
   transition: transform 260ms ease, border-color 260ms ease, box-shadow 260ms ease, background 260ms ease;
@@ -1386,7 +1386,7 @@ body {
 
 .systems-card {
   position: relative;
-  overflow: hidden;
+  
   animation: systemsCardReveal 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
   border-color: rgba(122, 232, 196, 0.16);
   transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease, background 240ms ease;
@@ -2171,7 +2171,7 @@ body {
   position: relative;
   border-radius: 10px;
   padding: 20px 18px;
-  overflow: hidden;
+  
   backdrop-filter: blur(14px);
   transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease, background 260ms ease;
 }
@@ -2204,7 +2204,7 @@ body {
 
 .comparison-sec {
   position: relative;
-  overflow: hidden;
+  
   animation-timeline: view();
   animation-range: entry 0% cover 42%;
 }
@@ -2589,7 +2589,7 @@ body {
 .cta-box {
   position: relative;
   margin: 0 32px 64px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 18% 22%, rgba(29, 158, 117, 0.2), transparent 34%),
     radial-gradient(circle at 82% 28%, rgba(55, 138, 221, 0.12), transparent 32%),
@@ -2879,7 +2879,7 @@ body {
 
 /* Reset the comparison section back to its simple card layout. */
 #comparison {
-  overflow: hidden;
+  
 }
 
 #comparison::before,
@@ -3040,7 +3040,7 @@ body {
 
 .outcomes-animated-card {
   position: relative;
-  overflow: hidden;
+  
   opacity: 0;
   transform: translateY(24px) rotateX(12deg) scale(0.96);
   animation: outcomesCardRise 0.85s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -3150,7 +3150,7 @@ body {
 }
 
 .outcomes-page {
-  overflow: hidden;
+  
 }
 
 .proof-board {
@@ -3165,7 +3165,7 @@ body {
   min-height: 420px;
   padding: 28px;
   border-radius: 14px;
-  overflow: hidden;
+  
   border: 0.5px solid rgba(122, 232, 196, 0.22);
   background:
     radial-gradient(circle at 22% 18%, rgba(122, 232, 196, 0.18), transparent 34%),
@@ -3228,7 +3228,7 @@ body {
   align-content: space-between;
   padding: 18px;
   border-radius: 10px;
-  overflow: hidden;
+  
   border: 0.5px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.035);
   opacity: 0;
@@ -3330,7 +3330,7 @@ body {
 }
 
 .intelligence-page {
-  overflow: hidden;
+  
 }
 
 .intelligence-stage {
@@ -3345,7 +3345,7 @@ body {
   background:
     linear-gradient(90deg, rgba(29, 158, 117, 0.14), rgba(255, 255, 255, 0.02) 42%, rgba(55, 138, 221, 0.08)),
     rgba(255, 255, 255, 0.015);
-  overflow: hidden;
+  
 }
 
 .intelligence-stage::before {
@@ -3436,7 +3436,7 @@ body {
   border: 0.5px solid rgba(255, 255, 255, 0.08);
   background: rgba(255, 255, 255, 0.04);
   backdrop-filter: blur(14px);
-  overflow: hidden;
+  
   opacity: 0;
   transform: translateX(54px) rotateY(-14deg) scale(0.94);
   transform-origin: left center;
@@ -3577,7 +3577,7 @@ body {
 
 .intelligence-blueprint {
   position: relative;
-  overflow: hidden;
+  
   min-height: 620px;
   padding: 26px;
   border: 0.5px solid rgba(122, 232, 196, 0.14);
@@ -3782,7 +3782,7 @@ body {
 
 .systems-showcase {
   position: relative;
-  overflow: hidden;
+  
   padding: 26px;
   border-radius: 14px;
   border: 0.5px solid rgba(122, 232, 196, 0.14);
@@ -4560,7 +4560,7 @@ body {
   border-radius: 14px;
   border: 1px solid rgba(29, 158, 117, 0.24);
   background: linear-gradient(145deg, rgba(29, 158, 117, 0.2), rgba(255, 255, 255, 0.035));
-  overflow: hidden;
+  
 }
 
 .outcomes-board-main::after {
@@ -4667,7 +4667,7 @@ body {
 
 .infrastructure-console .infra-block {
   position: relative;
-  overflow: hidden;
+  
   animation: infraConsoleIn 0.65s ease var(--infra-delay, 0s) both;
   transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease, background 220ms ease;
 }
@@ -4737,7 +4737,7 @@ body {
 /* Premium site atmosphere */
 body {
   position: relative;
-  overflow-x: hidden;
+  
   background:
     radial-gradient(ellipse at 0% 30%, rgba(26, 233, 171, 0.22), transparent 48%),
     radial-gradient(ellipse at 0% 75%, rgba(26, 233, 171, 0.12), transparent 42%),
@@ -4745,11 +4745,11 @@ body {
 }
 
 .particle-bg {
-  position: absolute;
+  position: fixed !important;
   inset: 0;
   z-index: 0 !important;
-  width: 100%;
-  height: 100%;
+  width: 100vw !important;
+  height: 100vh !important;
   pointer-events: none;
   opacity: 1;
 }
@@ -4835,7 +4835,7 @@ body::after {
   padding-top: 72px;
   padding-bottom: 72px;
   padding-right: 28px;
-  overflow: hidden;
+  
 }
 
 .hero-left .badge {
@@ -4861,7 +4861,7 @@ body::after {
 .hero-right {
   width: 390px;
   height: 420px;
-  overflow: hidden;
+  
   animation: toriiContentRise 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.64s both;
 }
 
@@ -4899,7 +4899,7 @@ body::after {
 
 .hero-side-card {
   position: relative;
-  overflow: hidden;
+  
   padding: 28px;
   border-left: 1px solid rgba(157, 244, 216, 0.22);
   background:
@@ -4992,7 +4992,7 @@ body::after {
   justify-content: center;
   margin: 24px 40px 40px;
   padding: 10px 0 0;
-  overflow: hidden;
+  
   border-radius: 0;
   border: 0;
   background: transparent;
@@ -5107,7 +5107,7 @@ body::after {
   grid-template-columns: minmax(280px, 0.58fr) minmax(0, 1.42fr);
   align-items: center;
   gap: clamp(34px, 6vw, 86px);
-  overflow: hidden;
+  
   padding: clamp(58px, 8vw, 92px) clamp(24px, 5vw, 58px);
   background:
     radial-gradient(circle at 12% 26%, rgba(50, 255, 197, 0.2), transparent 32%),
@@ -5303,7 +5303,7 @@ body::after {
   grid-template-columns: minmax(260px, 0.52fr) minmax(0, 1.48fr);
   align-items: center;
   gap: clamp(34px, 6vw, 90px);
-  overflow: hidden;
+  
   min-height: 720px;
   padding: clamp(62px, 8vw, 96px) clamp(24px, 5vw, 58px);
   background:
@@ -5585,7 +5585,7 @@ body::after {
   grid-template-columns: minmax(280px, 0.55fr) minmax(0, 1.45fr);
   align-items: center;
   gap: clamp(34px, 6vw, 88px);
-  overflow: hidden;
+  
   min-height: 700px;
   padding: clamp(62px, 8vw, 96px) clamp(24px, 5vw, 58px);
   background:
@@ -5792,7 +5792,7 @@ body::after {
   grid-template-columns: minmax(270px, 0.54fr) minmax(0, 1.46fr);
   align-items: center;
   gap: clamp(34px, 6vw, 92px);
-  overflow: hidden;
+  
   min-height: 720px;
   padding: clamp(62px, 8vw, 96px) clamp(24px, 5vw, 58px);
   background:
@@ -6040,7 +6040,7 @@ body::after {
   grid-template-columns: minmax(270px, 0.55fr) minmax(0, 1.45fr);
   align-items: center;
   gap: clamp(34px, 6vw, 92px);
-  overflow: hidden;
+  
   min-height: 700px;
   padding: clamp(62px, 8vw, 96px) clamp(24px, 5vw, 58px);
   background:
@@ -6129,7 +6129,7 @@ body::after {
   padding: 18px 20px;
   border: 1px solid rgba(145, 255, 220, 0.12);
   background: rgba(5, 18, 28, 0.72);
-  overflow: hidden;
+  
   opacity: 0;
   transform: translateY(18px);
   animation: commandRowIn 0.62s ease var(--infra-delay) forwards;
@@ -6240,7 +6240,7 @@ body::after {
   grid-template-columns: minmax(270px, 0.52fr) minmax(0, 1.48fr);
   align-items: center;
   gap: clamp(34px, 6vw, 92px);
-  overflow: hidden;
+  
   min-height: 720px;
   padding: clamp(62px, 8vw, 96px) clamp(24px, 5vw, 58px);
   background:
@@ -6515,7 +6515,7 @@ body::after {
   grid-template-columns: minmax(270px, 0.48fr) minmax(0, 1.52fr);
   align-items: center;
   gap: clamp(34px, 6vw, 84px);
-  overflow: hidden;
+  
   min-height: 720px;
   padding: clamp(62px, 8vw, 96px) clamp(24px, 5vw, 58px);
   background:
@@ -6571,7 +6571,7 @@ body::after {
 
 .web-preview {
   position: relative;
-  overflow: hidden;
+  
   min-height: 520px;
   border: 1px solid rgba(144, 255, 221, 0.2);
   background:
@@ -6806,7 +6806,7 @@ body::after {
   grid-template-columns: minmax(270px, 0.48fr) minmax(0, 1.52fr);
   align-items: center;
   gap: clamp(34px, 6vw, 86px);
-  overflow: hidden;
+  
   min-height: 720px;
   padding: clamp(62px, 8vw, 96px) clamp(24px, 5vw, 58px);
   background:
@@ -7127,7 +7127,7 @@ body::after {
 
 .sec {
   position: relative;
-  overflow: hidden;
+  
 }
 
 .sec::before {
@@ -7960,7 +7960,7 @@ body::after {
 
 .torii-story-card {
   position: relative;
-  overflow: hidden;
+  
   min-height: 520px;
   border: 1px solid rgba(166, 168, 184, 0.2);
   background:
@@ -8481,7 +8481,7 @@ body::after {
 .torii-story-copy {
   min-height: 560px;
   justify-content: center;
-  overflow: hidden;
+  
 }
 
 .torii-story-copy .sec-tag {
@@ -8567,7 +8567,7 @@ body::after {
   gap: 22px;
   min-height: 360px;
   padding: 34px;
-  overflow: hidden;
+  
 }
 
 .story-case-copy {
@@ -8746,7 +8746,7 @@ body::after {
   gap: 34px;
   align-items: center;
   padding: 88px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 72% 50%, rgba(157, 244, 216, 0.1), transparent 34%),
     #050914;
@@ -9093,7 +9093,7 @@ body::after {
 .outcome-stair-main,
 .outcome-step {
   position: relative;
-  overflow: hidden;
+  
   min-height: 132px;
   padding: 26px 30px;
   border: 1px solid rgba(166, 168, 184, 0.16);
@@ -9228,7 +9228,7 @@ body::after {
 
 .torii-case-showcase {
   min-width: 0;
-  overflow: hidden;
+  
   border: 1px solid rgba(166, 168, 184, 0.2);
   background:
     radial-gradient(circle at 78% 72%, rgba(255, 101, 152, 0.12), transparent 32%),
@@ -9492,7 +9492,7 @@ body::after {
   flex-direction: column;
   justify-content: flex-end;
   padding: 42px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 72% 22%, rgba(157, 244, 216, 0.18), transparent 32%),
     #07101c;
@@ -9631,7 +9631,7 @@ body::after {
   align-items: center;
   min-height: 780px;
   padding: 92px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 70% 46%, rgba(157, 244, 216, 0.1), transparent 34%),
     #050914;
@@ -9827,7 +9827,7 @@ body::after {
   align-items: center;
   min-height: 820px;
   padding: 94px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 72% 50%, rgba(157, 244, 216, 0.12), transparent 36%),
     #050914;
@@ -9860,7 +9860,7 @@ body::after {
   position: relative;
   min-height: 660px;
   border: 1px solid rgba(166, 168, 184, 0.14);
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 50% 50%, rgba(29, 158, 117, 0.12), transparent 32%),
     #07101c;
@@ -10055,7 +10055,7 @@ body::after {
   align-items: end;
   min-height: 780px;
   padding: 94px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 76% 24%, rgba(157, 244, 216, 0.12), transparent 30%),
     #050914;
@@ -10102,7 +10102,7 @@ body::after {
 .equalizer-primary,
 .equalizer-bar {
   position: relative;
-  overflow: hidden;
+  
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -10247,7 +10247,7 @@ body::after {
   align-items: center;
   min-height: 800px;
   padding: 94px 38px;
-  overflow: hidden;
+  
   background:
     linear-gradient(125deg, rgba(157, 244, 216, 0.09), transparent 30%),
     #050914;
@@ -10633,7 +10633,7 @@ body::after {
   align-items: center;
   min-height: 820px;
   padding: 94px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 76% 44%, rgba(157, 244, 216, 0.12), transparent 34%),
     #050914;
@@ -10911,7 +10911,7 @@ body::after {
 
 .torii-story-v2-showcase {
   min-width: 0;
-  overflow: hidden;
+  
   border: 1px solid rgba(166, 168, 184, 0.16);
   background:
     radial-gradient(circle at 78% 68%, rgba(157, 244, 216, 0.12), transparent 30%),
@@ -11498,7 +11498,7 @@ body::after {
   display: block;
   min-height: 640px;
   border: 1px solid rgba(166, 168, 184, 0.14);
-  overflow: hidden;
+  
   background:
     linear-gradient(90deg, rgba(157, 244, 216, 0.05) 1px, transparent 1px),
     linear-gradient(rgba(157, 244, 216, 0.04) 1px, transparent 1px),
@@ -11873,7 +11873,7 @@ body::after {
   position: relative;
   min-height: 820px;
   padding: 90px 38px 72px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 18% 18%, rgba(157, 244, 216, 0.1), transparent 28%),
     #050914;
@@ -12120,7 +12120,7 @@ body::after {
   gap: 40px;
   min-height: 780px;
   padding: 92px 38px;
-  overflow: hidden;
+  
   background:
     linear-gradient(90deg, rgba(157, 244, 216, 0.045) 1px, transparent 1px),
     linear-gradient(rgba(157, 244, 216, 0.035) 1px, transparent 1px),
@@ -12349,7 +12349,7 @@ body::after {
 .outcome-stair-section {
   display: block;
   padding: 96px 0 108px;
-  overflow: hidden;
+  
   background:
     linear-gradient(180deg, #050914, #030711),
     radial-gradient(circle at 80% 22%, rgba(255, 101, 152, 0.09), transparent 30%);
@@ -12520,7 +12520,7 @@ body::after {
   gap: 0;
   min-height: 760px;
   padding: 0;
-  overflow: hidden;
+  
   background: #030711;
 }
 
@@ -12738,7 +12738,7 @@ body::after {
   padding: 0;
   border: 1px solid rgba(166, 168, 184, 0.16);
   background: #030711;
-  overflow: hidden;
+  
 }
 
 .outcome-stair::before,
@@ -12884,7 +12884,7 @@ body::after {
   align-items: center;
   min-height: 780px;
   padding: 96px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 78% 22%, rgba(157, 244, 216, 0.12), transparent 28%),
     radial-gradient(circle at 38% 84%, rgba(255, 101, 152, 0.08), transparent 30%),
@@ -13158,7 +13158,7 @@ body::after {
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  overflow: hidden;
+  
   opacity: 0.85;
   mix-blend-mode: screen !important;
 }
@@ -13181,7 +13181,7 @@ body::after {
   align-items: center;
   min-height: 100vh;
   padding: clamp(86px, 9vw, 132px) 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 12% 26%, rgba(157, 244, 216, 0.2), transparent 28%),
     radial-gradient(circle at 82% 74%, rgba(29, 158, 117, 0.12), transparent 30%),
@@ -13236,7 +13236,7 @@ body::after {
   z-index: 1;
   min-height: 690px;
   border: 1px solid rgba(157, 244, 216, 0.16);
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 50% 48%, rgba(157, 244, 216, 0.13), transparent 30%),
     rgba(5, 12, 24, 0.94);
@@ -13611,7 +13611,7 @@ body::after {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
+  
   min-width: 0;
   min-height: 260px;
   padding: 18px;
@@ -13920,7 +13920,7 @@ body::after {
   position: relative;
   min-height: 100vh;
   padding: 104px 38px 92px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 12% 22%, rgba(157, 244, 216, 0.16), transparent 28%),
     radial-gradient(circle at 88% 74%, rgba(29, 158, 117, 0.1), transparent 30%),
@@ -13959,7 +13959,7 @@ body::after {
 .pillar-visual {
   position: relative;
   min-height: 560px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 50% 28%, rgba(157, 244, 216, 0.22), transparent 20%),
     #06101c;
@@ -14086,7 +14086,7 @@ body::after {
   position: relative;
   min-height: 100vh;
   padding: 104px 38px 92px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 78% 18%, rgba(157, 244, 216, 0.16), transparent 28%),
     linear-gradient(135deg, rgba(157, 244, 216, 0.055), transparent 32%),
@@ -14326,7 +14326,7 @@ body::after {
   position: relative;
   min-height: 560px;
   padding: 34px;
-  overflow: hidden;
+  
   border-radius: 0;
   clip-path: polygon(0 0, calc(100% - 42px) 0, 100% 42px, 100% 100%, 42px 100%, 0 calc(100% - 42px));
   background:
@@ -14525,7 +14525,7 @@ body::after {
   position: relative;
   min-height: 100vh;
   padding: 100px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 12% 18%, rgba(157, 244, 216, 0.16), transparent 28%),
     linear-gradient(180deg, #030812, #040a14);
@@ -14670,7 +14670,7 @@ body::after {
   align-items: center;
   min-height: 100vh;
   padding: 100px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 75% 48%, rgba(157, 244, 216, 0.14), transparent 32%),
     radial-gradient(circle at 12% 18%, rgba(29, 158, 117, 0.09), transparent 30%),
@@ -14891,7 +14891,7 @@ body::after {
   align-items: center;
   min-height: 100vh;
   padding: 96px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 14% 22%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 80% 46%, rgba(29, 158, 117, 0.1), transparent 30%),
@@ -15024,7 +15024,7 @@ body::after {
   align-items: center;
   min-height: 100vh;
   padding: 100px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 18% 24%, rgba(157, 244, 216, 0.16), transparent 28%),
     radial-gradient(circle at 74% 56%, rgba(29, 158, 117, 0.1), transparent 32%),
@@ -15056,7 +15056,7 @@ body::after {
 .infrastructure-map {
   position: relative;
   min-height: 680px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 50% 50%, rgba(157, 244, 216, 0.12), transparent 30%),
     rgba(5, 11, 21, 0.88);
@@ -15203,7 +15203,7 @@ body::after {
   position: relative;
   min-height: 100vh;
   padding: 96px 38px 110px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 18% 20%, rgba(157, 244, 216, 0.14), transparent 28%),
     radial-gradient(circle at 82% 78%, rgba(29, 158, 117, 0.1), transparent 30%),
@@ -15266,7 +15266,7 @@ body::after {
   display: grid;
   align-content: space-between;
   padding: 20px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 86% 16%, rgba(157, 244, 216, 0.18), transparent 22%),
     linear-gradient(135deg, rgba(157, 244, 216, 0.08), transparent 48%),
@@ -15374,7 +15374,7 @@ body::after {
   align-items: center;
   min-height: 100vh;
   padding: 96px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 14% 22%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 82% 58%, rgba(29, 158, 117, 0.08), transparent 32%),
@@ -15409,7 +15409,7 @@ body::after {
   gap: 10px;
   min-height: 610px;
   padding: 28px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 54% 50%, rgba(157, 244, 216, 0.11), transparent 30%),
     rgba(5, 11, 21, 0.9);
@@ -15525,7 +15525,7 @@ body::after {
   position: relative;
   min-height: 100vh;
   padding: 96px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 82% 18%, rgba(157, 244, 216, 0.14), transparent 28%),
     linear-gradient(180deg, #030812, #050813 52%, #030812);
@@ -15589,7 +15589,7 @@ body::after {
   align-content: space-between;
   min-height: 260px;
   padding: 26px;
-  overflow: hidden;
+  
   background:
     linear-gradient(180deg, rgba(157, 244, 216, 0.075), transparent 52%),
     rgba(6, 13, 24, 0.92);
@@ -15682,7 +15682,7 @@ body::after {
   align-items: center;
   min-height: 100vh;
   padding: 96px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 22%, rgba(157, 244, 216, 0.14), transparent 28%),
     radial-gradient(circle at 74% 46%, rgba(29, 158, 117, 0.13), transparent 34%),
@@ -15846,7 +15846,7 @@ body::after {
   position: relative;
   min-height: 100vh;
   padding: 96px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 14% 18%, rgba(157, 244, 216, 0.14), transparent 28%),
     radial-gradient(circle at 82% 68%, rgba(29, 158, 117, 0.1), transparent 32%),
@@ -15888,7 +15888,7 @@ body::after {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
   min-height: 520px;
-  overflow: hidden;
+  
   background: rgba(4, 10, 20, 0.68);
   box-shadow: inset 0 0 0 1px rgba(157, 244, 216, 0.08), 0 28px 90px rgba(0, 0, 0, 0.32);
 }
@@ -15950,7 +15950,7 @@ body::after {
   z-index: 1;
   max-height: 0;
   margin: 0;
-  overflow: hidden;
+  
   color: rgba(255, 255, 255, 0.66);
   font-size: 11px;
   line-height: 1.55;
@@ -16022,7 +16022,7 @@ body::after {
   align-items: center;
   min-height: 100vh;
   padding: 96px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 24%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 86% 60%, rgba(29, 158, 117, 0.1), transparent 32%),
@@ -16073,7 +16073,7 @@ body::after {
 .infrastructure-terminal {
   position: relative;
   z-index: 2;
-  overflow: hidden;
+  
   background:
     linear-gradient(180deg, rgba(157, 244, 216, 0.045), transparent 34%),
     rgba(4, 10, 20, 0.92);
@@ -16182,7 +16182,7 @@ body::after {
   position: relative;
   min-height: auto;
   padding: 64px 38px 56px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 20%, rgba(157, 244, 216, 0.16), transparent 28%),
     radial-gradient(circle at 82% 74%, rgba(29, 158, 117, 0.1), transparent 32%),
@@ -16234,7 +16234,7 @@ body::after {
   justify-content: flex-end;
   min-width: 0;
   padding: 16px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 50% 18%, rgba(157, 244, 216, 0.13), transparent 26%),
     linear-gradient(180deg, transparent 36%, rgba(157, 244, 216, 0.075)),
@@ -16300,7 +16300,7 @@ body::after {
   max-width: 420px;
   max-height: 0;
   margin: 0;
-  overflow: hidden;
+  
   color: rgba(255, 255, 255, 0.66);
   font-size: 9.8px;
   line-height: 1.42;
@@ -16446,7 +16446,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 70px 38px 62px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 18% 22%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 82% 58%, rgba(29, 158, 117, 0.1), transparent 32%),
@@ -16489,7 +16489,7 @@ body::after {
   align-content: end;
   min-height: 430px;
   padding: 28px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 50% 16%, rgba(157, 244, 216, 0.18), transparent 30%),
     linear-gradient(180deg, transparent 34%, rgba(157, 244, 216, 0.09)),
@@ -16622,7 +16622,7 @@ body::after {
   position: relative;
   min-height: auto;
   padding: 72px 38px 76px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 14% 20%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 82% 72%, rgba(29, 158, 117, 0.1), transparent 32%),
@@ -16850,7 +16850,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 70px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 20%, rgba(157, 244, 216, 0.14), transparent 28%),
     radial-gradient(circle at 72% 52%, rgba(29, 158, 117, 0.12), transparent 34%),
@@ -17017,7 +17017,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 70px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 14% 22%, rgba(157, 244, 216, 0.14), transparent 28%),
     radial-gradient(circle at 82% 70%, rgba(29, 158, 117, 0.1), transparent 32%),
@@ -17153,7 +17153,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 72px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 18% 22%, rgba(157, 244, 216, 0.16), transparent 28%),
     radial-gradient(circle at 78% 52%, rgba(29, 158, 117, 0.11), transparent 34%),
@@ -17296,7 +17296,7 @@ body::after {
   position: relative;
   min-height: auto;
   padding: 72px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 14% 22%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 86% 56%, rgba(29, 158, 117, 0.1), transparent 32%),
@@ -17629,7 +17629,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 74px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 20%, rgba(157, 244, 216, 0.14), transparent 28%),
     radial-gradient(circle at 78% 52%, rgba(29, 158, 117, 0.12), transparent 34%),
@@ -17815,7 +17815,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 72px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 20%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 78% 70%, rgba(29, 158, 117, 0.1), transparent 34%),
@@ -17852,7 +17852,7 @@ body::after {
   gap: 12px;
   min-height: 500px;
   padding: 28px;
-  overflow: hidden;
+  
   background:
     linear-gradient(180deg, rgba(157, 244, 216, 0.045), transparent 36%),
     rgba(4, 10, 20, 0.78);
@@ -17930,7 +17930,7 @@ body::after {
   z-index: 2;
   max-height: 0;
   margin: 0;
-  overflow: hidden;
+  
   color: rgba(255, 255, 255, 0.62);
   font-size: 9px;
   line-height: 1.34;
@@ -18003,7 +18003,7 @@ body::after {
   position: relative;
   min-height: auto;
   padding: 74px 38px 80px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 14% 18%, rgba(157, 244, 216, 0.16), transparent 28%),
     radial-gradient(circle at 86% 78%, rgba(29, 158, 117, 0.1), transparent 34%),
@@ -18055,7 +18055,7 @@ body::after {
   align-items: center;
   min-height: 82px;
   padding: 16px 24px;
-  overflow: hidden;
+  
   background:
     linear-gradient(90deg, rgba(157, 244, 216, 0.16), rgba(157, 244, 216, 0.04) 48%, transparent),
     rgba(6, 13, 24, 0.78);
@@ -18158,7 +18158,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 74px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 22%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 78% 58%, rgba(29, 158, 117, 0.11), transparent 34%),
@@ -18190,7 +18190,7 @@ body::after {
 .infrastructure-route-map {
   position: relative;
   min-height: 540px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 50% 50%, rgba(157, 244, 216, 0.08), transparent 34%),
     rgba(4, 10, 20, 0.62);
@@ -18308,7 +18308,7 @@ body::after {
   position: relative;
   min-height: auto;
   padding: 72px 38px 80px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 14% 20%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 88% 74%, rgba(29, 158, 117, 0.1), transparent 32%),
@@ -18355,7 +18355,7 @@ body::after {
   align-items: center;
   min-height: 96px;
   padding: 14px 0;
-  overflow: hidden;
+  
   animation: terminalLineIn 0.65s ease var(--infra-delay, 0s) both;
 }
 
@@ -18432,7 +18432,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 74px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 20%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 76% 56%, rgba(29, 158, 117, 0.12), transparent 34%),
@@ -18597,7 +18597,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 74px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 20%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 78% 62%, rgba(29, 158, 117, 0.1), transparent 34%),
@@ -18648,7 +18648,7 @@ body::after {
   align-content: end;
   min-height: 0;
   padding: 18px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 82% 14%, rgba(157, 244, 216, 0.14), transparent 22%),
     rgba(6, 13, 24, 0.88);
@@ -18761,7 +18761,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 74px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 20%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 78% 62%, rgba(29, 158, 117, 0.11), transparent 34%),
@@ -18888,7 +18888,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 74px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 20%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 78% 64%, rgba(29, 158, 117, 0.11), transparent 34%),
@@ -19016,7 +19016,7 @@ body::after {
 .skyline-tower p {
   max-height: 0;
   margin: 0;
-  overflow: hidden;
+  
   color: rgba(255, 255, 255, 0.62);
   font-size: 8.8px;
   line-height: 1.34;
@@ -19079,7 +19079,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 74px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 20%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 78% 66%, rgba(29, 158, 117, 0.1), transparent 34%),
@@ -19235,7 +19235,7 @@ body::after {
   position: relative;
   min-height: auto;
   padding: 72px 0 82px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 14% 18%, rgba(157, 244, 216, 0.16), transparent 28%),
     radial-gradient(circle at 86% 78%, rgba(29, 158, 117, 0.1), transparent 32%),
@@ -19282,7 +19282,7 @@ body::after {
   align-items: center;
   min-height: 92px;
   padding: 0 38px;
-  overflow: hidden;
+  
   background: rgba(6, 13, 24, 0.42);
   animation: terminalLineIn 0.65s ease var(--infra-delay, 0s) both;
 }
@@ -19384,7 +19384,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 74px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 20%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 76% 58%, rgba(29, 158, 117, 0.12), transparent 34%),
@@ -19416,7 +19416,7 @@ body::after {
 .infrastructure-chip-board {
   position: relative;
   min-height: 560px;
-  overflow: hidden;
+  
   background:
     linear-gradient(90deg, rgba(157, 244, 216, 0.035) 1px, transparent 1px),
     linear-gradient(rgba(157, 244, 216, 0.028) 1px, transparent 1px),
@@ -19577,7 +19577,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 74px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 18% 18%, rgba(157, 244, 216, 0.16), transparent 28%),
     radial-gradient(circle at 78% 62%, rgba(29, 158, 117, 0.12), transparent 34%),
@@ -19747,7 +19747,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 74px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 20%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 78% 62%, rgba(29, 158, 117, 0.1), transparent 34%),
@@ -19779,7 +19779,7 @@ body::after {
 .infrastructure-helix {
   position: relative;
   min-height: 620px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 50% 50%, rgba(157, 244, 216, 0.08), transparent 35%),
     rgba(4, 10, 20, 0.54);
@@ -19901,7 +19901,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 76px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 20%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 78% 66%, rgba(29, 158, 117, 0.11), transparent 34%),
@@ -19956,7 +19956,7 @@ body::after {
   width: 255px;
   min-height: 340px;
   padding: 24px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 78% 16%, rgba(157, 244, 216, 0.2), transparent 25%),
     linear-gradient(180deg, rgba(157, 244, 216, 0.075), transparent 58%),
@@ -20079,7 +20079,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 74px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 20%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 78% 62%, rgba(29, 158, 117, 0.1), transparent 34%),
@@ -20111,7 +20111,7 @@ body::after {
 .infrastructure-terrain-map {
   position: relative;
   min-height: 560px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 50% 50%, rgba(157, 244, 216, 0.08), transparent 36%),
     rgba(4, 10, 20, 0.62);
@@ -20233,7 +20233,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 74px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 20%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 76% 58%, rgba(29, 158, 117, 0.12), transparent 34%),
@@ -20265,7 +20265,7 @@ body::after {
 .infrastructure-tunnel {
   position: relative;
   min-height: 560px;
-  overflow: hidden;
+  
   perspective: 1100px;
   background:
     radial-gradient(circle at 50% 48%, rgba(157, 244, 216, 0.11), transparent 34%),
@@ -20409,7 +20409,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 74px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 20%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 82% 68%, rgba(29, 158, 117, 0.1), transparent 34%),
@@ -20567,7 +20567,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 74px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 20%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 76% 58%, rgba(29, 158, 117, 0.11), transparent 34%),
@@ -20599,7 +20599,7 @@ body::after {
 .infrastructure-radar {
   position: relative;
   min-height: 580px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 50% 50%, rgba(157, 244, 216, 0.09), transparent 36%),
     rgba(4, 10, 20, 0.62);
@@ -20753,7 +20753,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 74px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 20%, rgba(157, 244, 216, 0.15), transparent 28%),
     radial-gradient(circle at 82% 70%, rgba(29, 158, 117, 0.09), transparent 34%),
@@ -20881,7 +20881,7 @@ body::after {
   position: relative;
   min-height: auto;
   padding: 74px 38px 84px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 14% 18%, rgba(157, 244, 216, 0.16), transparent 28%),
     radial-gradient(circle at 86% 76%, rgba(29, 158, 117, 0.1), transparent 32%),
@@ -20918,7 +20918,7 @@ body::after {
 .infrastructure-waveform {
   position: relative;
   min-height: 520px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 50% 48%, rgba(157, 244, 216, 0.08), transparent 36%),
     rgba(4, 10, 20, 0.42);
@@ -21027,7 +21027,7 @@ body::after {
   align-items: center;
   min-height: auto;
   padding: 74px 38px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 16% 20%, rgba(157, 244, 216, 0.16), transparent 28%),
     radial-gradient(circle at 78% 62%, rgba(29, 158, 117, 0.11), transparent 34%),
@@ -21059,7 +21059,7 @@ body::after {
 .infrastructure-lab {
   position: relative;
   min-height: 560px;
-  overflow: hidden;
+  
   background:
     linear-gradient(90deg, rgba(157, 244, 216, 0.035) 1px, transparent 1px),
     linear-gradient(rgba(157, 244, 216, 0.028) 1px, transparent 1px),
@@ -21506,7 +21506,7 @@ body::after {
   display: block;
   max-width: 840px;
   min-height: 560px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 50% 50%, rgba(157, 244, 216, 0.08), transparent 34%),
     rgba(4, 10, 20, 0.5);
@@ -21644,7 +21644,7 @@ body::after {
   gap: 10px;
   max-width: 900px;
   min-height: 430px;
-  overflow: hidden;
+  
 }
 
 .ribbon-row,
@@ -21658,7 +21658,7 @@ body::after {
   min-height: 430px;
   margin: 0;
   padding: 18px 14px;
-  overflow: hidden;
+  
   border-radius: 0;
   background:
     linear-gradient(180deg, rgba(157, 244, 216, 0.09), transparent 38%),
@@ -21705,7 +21705,7 @@ body::after {
   right: 14px;
   bottom: 18px;
   max-height: 0;
-  overflow: hidden;
+  
   color: rgba(255, 255, 255, 0.66);
   font-size: 9px;
   line-height: 1.4;
@@ -21961,7 +21961,7 @@ body::after {
   grid-template-columns: minmax(280px, 0.46fr) minmax(0, 1.54fr);
   align-items: center;
   gap: clamp(36px, 6vw, 88px);
-  overflow: hidden;
+  
   min-height: 760px;
   padding: clamp(64px, 8vw, 104px) clamp(24px, 5vw, 58px);
   background:
@@ -22046,7 +22046,7 @@ body::after {
   left: 50%;
   top: 50%;
   z-index: 4;
-  overflow: hidden;
+  
   width: min(370px, 48%);
   min-height: 430px;
   border: 1px solid rgba(154, 255, 220, 0.42);
@@ -22354,7 +22354,7 @@ body::after {
   grid-template-columns: minmax(270px, 0.44fr) minmax(0, 1.56fr);
   align-items: center;
   gap: clamp(34px, 6vw, 86px);
-  overflow: hidden;
+  
   min-height: 760px;
   padding: clamp(64px, 8vw, 104px) clamp(24px, 5vw, 58px);
   background:
@@ -22424,7 +22424,7 @@ body::after {
   position: absolute;
   left: 48%;
   top: 50%;
-  overflow: hidden;
+  
   width: min(540px, 62%);
   min-height: 430px;
   border: 1px solid rgba(154, 255, 220, 0.22);
@@ -22744,7 +22744,7 @@ body::after {
   grid-template-columns: minmax(270px, 0.42fr) minmax(0, 1.58fr);
   align-items: center;
   gap: clamp(34px, 6vw, 86px);
-  overflow: hidden;
+  
   min-height: 760px;
   padding: clamp(64px, 8vw, 104px) clamp(24px, 5vw, 58px);
   background:
@@ -22803,7 +22803,7 @@ body::after {
   display: grid;
   align-content: end;
   gap: 14px;
-  overflow: hidden;
+  
   min-height: 150px;
   padding: 22px;
   border: 1px solid rgba(154, 255, 220, 0.15);
@@ -22908,7 +22908,7 @@ body::after {
 .bento-website-preview {
   position: absolute;
   inset: 22px 22px auto;
-  overflow: hidden;
+  
   height: 190px;
   border: 1px solid rgba(154, 255, 220, 0.2);
   background:
@@ -23024,7 +23024,7 @@ body::after {
   grid-template-columns: minmax(270px, 0.42fr) minmax(0, 1.58fr);
   align-items: center;
   gap: clamp(34px, 6vw, 86px);
-  overflow: hidden;
+  
   min-height: 780px;
   padding: clamp(64px, 8vw, 104px) clamp(24px, 5vw, 58px);
   background:
@@ -23078,7 +23078,7 @@ body::after {
 
 .storyboard-page {
   position: relative;
-  overflow: hidden;
+  
   min-height: 640px;
   border: 1px solid rgba(154, 255, 220, 0.2);
   background:
@@ -23501,7 +23501,7 @@ body::after {
   grid-template-columns: minmax(270px, 0.38fr) minmax(0, 1.62fr);
   align-items: center;
   gap: clamp(34px, 6vw, 86px);
-  overflow: hidden;
+  
   min-height: 760px;
   padding: clamp(64px, 8vw, 104px) clamp(24px, 5vw, 58px);
   background:
@@ -23741,7 +23741,7 @@ body::after {
   grid-template-columns: minmax(270px, 0.4fr) minmax(0, 1.6fr);
   align-items: center;
   gap: clamp(34px, 6vw, 86px);
-  overflow: hidden;
+  
   min-height: 760px;
   padding: clamp(64px, 8vw, 104px) clamp(24px, 5vw, 58px);
   background:
@@ -23878,7 +23878,7 @@ body::after {
 
 .controlroom-preview {
   position: relative;
-  overflow: hidden;
+  
   min-height: 610px;
   border: 1px solid rgba(154, 255, 220, 0.22);
   background:
@@ -24131,7 +24131,7 @@ body::after {
   grid-template-columns: minmax(270px, 0.4fr) minmax(0, 1.6fr);
   align-items: center;
   gap: clamp(34px, 6vw, 88px);
-  overflow: hidden;
+  
   min-height: 760px;
   padding: clamp(64px, 8vw, 104px) clamp(24px, 5vw, 58px);
   background:
@@ -24330,7 +24330,7 @@ body::after {
   grid-template-columns: minmax(270px, 0.38fr) minmax(0, 1.62fr);
   align-items: center;
   gap: clamp(34px, 6vw, 88px);
-  overflow: hidden;
+  
   min-height: 780px;
   padding: clamp(64px, 8vw, 104px) clamp(24px, 5vw, 58px);
   background:
@@ -24383,7 +24383,7 @@ body::after {
 
 .studio-preview {
   position: relative;
-  overflow: hidden;
+  
   min-height: 610px;
   border: 1px solid rgba(154, 255, 220, 0.2);
   background:
@@ -24766,7 +24766,7 @@ body::after {
     radial-gradient(circle at 86% 18%, rgba(154, 255, 220, 0.14), transparent 30%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055), 0 20px 62px rgba(0, 0, 0, 0.28);
   transform: none;
-  overflow: hidden;
+  
 }
 
 .studio-module::before {
@@ -24887,7 +24887,7 @@ body::after {
   background: rgba(5, 18, 28, 0.78);
   box-shadow: none;
   transform: none;
-  overflow: hidden;
+  
 }
 
 .studio-module::before,
@@ -24974,7 +24974,7 @@ body::after {
     radial-gradient(circle at 86% 18%, rgba(154, 255, 220, 0.14), transparent 32%);
   box-shadow: 0 22px 68px rgba(0, 0, 0, 0.32);
   transform: none;
-  overflow: hidden;
+  
 }
 
 .studio-module::before {
@@ -25100,7 +25100,7 @@ body::after {
     radial-gradient(circle at 50% 0%, rgba(154, 255, 220, 0.18), transparent 34%);
   box-shadow: 0 24px 76px rgba(0, 0, 0, 0.32);
   transform: none;
-  overflow: hidden;
+  
   scroll-snap-align: start;
 }
 
@@ -25396,7 +25396,7 @@ body::after {
     radial-gradient(circle at 86% 50%, rgba(154, 255, 220, 0.13), transparent 30%);
   box-shadow: 0 18px 56px rgba(0, 0, 0, 0.26);
   transform: none;
-  overflow: hidden;
+  
 }
 
 .studio-module:nth-child(even) {
@@ -25542,7 +25542,7 @@ body::after {
     linear-gradient(180deg, rgba(9, 31, 43, 0.92), rgba(3, 10, 19, 0.98));
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 20px 64px rgba(0, 0, 0, 0.28);
   transform: none;
-  overflow: hidden;
+  
 }
 
 .studio-module::before {
@@ -25948,7 +25948,7 @@ body::after {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
   backdrop-filter: none;
   transform: none;
-  overflow: hidden;
+  
 }
 
 .studio-module::before {
@@ -26070,7 +26070,7 @@ body::after {
     radial-gradient(circle at 82% 12%, rgba(154, 255, 220, 0.16), transparent 32%);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.055), 0 22px 66px rgba(0, 0, 0, 0.28);
   transform: none;
-  overflow: hidden;
+  
 }
 
 .studio-module::before {
@@ -26291,7 +26291,7 @@ body::after {
     rgba(4, 14, 24, 0.86);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 22px 70px rgba(0, 0, 0, 0.28);
   backdrop-filter: blur(14px);
-  overflow: hidden;
+  
 }
 
 .studio-module::before {
@@ -26524,7 +26524,7 @@ body::after {
   max-width: 1120px;
   min-height: auto;
   padding: 0;
-  overflow: hidden;
+  
   background: rgba(4, 10, 20, 0.82);
   box-shadow: inset 0 0 0 1px rgba(157, 244, 216, 0.08);
 }
@@ -26714,7 +26714,7 @@ body::after {
   background: rgba(5, 18, 28, 0.78) !important;
   box-shadow: none !important;
   transform: none !important;
-  overflow: hidden !important;
+  
 }
 
 .infrastructure-studio-section .studio-module::before,
@@ -26765,7 +26765,7 @@ body::after {
 /* Fresh 4th page: clean dual dock comparison */
 .comparison-timeline-section {
   position: relative;
-  overflow: hidden;
+  
   padding-block: clamp(86px, 9vw, 132px) !important;
   background:
     radial-gradient(circle at 15% 20%, rgba(77, 255, 203, 0.10), transparent 32%),
@@ -26912,7 +26912,7 @@ body::after {
 /* Fresh 5th page: compact signal matrix */
 .infrastructure-studio-section {
   position: relative;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 18% 18%, rgba(76, 255, 203, 0.12), transparent 34%),
     radial-gradient(circle at 78% 84%, rgba(51, 128, 108, 0.18), transparent 32%),
@@ -27385,7 +27385,7 @@ body {
     linear-gradient(180deg, rgba(143, 255, 224, 0.095), rgba(255, 255, 255, 0.025)),
     rgba(3, 10, 14, 0.68);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 20px 52px rgba(0, 0, 0, 0.24);
-  overflow: hidden;
+  
   opacity: 0;
   transform: translateY(16px);
   animation: capsuleCardIn 0.58s ease forwards;
@@ -27502,7 +27502,7 @@ body {
   opacity: 1 !important;
   transform: none !important;
   animation: none !important;
-  overflow: hidden !important;
+  
 }
 
 .outcomes-modern-section .outcomes-modern-card::before,
@@ -27680,7 +27680,7 @@ body {
   animation: infraTileIn 0.55s ease forwards;
   animation-delay: var(--infra-delay);
   transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
-  overflow: hidden;
+  
 }
 
 .infra-tile-card:nth-child(2),
@@ -28890,7 +28890,7 @@ body {
   border-radius: 24px !important;
   background: rgba(3, 10, 14, 0.80) !important;
   box-shadow: 0 18px 52px rgba(0, 0, 0, 0.24) !important;
-  overflow: hidden !important;
+  
 }
 
 .outcomes-modern-section .outcomes-modern-core {
@@ -29127,7 +29127,7 @@ body {
   border-radius: 0 !important;
   background: rgba(5, 5, 19, 0.94) !important;
   box-shadow: none !important;
-  overflow: hidden !important;
+  
 }
 
 .outcomes-modern-section .outcomes-modern-mesh,
@@ -29598,7 +29598,7 @@ body {
   border: 1px solid rgba(154, 255, 220, 0.16) !important;
   border-radius: 22px !important;
   background: rgba(5, 16, 20, 0.82) !important;
-  overflow: hidden !important;
+  
 }
 
 .outcome-clean-score {
@@ -29804,7 +29804,7 @@ body {
   border-radius: 26px !important;
   background: rgba(3, 12, 16, 0.72) !important;
   box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28) !important;
-  overflow: hidden;
+  
   backdrop-filter: blur(14px);
 }
 
@@ -29912,7 +29912,7 @@ body {
   border-radius: 28px !important;
   background: rgba(3, 12, 16, 0.72) !important;
   box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28) !important;
-  overflow: hidden;
+  
   backdrop-filter: blur(14px);
 }
 
@@ -29994,7 +29994,7 @@ body {
   padding: 0 !important;
   border: 1px solid rgba(247, 245, 255, 0.16) !important;
   background: rgba(5, 5, 19, 0.92) !important;
-  overflow: hidden !important;
+  
 }
 
 .outcomes-modern-section .outcomes-modern-core {
@@ -30235,7 +30235,7 @@ body {
     radial-gradient(circle at 92% 50%, rgba(154, 255, 220, 0.12), transparent 28%) !important;
   box-shadow: 0 18px 54px rgba(0, 0, 0, 0.24) !important;
   transform: none !important;
-  overflow: hidden !important;
+  
 }
 
 .infrastructure-studio-section .studio-module::before {
@@ -30331,7 +30331,7 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.06),
     0 22px 64px rgba(0, 0, 0, 0.28) !important;
   transform: none !important;
-  overflow: hidden !important;
+  
 }
 
 .infrastructure-studio-section .studio-module::before {
@@ -30553,7 +30553,7 @@ body {
     linear-gradient(90deg, rgba(154, 255, 220, 0.09), transparent 42%),
     rgba(5, 18, 28, 0.82);
   box-shadow: 0 18px 54px rgba(0, 0, 0, 0.24);
-  overflow: hidden;
+  
   animation: growthStackIn 0.55s ease var(--infra-delay) both;
 }
 
@@ -30671,7 +30671,7 @@ body {
     rgba(5, 18, 28, 0.84);
   box-shadow: 0 18px 54px rgba(0, 0, 0, 0.24);
   transform: none;
-  overflow: hidden;
+  
 }
 
 .growth-stack-card::before {
@@ -30766,7 +30766,7 @@ body {
   background: rgba(5, 18, 28, 0.78);
   box-shadow: 0 18px 54px rgba(0, 0, 0, 0.22);
   transform: none;
-  overflow: hidden;
+  
 }
 
 .growth-stack-card::before,
@@ -30846,7 +30846,7 @@ body {
     radial-gradient(circle at 92% 50%, rgba(154, 255, 220, 0.11), transparent 30%);
   box-shadow: 0 18px 54px rgba(0, 0, 0, 0.22);
   transform: none;
-  overflow: hidden;
+  
 }
 
 .growth-stack-card:nth-child(even) {
@@ -30957,7 +30957,7 @@ body {
   margin-left: auto;
   border: 1px solid rgba(154, 255, 220, 0.14);
   border-radius: 22px;
-  overflow: hidden;
+  
   background: rgba(5, 18, 28, 0.72);
   box-shadow: 0 22px 70px rgba(0, 0, 0, 0.28);
 }
@@ -31155,7 +31155,7 @@ body {
   margin-left: auto;
   border: 1px solid rgba(154, 255, 220, 0.14);
   border-radius: 18px;
-  overflow: hidden;
+  
   background: rgba(5, 18, 28, 0.7);
   box-shadow: 0 20px 62px rgba(0, 0, 0, 0.24);
 }
@@ -31918,7 +31918,7 @@ body {
   border-radius: 28px;
   background: linear-gradient(180deg, rgba(8, 28, 40, 0.86), rgba(3, 10, 19, 0.94));
   box-shadow: 0 24px 76px rgba(0, 0, 0, 0.28);
-  overflow: hidden;
+  
 }
 
 .comparison-split::before {
@@ -32004,7 +32004,7 @@ body {
     linear-gradient(90deg, rgba(154, 255, 220, 0.08), transparent 46%),
     rgba(5, 18, 28, 0.78);
   box-shadow: 0 18px 54px rgba(0, 0, 0, 0.24);
-  overflow: hidden;
+  
   animation: growthLayerIn 0.55s ease var(--infra-delay) both;
 }
 
@@ -32170,7 +32170,7 @@ body {
   border-radius: 26px !important;
   background: rgba(4, 14, 24, 0.94) !important;
   box-shadow: 0 22px 64px rgba(0, 0, 0, 0.28) !important;
-  overflow: hidden !important;
+  
   transform: none !important;
 }
 
@@ -32278,7 +32278,7 @@ body {
   padding: 100px 40px !important;
   background: radial-gradient(circle at 10% 20%, rgba(26, 233, 171, 0.04), transparent 45%), #030812 !important;
   position: relative !important;
-  overflow: hidden !important;
+  
 }
 
 .graph-visual-container {
@@ -32446,7 +32446,7 @@ body {
   padding: 100px 40px !important;
   background: #01040a !important;
   position: relative !important;
-  overflow: hidden !important;
+  
 }
 
 .blade-stack-grid {
@@ -32563,7 +32563,7 @@ body {
   padding: 100px 40px !important;
   background: radial-gradient(circle at 50% 50%, rgba(26, 233, 171, 0.05), transparent 60%), #030812 !important;
   position: relative !important;
-  overflow: hidden !important;
+  
 }
 
 .outcomes-hexagon-head {
@@ -32765,7 +32765,7 @@ body {
   justify-content: space-between !important;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
   position: relative !important;
-  overflow: hidden !important;
+  
 }
 
 .bento-card::before {
@@ -33183,7 +33183,7 @@ body {
   justify-content: center !important;
   align-items: center !important;
   position: relative !important;
-  overflow: hidden !important;
+  
 }
 
 .carousel-deck {
@@ -33289,7 +33289,7 @@ body {
   pointer-events: none;
   opacity: 0.82;
   mix-blend-mode: screen;
-  overflow: hidden;
+  
   contain: layout paint size;
 }
 
@@ -33314,7 +33314,7 @@ body {
 /* Fresh 3rd page: clean metric cockpit */
 .outcome-cockpit-section {
   position: relative;
-  overflow: hidden;
+  
   display: grid;
   grid-template-columns: minmax(280px, 0.86fr) minmax(420px, 1.14fr);
   gap: clamp(28px, 5vw, 72px);
@@ -33404,7 +33404,7 @@ body {
 .outcome-cockpit-meter {
   height: 8px;
   border-radius: 999px;
-  overflow: hidden;
+  
   background: rgba(255, 255, 255, 0.08);
 }
 
@@ -33454,7 +33454,7 @@ body {
 /* Fresh 4th page: compact transformation board */
 .comparison-portal-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(80px, 8vw, 116px);
   padding-bottom: clamp(84px, 8vw, 124px);
   background:
@@ -33692,7 +33692,7 @@ body {
 /* Different redesign: 3rd page proof wall */
 .outcome-proof-section {
   position: relative;
-  overflow: hidden;
+  
   display: grid;
   grid-template-columns: minmax(280px, 0.78fr) minmax(480px, 1.22fr);
   gap: clamp(30px, 6vw, 86px);
@@ -33745,7 +33745,7 @@ body {
 .outcome-proof-main,
 .outcome-proof-card {
   position: relative;
-  overflow: hidden;
+  
   border: 1px solid rgba(26, 233, 171, 0.15);
   background:
     linear-gradient(145deg, rgba(11, 31, 43, 0.88), rgba(3, 11, 19, 0.9));
@@ -33833,7 +33833,7 @@ body {
 /* Different redesign: 4th page transformation cards */
 .comparison-transform-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(84px, 8vw, 122px);
   padding-bottom: clamp(86px, 8vw, 126px);
   background:
@@ -33994,7 +33994,7 @@ body {
 /* New different version: 3rd page impact lab */
 .outcome-lab-section {
   position: relative;
-  overflow: hidden;
+  
   display: grid;
   grid-template-columns: minmax(280px, 0.82fr) minmax(520px, 1.18fr);
   gap: clamp(34px, 6vw, 92px);
@@ -34147,7 +34147,7 @@ body {
 /* New different version: 4th page upgrade matrix */
 .comparison-matrix-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(86px, 8vw, 124px);
   padding-bottom: clamp(86px, 8vw, 124px);
   background:
@@ -34303,7 +34303,7 @@ body {
 /* Latest redesign: 3rd page radar cards */
 .outcome-radar-v2-section {
   position: relative;
-  overflow: hidden;
+  
   display: grid;
   grid-template-columns: minmax(280px, 0.8fr) minmax(520px, 1.2fr);
   gap: clamp(36px, 6vw, 92px);
@@ -34358,7 +34358,7 @@ body {
 
 .outcome-radar-v2-core {
   position: relative;
-  overflow: hidden;
+  
   min-height: 430px;
   padding: 28px;
   border-radius: 34px;
@@ -34452,7 +34452,7 @@ body {
 /* Latest redesign: 4th page split stacks */
 .comparison-stacks-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(86px, 8vw, 124px);
   padding-bottom: clamp(86px, 8vw, 124px);
   background:
@@ -34620,7 +34620,7 @@ body {
 /* Final alternate: 3rd page impact ledger */
 .outcome-ledger-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(86px, 8vw, 126px);
   padding-bottom: clamp(86px, 8vw, 126px);
   background:
@@ -34755,7 +34755,7 @@ body {
 /* Final alternate: 4th page before/after tiles */
 .comparison-tiles-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(86px, 8vw, 124px);
   padding-bottom: clamp(86px, 8vw, 124px);
   background:
@@ -34892,7 +34892,7 @@ body {
 /* Newest alternate: 3rd page orbit metrics */
 .outcome-orbit-section {
   position: relative;
-  overflow: hidden;
+  
   min-height: 760px;
   padding-top: clamp(84px, 8vw, 124px);
   padding-bottom: clamp(84px, 8vw, 124px);
@@ -35033,7 +35033,7 @@ body {
 /* Newest alternate: 4th page horizontal lanes */
 .comparison-lanes-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(86px, 8vw, 124px);
   padding-bottom: clamp(86px, 8vw, 124px);
   background:
@@ -35188,7 +35188,7 @@ body {
 /* Latest 3rd page: equal signal grid */
 .outcome-signal-grid-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(84px, 8vw, 124px);
   padding-bottom: clamp(84px, 8vw, 124px);
   background:
@@ -35236,7 +35236,7 @@ body {
 .outcome-signal-card {
   min-height: 210px;
   position: relative;
-  overflow: hidden;
+  
   padding: 22px;
   border-radius: 26px;
   border: 1px solid rgba(26, 233, 171, 0.15);
@@ -35309,7 +35309,7 @@ body {
 /* Latest 3rd page: vertical growth timeline */
 .outcome-timeline-section {
   position: relative;
-  overflow: hidden;
+  
   display: grid;
   grid-template-columns: minmax(280px, 0.82fr) minmax(520px, 1.18fr);
   gap: clamp(36px, 6vw, 90px);
@@ -35441,7 +35441,7 @@ body {
 /* New 3rd page: diagonal outcome showcase */
 .outcome-showcase-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(86px, 8vw, 126px);
   padding-bottom: clamp(86px, 8vw, 126px);
   background:
@@ -35486,7 +35486,7 @@ body {
 
 .outcome-showcase-card {
   position: relative;
-  overflow: hidden;
+  
   min-height: 190px;
   padding: 22px;
   border-radius: 28px;
@@ -35556,7 +35556,7 @@ body {
 /* New 4th page: quadrant comparison panels */
 .comparison-quads-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(86px, 8vw, 124px);
   padding-bottom: clamp(86px, 8vw, 124px);
   background:
@@ -35709,7 +35709,7 @@ body {
 
 .bento-widget-card {
   position: relative;
-  overflow: hidden;
+  
   background: rgba(4, 14, 23, 0.65);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 28px;
@@ -36194,7 +36194,7 @@ body {
 /* Fresh 3rd page: prism outcome tiles */
 .outcome-prism-section {
   position: relative;
-  overflow: hidden;
+  
   display: grid;
   grid-template-columns: minmax(280px, 0.78fr) minmax(520px, 1.22fr);
   gap: clamp(34px, 6vw, 88px);
@@ -36246,7 +36246,7 @@ body {
 
 .outcome-prism-card {
   position: relative;
-  overflow: hidden;
+  
   min-height: 178px;
   padding: 22px;
   border-radius: 24px;
@@ -36304,7 +36304,7 @@ body {
 /* Fresh 4th page: river comparison rows */
 .comparison-river-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(86px, 8vw, 124px);
   padding-bottom: clamp(86px, 8vw, 124px);
   background:
@@ -36477,7 +36477,7 @@ body {
 /* Fresh 3rd page: metric shelf design */
 .outcome-shelf-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(86px, 8vw, 126px);
   padding-bottom: clamp(86px, 8vw, 126px);
   background:
@@ -36590,7 +36590,7 @@ body {
 /* Fresh 4th page: switch comparison cards */
 .comparison-switch-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(86px, 8vw, 124px);
   padding-bottom: clamp(86px, 8vw, 124px);
   background:
@@ -36802,7 +36802,7 @@ body {
 /* Fresh 3rd page: radar cards */
 .outcome-radar-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(76px, 7vw, 112px);
   padding-bottom: clamp(76px, 7vw, 112px);
   background:
@@ -36850,7 +36850,7 @@ body {
 .outcome-radar-card {
   min-height: 240px;
   position: relative;
-  overflow: hidden;
+  
   padding: 22px;
   border-radius: 28px;
   border: 1px solid rgba(26, 233, 171, 0.18);
@@ -36956,7 +36956,7 @@ body {
 /* Fresh 4th page: transformation lanes */
 .comparison-lane-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(76px, 7vw, 112px);
   padding-bottom: clamp(76px, 7vw, 112px);
   background:
@@ -37160,7 +37160,7 @@ body {
 /* Final compact 3rd page: signal tiles */
 .outcome-signal-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(54px, 5vw, 78px) !important;
   padding-bottom: clamp(52px, 5vw, 74px) !important;
   background:
@@ -37267,7 +37267,7 @@ body {
 /* Final compact 4th page: split cards without labels */
 .comparison-split-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(54px, 5vw, 78px) !important;
   padding-bottom: clamp(52px, 5vw, 74px) !important;
   background:
@@ -37397,7 +37397,7 @@ body {
 /* New 3rd page: compact outcome console */
 .outcome-console-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(56px, 5vw, 82px) !important;
   padding-bottom: clamp(54px, 5vw, 78px) !important;
   background:
@@ -37517,7 +37517,7 @@ body {
 /* New 4th page: compact comparison grid */
 .comparison-grid-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(56px, 5vw, 82px) !important;
   padding-bottom: clamp(54px, 5vw, 78px) !important;
   background:
@@ -37654,7 +37654,7 @@ body {
 /* New 3rd page: compact stacked outcome slabs */
 .outcome-stack-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(52px, 4.8vw, 76px) !important;
   padding-bottom: clamp(52px, 4.8vw, 76px) !important;
   background:
@@ -37756,7 +37756,7 @@ body {
 /* New 4th page: compact flow rows */
 .comparison-flow-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(52px, 4.8vw, 76px) !important;
   padding-bottom: clamp(52px, 4.8vw, 76px) !important;
   background:
@@ -37899,7 +37899,7 @@ body {
 /* 4th page normal clean cards */
 .comparison-normal-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(56px, 5vw, 82px) !important;
   padding-bottom: clamp(56px, 5vw, 82px) !important;
   background:
@@ -38017,7 +38017,7 @@ body {
 /* 3rd page: resource-style boxes inspired by Clair AI resources */
 .outcome-resource-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: clamp(58px, 5vw, 84px) !important;
   padding-bottom: clamp(58px, 5vw, 84px) !important;
   background:
@@ -38062,7 +38062,7 @@ body {
 }
 
 .outcome-resource-card {
-  overflow: hidden;
+  
   min-height: 286px;
   border-radius: 22px;
   border: 1px solid rgba(26, 233, 171, 0.16);
@@ -38077,7 +38077,7 @@ body {
 .outcome-resource-visual {
   position: relative;
   height: 112px;
-  overflow: hidden;
+  
   background:
     radial-gradient(circle at 24% 42%, rgba(26, 233, 171, 0.34), transparent 26%),
     linear-gradient(135deg, rgba(26, 233, 171, 0.18), rgba(255, 255, 255, 0.025));
@@ -38193,7 +38193,7 @@ body {
   border-radius: 20px;
   padding: 30px;
   position: relative;
-  overflow: hidden;
+  
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
   display: flex;
@@ -38322,7 +38322,7 @@ body {
   padding: 40px;
   margin-top: 60px;
   position: relative;
-  overflow: hidden;
+  
 }
 
 .roi-sim-container::before {
@@ -38468,7 +38468,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   margin-bottom: 16px;
-  overflow: hidden;
+  
   transition: all 0.3s;
 }
 
@@ -38599,7 +38599,7 @@ body {
   border-radius: 20px;
   padding: 24px;
   position: relative;
-  overflow: hidden;
+  
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
   display: flex;
@@ -38654,7 +38654,7 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
-  overflow: hidden;
+  
 }
 
 @media (max-width: 800px) {
@@ -38783,7 +38783,7 @@ body {
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.02);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
-  overflow: hidden;
+  
   height: 100%;
 }
 
@@ -38953,7 +38953,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  overflow: hidden;
+  
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
@@ -39359,7 +39359,7 @@ body {
   background:
     linear-gradient(90deg, rgba(157, 244, 216, 0.045), transparent 38%),
     #060c18;
-  overflow: hidden;
+  
   transition: border-color 220ms ease, transform 220ms ease, background 220ms ease;
 }
 
@@ -39726,7 +39726,7 @@ body {
 /* Fresh 4th page design: upgrade matrix */
 .comparison-upgrade-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: 78px;
   padding-bottom: 108px;
   background:
@@ -39943,7 +39943,7 @@ body {
 /* Fresh 4th page v2: split dashboard comparison */
 .comparison-dashboard-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: 74px;
   padding-bottom: 112px;
   background:
@@ -40165,7 +40165,7 @@ body {
 /* Fresh 4th page v3: transformation timeline */
 .comparison-timeline-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: 76px;
   padding-bottom: 112px;
   background:
@@ -40354,7 +40354,7 @@ body {
 /* Fresh 4th page v4: radar comparison board */
 .comparison-radar-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: 76px;
   padding-bottom: 112px;
   background:
@@ -40559,7 +40559,7 @@ body {
 /* Fresh 4th page v5: diagonal flow lanes */
 .comparison-flow-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: 76px;
   padding-bottom: 112px;
   background:
@@ -40783,7 +40783,7 @@ body {
 /* Correct 4th page: modern growth problem */
 .modern-problem-section {
   position: relative;
-  overflow: hidden;
+  
   padding-top: 72px;
   padding-bottom: 92px;
   background:
@@ -41023,7 +41023,7 @@ body {
 }
 
 .modern-problem-card {
-  overflow: hidden;
+  
   border-radius: 18px;
   padding: 30px 32px;
   background: rgba(7, 16, 29, 0.66);
@@ -41231,7 +41231,7 @@ body {
   position: relative;
   margin-top: clamp(22px, 3.5vw, 42px) !important;
   padding: 0 !important;
-  overflow: hidden;
+  
 }
 
 .hero-partners .partners-marquee {
@@ -41287,7 +41287,7 @@ body {
   width: 100% !important;
   margin: clamp(24px, 4vw, 46px) 0 28px !important;
   padding: 0 !important;
-  overflow: hidden !important;
+  
   background: transparent !important;
 }
 
@@ -41415,7 +41415,6 @@ body {
 /* Front-layer + screen-fit zoom. */
 html,
 body {
-  overflow-x: hidden;
 }
 
 .nh {
@@ -41423,7 +41422,6 @@ body {
   max-width: 100vw !important;
   margin: 0 !important;
   position: relative;
-  overflow-x: hidden;
   border-radius: 0;
   zoom: 1;
 }
@@ -41651,6 +41649,7 @@ body {
   line-height: 1.2 !important;
   white-space: normal !important;
   overflow: visible !important;
+  text-overflow: clip !important;
 }
 
 #systems .systems-bento .systems-card .kpi-arrow {
@@ -41867,7 +41866,7 @@ body {
 .methodology-panel {
   width: 100% !important;
   max-width: 100vw !important;
-  overflow-x: hidden !important;
+  
 }
 
 .methodology-panel {
@@ -41937,7 +41936,7 @@ body {
 .hero-partners .partner-row-container {
   position: relative !important;
   width: 100% !important;
-  overflow: hidden !important;
+  
   padding: 24px 0 !important;
   border-top: 1px solid rgba(255, 255, 255, 0.04) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.04) !important;
@@ -41995,7 +41994,7 @@ body {
 /* Landing hero visual: keep the right-side hive fully inside the viewport */
 @media (min-width: 981px) {
   .hero-wrap {
-    overflow: hidden !important;
+    
   }
 
   .hero-right {
@@ -42727,7 +42726,7 @@ body,
 .nh {
   width: 100% !important;
   max-width: 100% !important;
-  overflow-x: hidden !important;
+  
 }
 
 .nh {
@@ -44241,7 +44240,7 @@ body,
 .nh {
   width: 100% !important;
   max-width: 100% !important;
-  overflow-x: hidden !important;
+  
 }
 
 .nh {
@@ -44252,7 +44251,7 @@ body,
 .hero-wrap {
   width: 100% !important;
   max-width: 100% !important;
-  overflow: hidden !important;
+  
 }
 
 @media (min-width: 981px) {
@@ -44268,7 +44267,7 @@ body,
 .nh {
   width: 100% !important;
   max-width: 100% !important;
-  overflow-x: hidden !important;
+  
 }
 
 .nh {
@@ -44285,7 +44284,7 @@ body,
   gap: clamp(28px, 5vw, 72px) !important;
   padding-left: 30px !important;
   padding-right: 30px !important;
-  overflow: hidden !important;
+  
 }
 
 .hero-left {
@@ -44342,7 +44341,7 @@ body,
   align-items: center !important;
   justify-content: space-between !important;
   gap: clamp(24px, 4vw, 56px) !important;
-  overflow: hidden !important;
+  
   transform: none !important;
 }
 
@@ -44385,7 +44384,7 @@ body,
   grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.72fr) !important;
   align-items: center !important;
   gap: clamp(44px, 7vw, 118px) !important;
-  overflow: hidden !important;
+  
   transform: none !important;
 }
 
@@ -45873,7 +45872,7 @@ body,
   background: transparent !important;
   border: 0 !important;
   box-shadow: none !important;
-  overflow: hidden !important;
+  
   -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent) !important;
   mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent) !important;
 }
@@ -46274,7 +46273,7 @@ body,
   border: 0 !important;
   border-radius: 0 !important;
   box-shadow: none !important;
-  overflow: hidden !important;
+  
   -webkit-mask-image: none !important;
   mask-image: none !important;
 }
@@ -46384,7 +46383,7 @@ body,
 .nh {
   width: 100% !important;
   max-width: 100% !important;
-  overflow-x: hidden !important;
+  
 }
 
 .nav,
@@ -46580,7 +46579,7 @@ body,
   .hero-right {
     min-height: 280px !important;
     max-height: 360px !important;
-    overflow: hidden !important;
+    
   }
 
   #systems,
@@ -46708,7 +46707,7 @@ body,
 /* TRUE FINAL: restore landing left green gradient glow */
 .hero-page {
   position: relative !important;
-  overflow: hidden !important;
+  
 }
 
 .hero-page::before {
@@ -46813,7 +46812,7 @@ body,
   margin-bottom: 0 !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
-  overflow: hidden !important;
+  
   transform: none !important;
 }
 
@@ -46955,7 +46954,7 @@ html,
 body,
 .nh {
   max-width: 100% !important;
-  overflow-x: hidden !important;
+  
 }
 
 * {
@@ -47094,7 +47093,7 @@ body,
   .hero-right {
     min-height: 270px !important;
     max-height: 360px !important;
-    overflow: hidden !important;
+    
   }
 
   .hero-partners.gsap-logo-scroll {
@@ -47437,7 +47436,7 @@ body,
 /* FINAL LANDING PAGE SHADOW BACKGROUND - glows applied like 5th page */
 .hero-page {
   position: relative !important;
-  overflow: hidden !important;
+  
   background:
     radial-gradient(circle at 14% 20%, rgba(26, 233, 171, 0.15), transparent 30%),
     radial-gradient(circle at 84% 76%, rgba(26, 233, 171, 0.08), transparent 34%),
@@ -47560,3 +47559,14 @@ body,
 
 
 @keyframes sweep { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
+
+
+/* FORCE FIX FOR STICKY */
+html, body, .nh, .bottom-sections { 
+  overflow: visible !important; 
+  overflow-x: visible !important; 
+  overflow-y: visible !important; 
+  perspective: none !important; 
+  contain: none !important; 
+  isolation: auto !important; 
+}
