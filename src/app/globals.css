@@ -41620,7 +41620,7 @@ body {
 
 #systems .systems-bento .systems-card,
 #systems .systems-bento .systems-card:nth-child(n) {
-  min-height: 276px !important;
+  min-height: 292px !important;
   padding: 30px 40px 40px !important;
 }
 
@@ -41714,7 +41714,7 @@ body {
 #systems .systems-bento .systems-card:nth-child(n) {
   align-content: start !important;
   justify-items: center !important;
-  min-height: 254px !important;
+  min-height: 292px !important;
   padding: 34px 34px 28px !important;
   text-align: center !important;
 }
