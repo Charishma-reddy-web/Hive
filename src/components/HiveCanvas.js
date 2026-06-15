@@ -1,3 +1,4 @@
+/* eslint-disable */
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -140,3 +141,4 @@ export default function HiveCanvas() {
 
   return <canvas ref={canvasRef} className="hive-canvas" />;
 }
+

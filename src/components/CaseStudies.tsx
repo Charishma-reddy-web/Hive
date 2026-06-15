@@ -31,22 +31,22 @@ const caseStudies = [
 
 // --- Custom Animated Number Component ---
 function AnimatedMetric({ value }: { value: string }) {
-  // Parse prefix (e.g. "+"), the number, and suffix (e.g. "%", "X", "K+")
   const match = value.match(/^([^0-9]*)([0-9]+)([^0-9]*)$/);
-  
-  if (!match) return <span>{value}</span>;
-  
-  const prefix = match[1];
-  const num = parseInt(match[2], 10);
-  const suffix = match[3];
+  const num = match ? parseInt(match[2], 10) : 0;
 
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
 
   useEffect(() => {
+    if (!match) return;
     const controls = animate(count, num, { duration: 1.2, ease: "easeOut" });
     return controls.stop;
-  }, [num, count]);
+  }, [num, count, match]);
+
+  if (!match) return <span>{value}</span>;
+  
+  const prefix = match[1];
+  const suffix = match[3];
 
   return (
     <span>
@@ -84,7 +84,7 @@ export default function DynamicBento() {
             </p>
           </div>
           <h2 className="text-4xl md:text-5xl font-sans font-bold text-white mb-4 tracking-tight">
-            Results we've engineered
+            Results we&apos;ve engineered
           </h2>
           <p className="text-white/50 text-lg font-light">
             Real outcomes from intelligence-led systems — not vanity metrics.

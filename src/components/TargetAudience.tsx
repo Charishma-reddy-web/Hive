@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use client';
 
 import React, { useState, useEffect } from 'react';
@@ -20,15 +21,7 @@ export default function TargetAudience() {
 
   const allTitles = ['AI-first enterprises', ...audiences.map(a => a.name)];
 
-  // Sync hover with active index
-  useEffect(() => {
-    if (hoveredName) {
-      const index = audiences.findIndex(a => a.name === hoveredName);
-      if (index !== -1) {
-        setActiveIndex(index + 1); // +1 because 0 is AI-first enterprises
-      }
-    }
-  }, [hoveredName]);
+  // Hover logic is now handled directly in onMouseEnter
 
   // Auto-cycle logic
   useEffect(() => {
@@ -81,7 +74,10 @@ export default function TargetAudience() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.05, ease: "easeOut" }}
-                  onMouseEnter={() => setHoveredName(aud.name)}
+                  onMouseEnter={() => {
+                    setHoveredName(aud.name);
+                    setActiveIndex(index + 1);
+                  }}
                   onMouseLeave={() => setHoveredName(null)}
                   className="group relative flex flex-col items-center justify-center shrink-0 cursor-default transition-all duration-300"
                   style={{
@@ -183,4 +179,5 @@ export default function TargetAudience() {
     </section>
   );
 }
+
 

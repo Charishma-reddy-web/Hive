@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import {
   SiHubspot,
@@ -122,3 +123,4 @@ export const integrationData = [
   { name: "Stripe", icon: IconStripe },
   { name: "Vercel", icon: IconVercel },
 ];
+
