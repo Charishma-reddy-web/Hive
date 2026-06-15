@@ -47619,9 +47619,31 @@ body,
 /* FORCE FIX FOR STICKY */
 html, body, .nh, .bottom-sections { 
   overflow: visible !important; 
-  overflow-x: clip !important; 
+  overflow-x: visible !important; 
   overflow-y: visible !important; 
   perspective: none !important; 
   contain: none !important; 
   isolation: auto !important; 
+}
+
+/* CLIP HORIZONTAL OVERFLOW ON NON-STICKY SECTIONS */
+#systems,
+#outcomes,
+#comparison,
+#infrastructure,
+#industries,
+#cases,
+#integrations,
+#contact,
+#about {
+  overflow-x: clip !important;
+}
+
+/* NO-SCROLLBAR UTILITY */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
 }
