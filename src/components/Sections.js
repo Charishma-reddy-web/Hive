@@ -218,7 +218,7 @@ export function HeroSection() {
 
   return (
     <section data-page="1" className="hero-page">
-      <div className="hero-wrap w-full max-w-[1280px] mx-auto px-6 md:px-12">
+      <div className="hero-wrap w-full max-w-[1200px] mx-auto px-8 md:px-14">
         <div className="hero-left">
           <div className="badge">
             <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true">
@@ -273,7 +273,7 @@ export function SystemsSection() {
 
   return (
     <section data-page="2" className="sec" id="systems">
-      <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12">
+      <div className="w-full max-w-[1200px] mx-auto px-8 md:px-14">
       <div className="systems-intro">
         <div className="sec-tag">What we actually do</div>
         <h2 className="sec-h systems-heading">Intelligence systems for scalable growth</h2>
@@ -325,7 +325,7 @@ export function SystemsSection() {
 export function OutcomesSection() {
   return (
     <section data-page="3" className="sec" id="outcomes" style={{ paddingBottom: "24px", paddingTop: "40px" }}>
-      <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12">
+      <div className="w-full max-w-[1200px] mx-auto px-8 md:px-14">
         
         <div className="outcomes-section-head">
           <span className="sec-tag">Growth backed by outcomes</span>
@@ -373,7 +373,7 @@ export function ComparisonSection() {
 
   return (
     <section data-page="4" className="sec modern-problem-section" id="comparison">
-      <div className="modern-problem-wrap w-full max-w-[1280px] mx-auto px-6 md:px-12">
+      <div className="modern-problem-wrap w-full max-w-[1200px] mx-auto px-8 md:px-14">
         <div className="modern-problem-head">
           <span>THE MODERN GROWTH PROBLEM</span>
           <h2 className="sec-h systems-heading comparison-heading-line">
@@ -601,7 +601,7 @@ const infraColors = {
 export function InfrastructureSection() {
   return (
     <section data-page="5" className="sec blade-stack-section" id="infrastructure">
-      <div className="w-full max-w-[1280px] mx-auto px-6 md:px-12">
+      <div className="w-full max-w-[1200px] mx-auto px-8 md:px-14">
 
       {/* Content — top */}
       <div className="infrastructure-heading-block">
