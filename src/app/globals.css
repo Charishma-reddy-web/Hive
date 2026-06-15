@@ -47656,3 +47656,10 @@ html, body, .nh, .bottom-sections {
   padding-right: 20px !important;
   box-sizing: border-box !important;
 }
+
+/* FORCE HEXAGON SHAPE FOR SYSTEM CARD ICONS */
+#systems .systems-bento .systems-card .card-icon,
+#systems .systems-bento .systems-card:nth-child(n) .card-icon {
+  border-radius: 0 !important;
+  clip-path: polygon(50% 0, 94% 23%, 94% 77%, 50% 100%, 6% 77%, 6% 23%) !important;
+}
