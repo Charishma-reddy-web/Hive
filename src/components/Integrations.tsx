@@ -214,10 +214,7 @@ export default function Integrations() {
 
         {/* LEFT */}
         <div className="flex flex-col items-start flex-shrink-0 lg:w-[380px]">
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#00F0B5]/25 bg-[#00F0B5]/[0.08] mb-6">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#00F0B5] animate-pulse shadow-[0_0_8px_#00F0B5]" />
-            <p className="text-[11px] font-bold tracking-[0.35em] uppercase text-[#00F0B5] font-mono">Growth Infrastructure</p>
-          </div>
+          <div className="sec-tag">Growth Infrastructure</div>
 
           <h2 className="text-[48px] md:text-[64px] font-bold tracking-tight text-white leading-[1.05]">
             We don't just<br />use tools.

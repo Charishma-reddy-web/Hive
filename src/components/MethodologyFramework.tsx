@@ -143,11 +143,8 @@ export default function MethodologyFramework() {
 
         {/* Unified Section Header */}
         <div className="relative z-20 w-full flex flex-col items-start mb-2 lg:mb-4 pointer-events-none">
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#00F0B5]/25 bg-[#00F0B5]/[0.08] mb-4 shadow-[0_0_15px_rgba(0,240,181,0.1)] pointer-events-auto">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#00F0B5] animate-pulse shadow-[0_0_8px_#00F0B5]" />
-            <p className="text-[11px] font-bold tracking-[0.35em] uppercase text-[#00F0B5] font-mono">
-              The Intelligence Framework
-            </p>
+          <div className="sec-tag pointer-events-auto">
+            The Intelligence Framework
           </div>
           <h2 className="text-[36px] md:text-[48px] lg:text-[56px] font-bold tracking-tight text-white leading-[1.05] mb-2">
             Our proprietary<br className="hidden lg:block" /> methodology

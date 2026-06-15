@@ -20,10 +20,7 @@ export default function CtaFooter() {
             
             {/* Left Side: The Pitch */}
             <div className="lg:col-span-6 flex flex-col items-start relative z-20">
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.02] border border-white/[0.08] mb-6 backdrop-blur-md">
-                <span className="w-2 h-2 rounded-full bg-[#00F0B5] animate-pulse shadow-[0_0_12px_#00F0B5]" />
-                <span className="text-[10px] uppercase tracking-widest text-white/80 font-mono font-bold">Ready to scale</span>
-              </div>
+              <div className="sec-tag">Ready to scale</div>
               
               <h2 className="text-[36px] md:text-[48px] font-semibold tracking-tight text-white leading-[1.05] mb-6">
                 Build a smarter<br/>

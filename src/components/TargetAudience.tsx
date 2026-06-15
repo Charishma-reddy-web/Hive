@@ -57,11 +57,8 @@ export default function TargetAudience() {
       <div className="relative z-10 w-full max-w-[1200px] mx-auto px-8 md:px-14 flex flex-col items-center text-center gap-6">
         
         <div className="flex flex-col items-center w-full gap-3">
-          {/* Who We Serve Pill */}
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#00F0B5]/25 bg-[#00F0B5]/[0.08] mb-5 md:mb-6">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#00F0B5] shadow-[0_0_8px_#00F0B5] animate-pulse" />
-            <p className="text-[11px] font-bold tracking-[0.3em] uppercase text-[#00F0B5] font-mono">Who we serve</p>
-          </div>
+          {/* Who We Serve Tag */}
+          <div className="sec-tag">Who we serve</div>
 
           {/* Icons Row */}
           <div className="flex flex-row flex-nowrap items-center justify-center gap-3 md:gap-5 lg:gap-7 w-full mx-auto overflow-x-auto no-scrollbar py-4 relative z-10">

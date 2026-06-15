@@ -77,12 +77,7 @@ export default function DynamicBento() {
         
         {/* EXACT MATCH HEADER */}
         <div className="w-full flex flex-col items-start mb-10 md:mb-12">
-          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#00F0B5]/25 bg-[#00F0B5]/[0.08] mb-6 shadow-[0_0_15px_rgba(0,240,181,0.1)]">
-            <div className="w-1.5 h-1.5 rounded-full bg-[#00F0B5] animate-pulse shadow-[0_0_8px_#00F0B5]" />
-            <p className="text-[11px] font-bold tracking-[0.35em] uppercase text-[#00F0B5] font-mono">
-              Growth Systems in Action
-            </p>
-          </div>
+          <div className="sec-tag">Growth Systems in Action</div>
           <h2 className="text-4xl md:text-5xl font-sans font-bold text-white mb-4 tracking-tight">
             Results we&apos;ve engineered
           </h2>
