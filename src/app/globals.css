@@ -1429,13 +1429,13 @@ body {
 
 .systems-bento .systems-card-1 h4 {
   max-width: 240px;
-  font-size: 18px;
+  font-size: 15px;
   line-height: 1.25;
 }
 
 .systems-bento .systems-card-1 p {
   max-width: 280px;
-  font-size: 12px;
+  font-size: 10.5px;
 }
 
 .systems-card::before {
@@ -4013,7 +4013,7 @@ body {
 #systems .systems-bento .systems-card h4 {
   grid-column: 3;
   margin: 0;
-  font-size: 16px;
+  font-size: 13.5px;
   line-height: 1.25;
 }
 
@@ -4021,7 +4021,7 @@ body {
   grid-column: 3;
   margin: 0;
   max-width: 540px;
-  font-size: 11px;
+  font-size: 9.5px;
 }
 
 #systems .systems-bento .systems-card .kpi {
