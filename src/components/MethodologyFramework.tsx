@@ -2,10 +2,6 @@
 
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring, useMotionTemplate } from 'framer-motion';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 // ─── Data ───────────────────────────────────────────────────────────────────
 export const phases = [
@@ -49,7 +45,6 @@ export const phases = [
 // ─── Main Component ──────────────────────────────────────────────────────────
 export default function MethodologyFramework() {
   const trackRef      = useRef<HTMLDivElement>(null);
-  const panelRef      = useRef<HTMLDivElement>(null);
   const progressRef   = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
   const activeRef     = useRef(0);
@@ -79,47 +74,53 @@ export default function MethodologyFramework() {
     cursorY.set(((e.clientY - rect.top) / rect.height) * 100);
   }, [cursorX, cursorY]);
 
+  // Bulletproof Pure React Scroll Tracking
+  // No GSAP, No Framer-Motion useScroll, No conflicts with Lenis
   useEffect(() => {
-    if (!trackRef.current || !panelRef.current) return;
+    const handleScroll = () => {
+      if (!trackRef.current) return;
+      
+      const rect = trackRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // Calculate scroll progress through the track
+      const scrollDistance = -rect.top;
+      const maxScroll = trackRef.current.offsetHeight - windowHeight;
+      
+      if (maxScroll <= 0) return;
+      
+      let progress = scrollDistance / maxScroll;
+      progress = Math.max(0, Math.min(1, progress));
+      
+      // Update visual progress bar instantly
+      if (progressRef.current) {
+        progressRef.current.style.height = `${progress * 100}%`;
+      }
+      
+      // Determine active phase based on precise intervals
+      const totalPhases = phases.length;
+      // Math.round snaps the active state when the line is halfway to the next dot
+      const idx = Math.max(0, Math.min(Math.round(progress * (totalPhases - 1)), totalPhases - 1));
+      
+      if (idx !== activeRef.current) {
+        activeRef.current = idx;
+        setActive(idx);
+      }
+    };
 
-    const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: trackRef.current,
-        start: 'top center',
-        end: 'bottom bottom',
-        scrub: true,
-        invalidateOnRefresh: true,
-        onUpdate: (self) => {
-          const progress = self.progress;
-
-          if (progressRef.current) {
-            gsap.set(progressRef.current, { height: `${progress * 100}%` });
-          }
-
-          const idx = Math.min(Math.floor(progress * phases.length * 0.99), phases.length - 1);
-
-          if (idx !== activeRef.current && idx >= 0) {
-            activeRef.current = idx;
-            setActive(idx);
-          }
-        },
-      });
-    }, trackRef);
-
-    ScrollTrigger.refresh();
-
-    return () => ctx.revert();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Trigger initial check
+    
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const phase = phases[active];
 
   return (
-    <div ref={trackRef} className="methodology-track relative w-full min-h-screen bg-[#060C18]">
+    <div ref={trackRef} className="relative w-full h-[300vh] bg-[#060C18]">
       <div
-        ref={panelRef}
-        data-page="6"
         onMouseMove={handleMouseMove}
-        className="methodology-panel h-screen w-full overflow-hidden flex flex-col pt-8 md:pt-10 pb-16 lg:pb-24"
+        className="sticky top-0 h-screen w-full overflow-hidden flex flex-col pt-8 md:pt-10 pb-16 lg:pb-24"
       >
         {/* ── CURSOR SPOTLIGHT ── */}
         <SpotlightLayer smoothX={smoothX} smoothY={smoothY} />
@@ -140,29 +141,40 @@ export default function MethodologyFramework() {
         </AnimatePresence>
 
         {/* Unified Section Header */}
-        <div className="relative z-20 w-full max-w-[1120px] mx-auto px-6 md:px-10 flex flex-col items-start mb-2 lg:mb-4 pointer-events-none">
+        <div className="relative z-20 w-full max-w-[1280px] mx-auto px-6 md:px-12 flex flex-col items-start mb-2 lg:mb-4 pointer-events-none">
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-[#00F0B5]/25 bg-[#00F0B5]/[0.08] mb-4 shadow-[0_0_15px_rgba(0,240,181,0.1)] pointer-events-auto">
             <div className="w-1.5 h-1.5 rounded-full bg-[#00F0B5] animate-pulse shadow-[0_0_8px_#00F0B5]" />
             <p className="text-[11px] font-bold tracking-[0.35em] uppercase text-[#00F0B5] font-mono">
               The Intelligence Framework
             </p>
           </div>
-          <h2 className="text-[40px] md:text-[56px] lg:text-[64px] font-bold tracking-tight text-white leading-[1.05] mb-2">
+          <h2 className="text-[36px] md:text-[48px] lg:text-[56px] font-bold tracking-tight text-white leading-[1.05] mb-2">
             Our proprietary<br className="hidden lg:block" /> methodology
           </h2>
         </div>
 
         {/* ── 2-COLUMN ORBITAL LAYOUT ── */}
-        <div className="relative z-10 w-full max-w-[1080px] mx-auto px-6 md:px-10 flex flex-col md:flex-row gap-6 lg:gap-10 items-center justify-center flex-1">
+        <div className="relative z-10 w-full max-w-[1280px] mx-auto px-6 md:px-12 flex flex-col md:flex-row gap-6 lg:gap-16 items-center justify-center flex-1">
 
           {/* LEFT: Phase List */}
           <div className="relative flex-1 flex items-center justify-center">
-            {/* Vertical Stack of Phases */}
-            <div className="relative z-10 flex flex-col gap-2">
+            
+            {/* Vertical Stack of Phases - Added explicit width to hold the line perfectly */}
+            <div className="relative z-10 flex flex-col gap-2 w-[280px]">
+              
+              {/* Progress bar line connecting dots - Now locked to the list container */}
+              <div className="absolute right-[5px] top-[24px] bottom-[24px] w-[2px] bg-white/[0.05] rounded-full overflow-hidden z-0">
+                <div 
+                  ref={progressRef}
+                  className="w-full bg-gradient-to-b from-[#00F0B5] to-[#157A5A] rounded-full origin-top transition-all duration-[50ms]"
+                  style={{ height: '0%' }}
+                />
+              </div>
+
               {phases.map((p, i) => (
                 <div 
                   key={i} 
-                  className="relative flex items-center h-[48px] md:h-[56px] cursor-pointer group"
+                  className="relative flex items-center h-[48px] md:h-[56px] cursor-pointer group z-10"
                   onMouseEnter={() => {
                     if (!hasMouseMoved) return;
                     activeRef.current = i;
@@ -173,19 +185,23 @@ export default function MethodologyFramework() {
                   {i === active && (
                     <motion.div 
                       layoutId="active-orb-card"
-                      className="absolute w-[320px] -left-6 h-full rounded-2xl border border-[#00F0B5]/30 bg-[#00F0B5]/5 backdrop-blur-[2px]"
-                      style={{ boxShadow: '0 0 40px rgba(0,240,181,0.1)' }}
+                      className="absolute w-[320px] -left-6 h-full rounded-2xl border border-[#00F0B5]/20 bg-gradient-to-r from-[#00F0B5]/[0.08] to-transparent backdrop-blur-[4px] -z-10"
+                      style={{ boxShadow: 'inset 1px 0 0 rgba(0,240,181,0.3), 0 0 30px rgba(0,240,181,0.1)' }}
                       transition={{ type: "spring", stiffness: 200, damping: 25 }}
                     />
                   )}
                   
                   {/* Item Content */}
-                  <div className="relative z-10 w-[280px] flex items-center justify-between">
+                  <div className="relative z-10 w-full flex items-center justify-between">
                     <div className="flex gap-5 items-center">
                       <div className="flex flex-col ml-4">
                         <span 
-                          className="text-[20px] font-bold transition-colors duration-300" 
-                          style={{ color: i === active ? '#fff' : 'rgba(255,255,255,0.15)' }}
+                          className={`text-[20px] font-bold transition-all duration-300 transform
+                            ${i === active 
+                              ? "text-white translate-x-2 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]" 
+                              : "text-white/30 group-hover:text-white/70 group-hover:translate-x-1"
+                            }
+                          `}
                         >
                           {p.title}
                         </span>
@@ -196,7 +212,7 @@ export default function MethodologyFramework() {
                     {i === active && (
                       <motion.div 
                         layoutId="active-dot"
-                        className="w-3 h-3 rounded-full flex-shrink-0 ml-4 relative flex items-center justify-center"
+                        className="w-3 h-3 rounded-full flex-shrink-0 ml-4 relative flex items-center justify-center bg-[#060C18]"
                         style={{ 
                           background: 'radial-gradient(circle, #00F0B5 0%, #157A5A 100%)',
                           boxShadow: '0 0 12px 1px rgba(0,240,181,0.5), inset 0 1px 1px rgba(255,255,255,0.4)' 
@@ -214,15 +230,6 @@ export default function MethodologyFramework() {
                 </div>
               ))}
             </div>
-
-            {/* Progress bar line connecting dots */}
-            <div className="absolute right-[43px] top-[24px] bottom-[24px] w-[2px] bg-white/[0.05] rounded-full overflow-hidden z-0">
-              <div 
-                ref={progressRef}
-                className="w-full bg-gradient-to-b from-[#00F0B5] to-[#157A5A] rounded-full origin-top transition-all duration-300"
-                style={{ height: '0%' }}
-              />
-            </div>
           </div>
 
           {/* RIGHT: Content Area */}
@@ -231,13 +238,13 @@ export default function MethodologyFramework() {
             {/* Ambient glow behind text */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#00F0B5]/[0.04] blur-[120px] rounded-full pointer-events-none -z-10" />
 
-            <AnimatePresence>
+            <AnimatePresence mode="wait">
               <motion.div
                 key={`content-${active}`}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -40 }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                exit={{ opacity: 0, y: -15 }}
+                transition={{ duration: 0.15, ease: "easeOut" }}
                 className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex flex-col"
               >
                 {/* Giant watermark number */}

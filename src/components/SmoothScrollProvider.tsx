@@ -1,15 +1,16 @@
 'use client';
 
+import { ReactLenis } from '@studio-freight/react-lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import type { ReactNode } from 'react';
+import { useEffect, useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function SmoothScrollProvider({
   children,
 }: {
-  children: ReactNode;
+  children: React.ReactNode;
 }) {
-  return children;
+  return <>{children}</>;
 }

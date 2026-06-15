@@ -186,6 +186,9 @@ export function SiteShell({ children }) {
     <>
       <SplashCursor
         enabled={cursorEnabled}
+        SIM_RESOLUTION={64}
+        DYE_RESOLUTION={512}
+        PRESSURE_ITERATIONS={3}
         DENSITY_DISSIPATION={6}
         VELOCITY_DISSIPATION={4}
         PRESSURE={0.5}
@@ -193,7 +196,7 @@ export function SiteShell({ children }) {
         SPLAT_RADIUS={0.14}
         SPLAT_FORCE={3500}
         COLOR_UPDATE_SPEED={10}
-        SHADING
+        SHADING={false}
         RAINBOW_MODE={false}
         COLOR="#1ae9ab"
       />
