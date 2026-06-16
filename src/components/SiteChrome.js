@@ -135,7 +135,7 @@ export function SiteShell({ children }) {
   const [cursorEnabled, setCursorEnabled] = useState(false);
 
   useEffect(() => {
-    const targetPages = new Set([1, 6, 10, 11]);
+    const targetPages = new Set([1, 6, 10]);
     let rafId = 0;
 
     const updateCursorState = () => {
