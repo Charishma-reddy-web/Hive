@@ -21,7 +21,9 @@ function Logo() {
           />
         </svg>
       </div>
-      <span className="logo-name">NurtureHive</span>
+      <span className="logo-name">
+        Nurture<span style={{ color: '#1ae9ab' }}>Hive</span>
+      </span>
     </div>
   );
 }
