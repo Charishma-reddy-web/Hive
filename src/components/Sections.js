@@ -324,7 +324,7 @@ export function SystemsSection() {
 
 export function OutcomesSection() {
   return (
-    <section data-page="3" className="sec" id="outcomes" style={{ paddingBottom: "24px", paddingTop: "40px" }}>
+    <section data-page="3" className="sec" id="outcomes" style={{ paddingTop: "44px", paddingBottom: "64px" }}>
       <div className="w-full max-w-[1200px] mx-auto px-8 md:px-14">
         
         <div className="outcomes-section-head">

@@ -40800,6 +40800,8 @@ body {
   
   padding-top: 72px;
   padding-bottom: 92px;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
   background:
     linear-gradient(120deg, rgba(26, 233, 171, 0.055), transparent 34%),
     linear-gradient(180deg, rgba(4, 12, 22, 0.78), rgba(4, 9, 18, 0));
@@ -47615,27 +47617,41 @@ body,
   max-width: none !important;
 }
 
-#framework.sec > div.sticky > div {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+#framework.sec .framework-inner-wrap {
   box-sizing: border-box !important;
   width: 100% !important;
-  max-width: min(100%, 1200px) !important;
+  max-width: min(100%, 1380px) !important; /* 1280px content width + 2 * 50px padding */
   margin-left: auto !important;
   margin-right: auto !important;
+  padding-left: 50px !important;
+  padding-right: 50px !important;
+}
+
+@media (min-width: 901px) and (max-width: 1199px) {
+  #framework.sec .framework-inner-wrap {
+    padding-left: 46px !important;
+    padding-right: 46px !important;
+  }
 }
 
 @media (max-width: 900px) {
-  #framework.sec > div.sticky > div {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  #framework.sec .framework-inner-wrap {
+    padding-left: 38px !important;
+    padding-right: 38px !important;
   }
 }
 
 @media (max-width: 700px) {
-  #framework.sec > div.sticky > div {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  #framework.sec .framework-inner-wrap {
+    padding-left: 42px !important;
+    padding-right: 42px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  #framework.sec .framework-inner-wrap {
+    padding-left: 34px !important;
+    padding-right: 34px !important;
   }
 }
 
@@ -47671,11 +47687,84 @@ html, body, .nh, .bottom-sections {
   scrollbar-width: none !important;
 }
 
-/* MATCH PAGE 2 AND PAGE 5 GAP WITH PAGE 4 */
+/* MATCH PAGE 2, 3, 4 AND 5 GAP */
 #systems > *,
+#outcomes > *,
+#comparison > *,
 #infrastructure > * {
+  padding-left: 15px !important;
+  padding-right: 20px !important;
+  box-sizing: border-box !important;
+}
+
+/* SUBPAGE LAYOUT CONTROLLER (WITH MARGIN) */
+.nh-subpage-layout {
+  margin: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.nh-subpage-content-card {
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.015);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  box-shadow: 
+    0 30px 60px -15px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .nh-subpage-layout {
+    margin: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+  .nh-subpage-content-card {
+    padding: 2rem 1.25rem;
+    border-radius: 16px;
+  }
+}
+
+/* Match the 40px side margins/paddings from pages 4 and 5 on sections 3, 8, 9, 10 (and 11) */
+#cases,
+#insights,
+#contact,
+#about {
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 768px) {
+  #cases,
+  #insights,
+  #contact,
+  #about {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+
+/* Match the internal children padding of pages 4 and 5 on sections 8, 9, 10 */
+#cases > *,
+#insights > *,
+#contact > * {
   padding-left: 20px !important;
   padding-right: 20px !important;
+  box-sizing: border-box !important;
+}
+
+/* CENTER AND CAP PAGE 2, 3, AND 5 INNER WRAPPERS */
+#systems > *,
+#infrastructure > * {
+  max-width: min(100%, 1320px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   box-sizing: border-box !important;
 }
 

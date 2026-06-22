@@ -133,6 +133,7 @@ export function Footer() {
 
 export function SiteShell({ children }) {
   const [cursorEnabled, setCursorEnabled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const targetPages = new Set([1, 6, 10]);
@@ -205,8 +206,19 @@ export function SiteShell({ children }) {
       />
       <main className="nh">
         <ParticleBackground />
-        <Navbar />
-        {children}
+        {pathname !== "/" ? (
+          <div className="nh-subpage-layout">
+            <Navbar />
+            <div className="nh-subpage-content-card">
+              {children}
+            </div>
+          </div>
+        ) : (
+          <>
+            <Navbar />
+            {children}
+          </>
+        )}
       </main>
     </>
   );

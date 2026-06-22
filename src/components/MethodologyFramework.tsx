@@ -142,7 +142,7 @@ export default function MethodologyFramework() {
         </AnimatePresence>
 
         {/* Unified Section Header */}
-        <div className="relative z-20 w-full flex flex-col items-start mb-2 lg:mb-4 pointer-events-none">
+        <div className="framework-inner-wrap relative z-20 w-full flex flex-col items-start mb-2 lg:mb-4 pointer-events-none">
           <div className="sec-tag pointer-events-auto">
             The Intelligence Framework
           </div>
@@ -152,7 +152,7 @@ export default function MethodologyFramework() {
         </div>
 
         {/* ── 2-COLUMN ORBITAL LAYOUT ── */}
-        <div className="relative z-10 w-full flex flex-col md:flex-row gap-6 lg:gap-16 items-center justify-center flex-1">
+        <div className="framework-inner-wrap relative z-10 w-full flex flex-col md:flex-row gap-6 lg:gap-16 items-center justify-center flex-1">
 
           {/* LEFT: Phase List */}
           <div className="relative flex-1 flex items-center justify-center">
